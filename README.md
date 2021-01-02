@@ -43,9 +43,9 @@
 #### Association
 
 - has_many :room_users
-- has_many :rooms, through: room_users
+- has_many :rooms, through: user_rooms
 - has_many :reports
-- has_many :subjects
+- has_many :subjects, through: user_subjects
 - has_many :memos
 
 ### roomsテーブル
@@ -56,11 +56,11 @@
 
 #### Association
 
-- has_many :room_users
-- has_many :users, through: room_users
+- has_many :user_rooms
+- has_many :users, through: user_rooms
 - has_many :reports
 
-### room_users テーブル
+### user_rooms テーブル
 
 | Column             | Type            | option                         |
 | ------------------ | --------------- | ------------------------------ |
@@ -69,10 +69,53 @@
 
 #### Association
 
-- belongs_to :room
 - belongs_to :user
+- belongs_to :room
 
 ### reports テーブル
+
+| Column             | Type            | option                         |
+| ------------------ | --------------- | ------------------------------ |
+| user               | references      | null: false, foreign_key: true |
+| room               | references      | null: false, foreign_key: true |
+| nickname           | string          | null: false                    |
+| study-time         | time            | null: false                    |
+| concentrated-time  | time            | null: false                    |
+| good-way           | text            | null: false                    |
+| achievement        | binary          | null: false                    |
+| why_not            | text            |                                |
+| tomorrow-plan      | text            | null: false                    |
+| study-content      | text            | null: false                    |
+| solution-proposal  | text            | null: false                    |
+
+#### Association
+
+- belongs_to :user
+- belongs_to :room
+
+### subjects テーブル
+
+| Column             | Type            | option                         |
+| ------------------ | --------------- | ------------------------------ |
+| name               | string          | null: false                    |
+
+#### Association
+
+- has_many :user_subjects
+- has_many :users, through: user_subjects
+- has_many :memos
+
+### user_subjects テーブル
+
+| Column             | Type            | option                         |
+| ------------------ | --------------- | ------------------------------ |
+| user               | references      | null: false, foreign_key: true |
+| subject            | references      | null: false, foreign_key: true |
+
+#### Association
+
+- belongs_to :user
+- belongs_to :subject
 
 
 
