@@ -14,7 +14,7 @@
 サービスをご利用いただくにはユーザー登録＆ログインをしていただく必要があります。
 ログインが完了されましたら、大きく2つの機能をご利用いただけます。
 1つ目は「学習項目別のメモ書き」機能です。
-本アプリをご利用頂く方は学習をされている方を想定していますが、学習する内容は人により様々で、ほとんどの人が複数の題材について学習されていると考えます
+本アプリをご利用頂く方は歯科プログラミングや資格等の学習をされている方を想定していますが、学習する内容は人により様々で、ほとんどの人が複数の題材について学習されていると考えます
 本アプリではまず「学習項目」というものを作成いただき、その「学習項目」の中で、日々の学習でメモをしたい事項を書き残すことができます。
 またお書きいただいたメモは一覧で表示されるようになっており、キーワード検索をすることでこれまでご自身が残されたメモを検索することができます
 2つ目は「仲間との一日の学習報告ルーム」機能です。
@@ -38,7 +38,8 @@
 | encrypted_password | string          | null: false      |
 | nickname           | string          | null: false      |
 | birthday           | date            | null: false      |
-| job_genre_id       | integer         | null: false      |
+| study_genre_id     | integer         | null: false      |
+| self_introduction  | text            |                  |
 
 #### Association
 
@@ -79,14 +80,14 @@
 | user               | references      | null: false, foreign_key: true |
 | room               | references      | null: false, foreign_key: true |
 | nickname           | string          | null: false                    |
-| study-time         | time            | null: false                    |
-| concentrated-time  | time            | null: false                    |
-| good-way           | text            | null: false                    |
+| study_time         | time            | null: false                    |
+| concentrated_time  | time            | null: false                    |
+| good_way           | text            | null: false                    |
 | achievement        | binary          | null: false                    |
 | why_not            | text            |                                |
-| tomorrow-plan      | text            | null: false                    |
-| study-content      | text            | null: false                    |
-| solution-proposal  | text            | null: false                    |
+| tomorrow_plan      | text            | null: false                    |
+| study_content      | text            | null: false                    |
+| solution_proposal  | text            | null: false                    |
 
 #### Association
 
@@ -117,10 +118,26 @@
 - belongs_to :user
 - belongs_to :subject
 
+### memos テーブル
+
+| Column             | Type            | option                         |
+| ------------------ | --------------- | ------------------------------ |
+| user               | references      | null: false, foreign_key: true |
+| subjects           | references      | null: false, foreign_key: true |
+| title              | integer         | null: false                    |
+| point              | text            |                                |
+| explanation        | text            | null: false                    |
+
+#### Association
+
+- belongs_to :user
+- belongs_to :subjects
+
 
 
 ## ローカルでの動作方法
 - データベース: MySQL
+- ユーザー登録で使用したパッケージ: devise
 - database.yml にて default: &defaultのencoding: utf8に変更
 - app/javascript/packs/application.js にて require("turbolinks").start() を削除する
 - .gitignore に .Ds_Store を追加する
