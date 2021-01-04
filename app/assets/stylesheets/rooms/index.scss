@@ -105,14 +105,14 @@ a {
   color: rgba(256, 256, 256, 0.8);
 }
 
-.feature-lists>.list>.regi_session {
+.regi_session {
   font-size: 22px;
   line-height: 50px;
   margin-bottom: 20vh;
   color: rgba(256, 256, 256, 0.8);
 }
 
-.feature-lists>.list>.regi_session:hover {
+.regi_session:hover {
   font-weight: bold;
   font-size: 22px;
   line-height: 50px;
@@ -128,17 +128,31 @@ a {
 /* 学習報告ルーム一覧 */
 
 .room-contents {
-  background-color: #FFF;
   display: flex;
+  background-color: rgba(0, 0, 0, 0.3);
   flex-direction: column;
   align-items: center;
-  padding: 10vh 0;
+  padding: 30vh 0 0 0;
 }
 
 .room-contents>.title {
-  font-size: 5vh;
+  font-size: 3.5vh;
   line-height: 1.4;
   font-weight: bold;
+  color:rgba(256, 256, 256, 0.8);
+  margin-bottom: 10vh;
+  position: relative;
+}
+
+.room-contents>.title::after {
+  content: '';
+  width: 70px;
+  height: 2px;
+  background-color: rgba(256, 256, 256, 0.8);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .room-contents>.subtitle {
@@ -154,12 +168,13 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 5vh 0;
 }
 
 .room-lists>.list {
-  width: 37vh;
-  padding: 1vw;
-  background-color: #FFF;
+  width: 30vh;
+  padding: 2vw;
+  border-radius: 4px;
 }
 
 
@@ -168,19 +183,34 @@ a {
 }
 
 .room-img {
-  width: 33vh;
-  height: 33vh;
+  width: 25vh;
+  height: 25vh;
+  border-radius: 50%;
 }
 
 
 .room-info {
-  background-color: #FFF;
-  color: black;
+  color: rgba(0, 0, 0, 1);
   padding: 1vw;
 }
 
 .room-name {
+  text-align: center;
   font-size: 2.5vh;
 }
+
+.room-name:hover {
+  text-align: center;
+  font-size: 2.5vh;
+  text-decoration: underline;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.non-room-info {
+  color: rgba(256, 256, 256, 0.8);
+  padding: 1vw;
+}
+
 
 /* //学習報告ルーム一覧 */

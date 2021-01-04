@@ -23,8 +23,7 @@
         <%# else %>
             <li class='list'>
               <%= link_to '#' do %>
-              <%= image_tag "/", class: "item-img" %>
-              <div class='room-info'>
+              <div class='non-room-info'>
                 <h3 class='room-name'>
                   仲間と学習報告を行いましょう!
                 </h3>
@@ -33,6 +32,8 @@
             </li>
         <%# end %>
       </ul>
+      <h2 class='title'>学習報告ルーム新規作成はこちら</h2>
+      <%= link_to "学習報告ルーム作成ページ", "#", class: :regi_session %>
     </div>
     <%# /学習報告ルーム一覧 %>
   <% else %>
