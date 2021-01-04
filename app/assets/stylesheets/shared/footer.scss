@@ -1,0 +1,14 @@
+.footer {
+  width: 100vw;
+  padding: 2vh 0;
+  color: rgba(256, 256, 256, 0.8);
+  position: fixed;
+  bottom:0;
+  z-index: 10;
+  background: linear-gradient(to top, black, transparent 100% );
+  text-align: center;
+}
+
+.footer>p {
+  font-size: 14px;
+}
