@@ -44,10 +44,11 @@
 #### Association
 
 - has_many :room_users
-- has_many :rooms, through: user_rooms
+- has_many :rooms, through: :room_users
 - has_many :reports
-- has_many :subjects, through: user_subjects
+- has_many :subjects
 - has_many :memos
+- belongs_to_active_hash :study_genre
 
 ### roomsテーブル
 
@@ -57,11 +58,11 @@
 
 #### Association
 
-- has_many :user_rooms
-- has_many :users, through: user_rooms
+- has_many :room_users
+- has_many :users, through: :room_users
 - has_many :reports
 
-### user_rooms テーブル
+### room_users テーブル
 
 | Column             | Type            | option                         |
 | ------------------ | --------------- | ------------------------------ |
@@ -99,24 +100,12 @@
 | Column             | Type            | option                         |
 | ------------------ | --------------- | ------------------------------ |
 | name               | string          | null: false                    |
-
-#### Association
-
-- has_many :user_subjects
-- has_many :users, through: user_subjects
-- has_many :memos
-
-### user_subjects テーブル
-
-| Column             | Type            | option                         |
-| ------------------ | --------------- | ------------------------------ |
 | user               | references      | null: false, foreign_key: true |
-| subject            | references      | null: false, foreign_key: true |
 
 #### Association
 
 - belongs_to :user
-- belongs_to :subject
+- has_many :memos
 
 ### memos テーブル
 
