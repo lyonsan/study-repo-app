@@ -1,1 +1,122 @@
-<h1>トップページ</h1>
+<%= render "shared/header" %>
+<div class='main'>
+  <%# 学習報告ルーム一覧 %>
+  <%if user_signed_in? %>
+    <div class='room-contents'>
+      <h2 class='title'>学習報告ルーム一覧</h2>
+      <ul class='room-lists'>
+        <%# ユーザーの報告ルームが存在する場合表示 %>
+          <%# ルーム毎に表示 %>
+            <%#<li class='list'>%>
+              <%#= link_to "ルームへのリンク" do %>
+              <%#<div class='room-img-content'>%>
+                <%#= image_tag "ルームのイメージ画像", class: "room-img" %>
+              <%#</div>%>
+              <%#<div class='room-info'>%>
+                <%#<h3 class='room-name'>%>
+                  <%#= "学習報告ルームのタイトル" %>
+                <%#</h3>%>
+              <%#</div>%>
+              <%# end %>
+            <%#</li>%>
+          <%# end %>
+        <%# else %>
+            <li class='list'>
+              <%= link_to '#' do %>
+              <div class='non-room-info'>
+                <h3 class='room-name'>
+                  仲間と学習報告を行いましょう!
+                </h3>
+              </div>
+              <% end %>
+            </li>
+        <%# end %>
+      </ul>
+      <h2 class='title'>学習報告ルーム新規作成はこちら</h2>
+      <%= link_to "学習報告ルーム作成ページ", "#", class: :regi_session %>
+    </div>
+    <%# /学習報告ルーム一覧 %>
+  <% else %>
+    <%# 画面上部のキャッチコピー帯部分 %>
+    <div class='title-contents'>
+      <h2 class='service-title'>
+        高め合う、記録する。
+      </h2>
+      <p class='service-explain'>
+        StudyReportは仲間との学習の報告と、学習中の気付きを簡単にメモできる学習記録アプリです。
+      </p>
+    </div>
+    <%# /画面上部のキャッチコピー帯部分  %>
+
+    <%# StudyReportの特徴 %>
+    <div class='feature-contents'>
+      <h2 class='title'>
+        StudyReportの特徴
+      </h2>
+      <div class='explanation'>
+        <p>StudyReportは、日々の学習をアウトプットするためのアプリケーションです。</p>
+        <p>具体的には以下の2つのアウトプットを行っていただけます。</p>
+      </div>
+      <ul class='feature-lists'>
+        <li class='list'>
+          <%= image_tag "rooms-index-03.jpeg", class:"list-pict" %>
+          <h3 class='feature-list-text'>
+            報告する
+          </h3>
+          <p class='feature-list-description'>
+            毎日の学習を、同士と報告し合えます。
+          </p>
+        </li>
+        <li class='list'>
+          <%= image_tag "rooms-index-04.jpeg", class:"list-pict" %>
+          <h3 class='feature-list-text'>
+            メモをとる
+          </h3>
+          <p class='feature-list-description'>
+            学習中の気付きを、ご自身の設定したカテゴリ毎にメモできます。
+          </p>
+        </li>
+      </ul>
+    </div>
+    <%# /StudyReportの特徴 %>
+    <%# アウトプットの重要性 %>
+    <div class='feature-contents'>
+      <h2 class='title'>
+        アウトプットの重要性
+      </h2>
+      <div class='explanation'>
+        <p>アウトプットは知識の定着効率を最も良くする手段です。</p>
+        <p>人間は情報を見たり、聞いたり、読んだりするだけでは学習定着率は良くて20%ですが、</p>
+        <p>人に説明することで<span class="border">最大90%</span>まで上昇すると言われています。</p>
+        <p>(出典：アメリカ国立訓練研究所)</p>
+      </div>
+    </div>
+    <%# /アウトプットの重要性 %>
+    <%# 登録・ログイン %>
+    <div class='feature-contents'>
+      <h2 class='title'>
+        まずはお試しを！
+      </h2>
+      <div class='explanation'>
+        <p>ユーザー登録をするだけでサービスをご利用いただけます。</p>
+        <p>ぜひお試しください！</p>
+      </div>
+      <ul class='feature-lists'>
+        <li class='list'>
+          <%= link_to "ログインはこちら", new_user_session_path, class: :regi_session %>
+        </li>
+        <li class='list'>
+          <%= link_to "新規登録はこちら", new_user_registration_path, class: :regi_session %>
+        </li>
+      </ul>
+    </div>
+    <%# 登録・ログイン %>
+    
+  <% end %>  
+</div>
+
+<%#= link_to("#", class: 'purchase-btn') do %>
+  <%#<span class='purchase-btn-text'>新規作成</span>%>
+  <%#= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+<%# end %>
+<%= render "shared/footer" %>
