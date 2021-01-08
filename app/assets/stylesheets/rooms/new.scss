@@ -1,0 +1,25 @@
+.img-upload {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2vh 0;
+}
+
+.click-upload {
+  margin: 15px 0;
+  min-width: 250px;
+}
+
+.click-upload>p {
+  margin-bottom: 15px;
+  color: rgba(256, 256, 256, 0.8);
+}
+
+.room-image {
+  color: rgba(256, 256, 256, 0.8);
+}
+
+select {
+  height: 30px;
+  color: rgba(0, 0, 0, 0.8);
+}

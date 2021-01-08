@@ -55,6 +55,7 @@
 | Column             | Type            | option           |
 | ------------------ | --------------- | ---------------- |
 | title              | string          | null: false      |
+| purpose_room       | text            | null: false      |
 
 #### Association
 
@@ -100,6 +101,7 @@
 | Column             | Type            | option                         |
 | ------------------ | --------------- | ------------------------------ |
 | name               | string          | null: false                    |
+| purpose_subject    | text            | null: false                    |
 | user               | references      | null: false, foreign_key: true |
 
 #### Association
