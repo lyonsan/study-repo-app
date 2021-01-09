@@ -28,7 +28,7 @@ RSpec.describe User, type: :model do
       it 'emailに@がないと登録できない' do
         @user.email = 'email'
         @user.valid?
-        expect(@user.errors.full_messages).to include "Email is invalid"
+        expect(@user.errors.full_messages).to include 'Email is invalid'
       end
       it 'emailが重複していると登録できない' do
         @user.email = 'aaa@mail.com'
@@ -36,7 +36,7 @@ RSpec.describe User, type: :model do
         @user1 = FactoryBot.build(:user)
         @user1.email = 'aaa@mail.com'
         @user1.valid?
-        expect(@user1.errors.full_messages).to include "Email has already been taken"
+        expect(@user1.errors.full_messages).to include 'Email has already been taken'
       end
       it 'passwordがないと登録できない' do
         @user.password = nil
@@ -47,19 +47,19 @@ RSpec.describe User, type: :model do
         @user.password = 'aaaaaa'
         @user.password_confirmation = 'aaaaaa'
         @user.valid?
-        expect(@user.errors.full_messages).to include "Password include both letters and numbers"
+        expect(@user.errors.full_messages).to include 'Password include both letters and numbers'
       end
       it 'passwordが数字のみだと登録できない' do
         @user.password = '111111'
         @user.password_confirmation = '111111'
         @user.valid?
-        expect(@user.errors.full_messages).to include "Password include both letters and numbers"
+        expect(@user.errors.full_messages).to include 'Password include both letters and numbers'
       end
       it 'passwordが5文字以下だと登録できない' do
         @user.password = '11aaa'
         @user.password_confirmation = '11aaa'
         @user.valid?
-        expect(@user.errors.full_messages).to include "Password is too short (minimum is 6 characters)"
+        expect(@user.errors.full_messages).to include 'Password is too short (minimum is 6 characters)'
       end
       it 'passwordとpassword_confirmationが一致していないと登録できない' do
         @user.password = '111aaa'
@@ -80,7 +80,7 @@ RSpec.describe User, type: :model do
       it 'study_genre_idが1だと登録できない' do
         @user.study_genre_id = 1
         @user.valid?
-        expect(@user.errors.full_messages).to include "Study genre must be chosen"
+        expect(@user.errors.full_messages).to include 'Study genre must be chosen'
       end
     end
   end

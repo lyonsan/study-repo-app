@@ -8,8 +8,11 @@
         会員情報入力
       </h1>
     </div>
-
-    <%= render 'shared/error_messages', model: f.object %>
+    <div class="login-flash-message">
+      <%= flash[:notice]%>
+      <%= flash[:alert] %>
+    </div>
+    
     
     <div class="form-group">
       <div class='form-text-wrap'>
