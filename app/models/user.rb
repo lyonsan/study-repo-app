@@ -10,12 +10,11 @@ class User < ApplicationRecord
     validates :nickname
     validates :birthday
   end
-  with_options numericality: { other_than: 1, message: 'must be chosen'} do
+  with_options numericality: { other_than: 1, message: 'must be chosen' } do
     validates :study_genre_id
   end
   validates :email, uniqueness: { case_sensitive: false }
   has_many :room_users
   has_many :rooms, through: :room_users
   belongs_to_active_hash :study_genre
-  
 end

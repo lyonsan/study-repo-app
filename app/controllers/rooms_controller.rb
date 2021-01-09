@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :authenticate_user!, except:[:index]
+  before_action :authenticate_user!, except: [:index]
 
   def index
     @rooms = Room.all.order(created_at: 'DESC')
@@ -23,5 +23,4 @@ class RoomsController < ApplicationController
   def room_params
     params.require(:room).permit(:image, :title, :purpose_room, user_ids: [])
   end
-
 end
