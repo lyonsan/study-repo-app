@@ -2,11 +2,7 @@ a {
   text-decoration: none;
 }
 
-.main{
-  background-attachment: fixed;
-  background-size: cover;
-  background-image: image-url('rooms-index-02.jpeg');
-}
+
 
 
 /* 画面上部のキャッチコピー帯部分 */
@@ -16,6 +12,7 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
+  background-image: image-url('rooms-index-02.jpeg');
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -129,7 +126,7 @@ a {
 
 .room-contents {
   display: flex;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(48, 146, 236, 0.3);
   flex-direction: column;
   align-items: center;
   padding: 30vh 0 0 0;
@@ -168,19 +165,21 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 5vh 0;
+  margin-bottom: 7vh;
 }
 
 .room-lists>.list {
-  width: 30vh;
+  width: 30vw;
   padding: 2vw;
   border-radius: 4px;
 }
 
-
-.room-img-content {
-  position: relative;
+.room-lists>.got-list {
+  width: 30vh;
+  padding: 2vw;
 }
+
+
 
 .room-img {
   width: 25vh;
@@ -190,7 +189,7 @@ a {
 
 
 .room-info {
-  color: rgba(0, 0, 0, 1);
+  color: rgba(256, 256, 256, 0.8);
   padding: 1vw;
 }
 

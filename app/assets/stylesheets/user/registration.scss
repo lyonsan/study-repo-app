@@ -1,14 +1,9 @@
-.registration-body {
-  background-attachment: fixed;
-  background-size: cover;
-  background-image: image-url('rooms-index-02.jpeg');
-}
+
 .registration-main {
   width: 100%;
   min-width: 800px;
   height: 100%;
   display: flex;
-  background-color: rgba(0, 0, 0, 0.3);
   justify-content: center;
 }
 
@@ -28,9 +23,9 @@
 
 .form-header-text {
   line-height: 100px;
-  border-bottom: 1px solid rgba(256, 256, 256, 0.8);
+  border-bottom: 1px solid #000088;
   font-weight: bold;
-  color: rgba(256, 256, 256, 0.8);
+  color: #000088;
 }
 
 // 共通
@@ -56,7 +51,7 @@
 .form-text {
   font-size: 14px;
   font-weight: bold;
-  color: rgba(256, 256, 256, 0.8);
+  color: #000088;
 }
 
 // 共通
@@ -83,7 +78,7 @@
 }
 
 .info-text {
-  color: #fff;
+  color: #000088;
   font-size: 15px;
   margin-top: 3px;
 }
@@ -140,12 +135,7 @@
 .form-bottom-text:last-child {
   margin: 0;
   padding-bottom: 50px;
-  color: rgba(256, 256, 256, 0.8);
-}
-
-.form-bottom-text>span {
   color: black;
-  cursor: pointer;
 }
 
 .register-btn {
@@ -155,10 +145,10 @@
 
 .register-link {
   width: 100%;
-  background: none;
+  background-color: #000088;
   border-radius: 4px;
   border: none;
-  color: #fff;
+  color: #FFF;
   line-height: 48px;
   font-size: 20px;
   cursor: pointer;
@@ -166,9 +156,8 @@
 
 .register-link:hover {
   width: 100%;
-  background: none;
+  background-color: #0000EE;
   border-radius: 4px;
-  border: solid 1px #fff;
   color: #fff;
   line-height: 48px;
   font-size: 20px;
