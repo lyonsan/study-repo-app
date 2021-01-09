@@ -1,7 +1,7 @@
 <%= render "shared/header"%>
 
 <div class="registration-body">
-  <%= form_with model: @room, url: rooms_path, class: 'registration-main', local: true do |f| %>
+  <%= form_with model: @room, url: rooms_path(@room), class: 'registration-main', local: true do |f| %>
   <div class='form-wrap'>
     <div class='form-header'>
       <h1 class='form-header-text'>
@@ -39,7 +39,7 @@
     </div>
     <div class="form-group">
       <div class='form-text-wrap'>
-        <%= f.label :user, "メンバーを選択してください", class:"form-text" %>
+        <label class="form-text">メンバーを選択してください</label>
         <span class="indispensable">必須</span>
       </div>
       <select name="room[user_ids][]" >
@@ -59,7 +59,7 @@
       </h2>
     </div>
     <div class='register-btn'>
-      <%= f.submit "新規登録" ,class:"register-link" %>
+      <%= f.submit "ルーム作成" ,class:"register-link" %>
     </div>
   </div>
   <% end %>

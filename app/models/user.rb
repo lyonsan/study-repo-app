@@ -14,12 +14,8 @@ class User < ApplicationRecord
     validates :study_genre_id
   end
   validates :email, uniqueness: { case_sensitive: false }
-  
   has_many :room_users
   has_many :rooms, through: :room_users
-  has_many :reports
-  has_many :subjects
-  has_many :memos
   belongs_to_active_hash :study_genre
   
 end
