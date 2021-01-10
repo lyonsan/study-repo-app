@@ -7,10 +7,5 @@ class Room < ApplicationRecord
     validates :title
     validates :purpose_room
   end
-  def default_image
-    unless image.attached?
-      image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'rooms-index-02.jpeg')),
-                   filename: 'rooms-index-02.jpeg', content_type: 'image/jpeg')
-    end
-  end
+  
 end
