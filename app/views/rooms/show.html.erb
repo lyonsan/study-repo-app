@@ -14,9 +14,12 @@
     </div>
 
     <% if user_signed_in? && @room.users.include?(current_user) %>
-      <%= link_to 'ルームの編集', "#" , method: :get, class: "room-blue-btn" %>
-      <p class='or-text'>or</p>
-      <%= link_to '削除', "#", method: :delete, class:'room-destroy' %>
+      <%= link_to "学習報告ルームへ", "#", class:"room-link" %>
+      <div class="room-edit-btn">
+        <%= link_to 'ルームの編集', "#" , method: :get, class: "room-link" %>
+        <p class='or-text'>or</p>
+        <%= link_to '削除', "#", method: :delete, class:'room-link' %>
+      </div>
     <% end %>
 
   
@@ -30,8 +33,14 @@
           <th class="detail-room">参加者</th>
           <td class="detail-value">
             <% @room.users.each do |user| %>
-              <%= link_to user.nickname, "#", class:"user_name" %>
+              <%= link_to user.nickname, "#", class:"user-name" %>
             <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th class="detail-room">最終投稿日時</th>
+          <td class="detail-value">
+            最終投稿日時
           </td>
         </tr>
       </tbody>
