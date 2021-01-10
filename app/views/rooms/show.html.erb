@@ -1,0 +1,42 @@
+<%= render "shared/header" %>
+
+<div class="room-show">
+  <div class="room-box">
+    <h2 class="name">
+      <%= @room.title %>
+    </h2>
+    <div class='room-img-content'>
+      <% if @room.image.attached? %>
+        <%= image_tag @room.image, class: "room-box-img" %>
+      <% else %>
+        <%= image_tag 'rooms-index-03.jpeg', class:"room-box-img" %>
+      <% end %>
+    </div>
+
+    <% if user_signed_in? && @room.users.include?(current_user) %>
+      <%= link_to 'ルームの編集', "#" , method: :get, class: "room-blue-btn" %>
+      <p class='or-text'>or</p>
+      <%= link_to '削除', "#", method: :delete, class:'room-destroy' %>
+    <% end %>
+
+  
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-room">ルームの目的</th>
+          <td class="detail-value"><%= @room.purpose_room %></td>
+        </tr>
+        <tr>
+          <th class="detail-room">参加者</th>
+          <td class="detail-value">
+            <% @room.users.each do |user| %>
+              <%= link_to user.nickname, "#", class:"user_name" %>
+            <% end %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

@@ -1,0 +1,116 @@
+/* ルームの概要 */
+
+.room-show {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+
+.room-box {
+  background-color: rgba(48, 146, 236, 0.3);
+  width: 70vw;
+  min-width: 1200px;
+  padding: 15vh 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.room-box>.name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  color: rgba(256, 256, 256, 0.8);
+  padding-bottom: 5vh;
+}
+
+.room-img-content {
+  padding-bottom: 5vh;
+}
+
+.room-box-img {
+  height: 30vw;
+  width: 30vw;
+  border-radius: 50%;
+}
+
+.room-blue-btn {
+  text-align: center;
+  background-color: #000088;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 0.4vh;
+  color: #FFF;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+}
+
+.room-blue-btn:hover {
+  text-align: center;
+  background-color: #0000EE;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 0.4vh;
+  color: #FFF;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+  transition: all 0.5s;
+}
+
+.or-text {
+  font-size: 20px;
+}
+
+.room-destroy {
+  background-color: #BBBBBB;
+  text-align: center;
+  font-size: 24px;
+  border-radius: 0.4vh;
+  color: black;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+}
+
+.room-destroy:hover {
+  background-color: #DDDDDD;
+  text-align: center;
+  font-size: 24px;
+  border-radius: 0.4vh;
+  color: black;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+  transition: all 0.5s;
+}
+
+
+.room-explain-box {
+  font-size: 18px;
+  margin: 40px 0px;
+}
+
+.detail-table {
+  margin-bottom: 30px;
+  width: 80vw;
+}
+
+.detail-room {
+  width: 20%;
+  background-color: #BBBBBB;
+  border: 1px solid #AAAAAA;
+  font-size: 14px;
+  text-align: center;
+}
+
+.detail-value {
+  width: 80%;
+  padding: 20px;
+  border: 1px solid #AAAAAA;
+  background-color: rgba(256, 256, 256, 0.8);
+  font-size: 14px;
+}
+
+.user_name {
+  color: black;
+}
+/* //ルーム概要 */
