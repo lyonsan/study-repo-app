@@ -11,7 +11,7 @@
           <% @rooms.each do |room| %>
             <% if room.users.include?(current_user) %>
               <li class='got-list'>
-                <%= link_to "ルームへのリンク" do %>
+                <%= link_to room_path(room) do %>
                   <div class='room-img-content'>
                     <% if room.image.attached? %>
                       <%= image_tag room.image, class: "room-img" %>
@@ -112,7 +112,7 @@
     <ul class='land-room-lists'>
       <% @rooms.first(4).each do |room| %>
         <li class='got-list'>
-          <%= link_to "ルームへのリンク" do %>
+          <%= link_to room_path(room) do %>
             <div class='room-img-content'>
               <% if room.image.attached? %>
                 <%= image_tag room.image, class: "room-img" %>
