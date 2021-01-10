@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_room, only: :show
+  before_action :set_room, only: [:show, :edit, :update]
   def index
     @rooms = Room.all.order(created_at: 'DESC')
   end
@@ -17,6 +17,18 @@ class RoomsController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+    unless user_signed_in? && @room.users.include?(current_user)
+      redirect_to root_path
+    end
+  end
+
+  def update
+    unless @room.update(room_params)
+      render :edit
+    end
   end
 
   private
