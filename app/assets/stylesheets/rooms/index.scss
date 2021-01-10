@@ -33,6 +33,28 @@ a {
 
 /* //画面上部のキャッチコピー帯部分 */
 
+/* ルームのサンプル */
+.land-room-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.land-room-lists>.list {
+  width: 30vw;
+  padding: 2vw;
+  border-radius: 4px;
+}
+
+.land-room-lists>.got-list {
+  width: 30vh;
+  padding: 2vw;
+}
+
+/* //ルームのサンプル */
+
 
 /* StudyReportの特徴 */
 .feature-contents {
@@ -62,7 +84,7 @@ a {
 .feature-contents>.explanation {
   text-align: center;
   font-size: 2vh;
-  margin-bottom: 15vh;
+  margin-bottom: 5vh;
   color: rgba(256, 256, 256, 0.8);
 }
 

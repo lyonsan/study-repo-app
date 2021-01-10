@@ -1,0 +1,18 @@
+<%= render "shared/header" %>
+<div class="create-contents">
+  <div class="message">
+    <div class="success">
+      <h2 class="create-message">学習報告ルーム作成が完了しました!</h2>
+    </div>
+  </div>
+  <ul class='feature-lists'>
+    <li class='list'>
+      <%= link_to "学習報告ルームへ", new_user_session_path, class: :regi_session %>
+    </li>
+    <li class='list'>
+      <%= link_to "トップページに戻る", root_path, class: :regi_session %>
+    </li>
+  </ul>
+</div>
+
+<%= render "shared/footer" %>
