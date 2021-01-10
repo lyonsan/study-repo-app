@@ -32,7 +32,7 @@
     </div>
     <div class="form-group">
       <div class='form-text-wrap'>
-        <%= f.label :purpose_room, "この学習報告ルームの目的", class:"form-text" %>
+        <%= f.label :purpose_room, "学習報告ルームの目的", class:"form-text" %>
         <span class="indispensable">※140字まで</span>
       </div>
       <%= f.text_area :purpose_room, class:"input-introduction", placeholder:"ルームの説明（学習テーマ、目的、学習目標等）例) Ruby on Railsの学習報告ルームです。webエンジニアを目指して学習を行っていきましょう。平日2時間、休日8時間学習しましょう", maxlength:"140" %>
@@ -42,7 +42,7 @@
         <label class="form-text">メンバーを選択してください</label>
         <span class="indispensable">必須</span>
       </div>
-      <select name="room[user_ids][]" >
+      <select id="room_user" name="room[user_ids][]" >
         <option value="">ユーザーを選択してください</option>
         <% User.where.not(id: current_user.id).each do |user| %>
           <option value=<%= user.id %>><%= user.nickname %></option>
