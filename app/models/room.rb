@@ -6,5 +6,4 @@ class Room < ApplicationRecord
     validates :title
     validates :purpose_room
   end
-  
 end
