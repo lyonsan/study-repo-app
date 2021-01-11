@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "学習報告ルームの作成機能", type: :system do
+RSpec.describe '学習報告ルームの作成機能', type: :system do
   before do
     @user = FactoryBot.create(:user)
     @user1 = FactoryBot.create(:user)
@@ -23,7 +23,7 @@ RSpec.describe "学習報告ルームの作成機能", type: :system do
       fill_in '学習報告ルームの目的', with: @room_purpose_room
       find('#room_user').find("option[value='#{@user1.id}']").select_option
       # 送信するとRoomモデルのカウントが1上がる
-      expect  do
+      expect do
         find('input[name="commit"]').click
       end.to change { Room.count }.by(1)
       # 投稿完了ページに遷移することを確認する
@@ -65,7 +65,7 @@ RSpec.describe "学習報告ルームの作成機能", type: :system do
   end
 end
 
-RSpec.describe "学習報告ルームの情報編集機能", type: :system do
+RSpec.describe '学習報告ルームの情報編集機能', type: :system do
   before do
     @room_user = FactoryBot.create(:room_user)
     @user = @room_user.user

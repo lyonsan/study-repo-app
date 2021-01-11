@@ -11,24 +11,18 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
-    unless @room.save
-      render :new
-    end
+    render :new unless @room.save
   end
 
   def show
   end
 
   def edit
-    unless user_signed_in? && @room.users.include?(current_user)
-      redirect_to root_path
-    end
+    redirect_to root_path unless user_signed_in? && @room.users.include?(current_user)
   end
 
   def update
-    unless @room.update(room_params)
-      render :edit
-    end
+    render :edit unless @room.update(room_params)
   end
 
   private
