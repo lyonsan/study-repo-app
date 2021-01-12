@@ -6,7 +6,7 @@ class CreateReports < ActiveRecord::Migration[6.0]
       t.time       :study_time, null: false
       t.time       :concentrated_time, null: false
       t.text       :good_way, null: false
-      t.binary     :achieved_or_not, null: false
+      t.boolean    :achieved?, null: false
       t.text       :go_wrong
       t.text       :tomorrow_plan, null: false
       t.text       :study_content, null: false

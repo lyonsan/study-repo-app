@@ -1,0 +1,75 @@
+<%= render "shared/header"%>
+
+<div class="registration-body">
+  <%= form_with model: [@room, @report], url: room_reports_path, class: 'registration-main', local: true do |f| %>
+  <div class='form-wrap'>
+    <div class='form-header'>
+      <h1 class='form-header-text'>
+        学習報告を入力
+      </h1>
+    </div>
+
+    <%= render 'shared/error_messages', model: f.object %>
+    
+    <div class="form-group-wide">
+      <div class='form-text-wrap'>
+        <%= f.label :study_time, "本日の学習時間を入力してください", class:"form-text" %>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.time_field :study_time, class:"time-selector"%>
+    </div>
+    <div class="form-group-wide">
+      <div class='form-text-wrap'>
+        <%= f.label :concentrated_time, "集中して学習を行えた時間を入力してください", class:"form-text" %>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.time_field :concentrated_time, class:"time-selector" %>
+    </div>
+    <div class="form-group-wide">
+      <div class='form-text-wrap'>
+        <%= f.label :good_way, "本日用いた学習方略のうち、特によかったものとその理由を入力してください", class:"form-text" %>
+        <span class="indispensable">※140字まで</span>
+      </div>
+      <%= f.text_area :good_way, class:"input-introduction", placeholder:"例）20分勉強し、5分間で自分の言葉でまとめ、5分間休憩のサイクル（ポモドーロ勉強法）で勉強した。", maxlength:"140" %>
+    </div>
+    <div class="form-group-wide">
+      <div class='form-text-wrap'>
+        <%= f.label :achieved_or_not, "目標通りに学習を進めることができましたか？", class:"form-text" %>
+      </div>
+      <label class="radio-buttom"><%= f.radio_button :achieved?, "true" %>はい</label>
+      <label class="radio-buttom"><%= f.radio_button :achieved?, "false" %>いいえ</label>
+    </div>
+    <div class="form-group-wide">
+      <div class='form-text-wrap'>
+        <%= f.label :go_wrong, "（いいえの方に質問）なぜ目標通りに進められなかったのか理由を入力してください", class:"form-text" %>
+        <span class="indispensable">※140字まで</span>
+      </div>
+      <%= f.text_area :go_worng, class:"input-introduction", placeholder:"例）教材の内容が理解できなかった。", maxlength:"140" %>
+    </div>
+    <div class="form-group-wide">
+      <div class='form-text-wrap'>
+        <%= f.label :tomorrow_plan, "明日何をどれくらい学習するか計画を立てましょう", class:"form-text" %>
+        <span class="indispensable">※140字まで</span>
+      </div>
+      <%= f.text_area :tomorrow_plan, class:"input-introduction", placeholder:"例）railsを用いたアプリケーションの投稿機能を完成させる。（3時間程度）", maxlength:"140" %>
+    </div>
+    <div class="form-group-wide">
+      <div class='form-text-wrap'>
+        <%= f.label :study_content, "本日学習した内容や知識を端的にまとめてください", class:"form-text" %>
+      </div>
+      <%= f.text_area :study_content, class:"input-contents", placeholder:"例）form_withはrailsで情報を送信するためのヘルパーメソッドである。" %>
+    </div>
+    <div class="form-group-wide">
+      <div class='form-text-wrap'>
+        <%= f.label :tomorrow_plan, "メンバーに向けて、オススメの学習方略や新たにえた知識を共有しましょう", class:"form-text" %>
+        <span class="indispensable">※140字まで</span>
+      </div>
+      <%= f.text_area :tomorrow_plan, class:"input-introduction", placeholder:"例）メリハリをつけることが大事ですね。", maxlength:"140" %>
+    </div>
+    <div class='register-btn'>
+      <%= f.submit "送信" ,class:"register-link" %>
+    </div>
+  </div>
+  <% end %>
+</div>
+<%= render "shared/footer"%>

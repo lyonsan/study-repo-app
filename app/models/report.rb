@@ -11,5 +11,5 @@ class Report < ApplicationRecord
     validates study_content
     validates advice
   end
-  validates go_wrong, presence: true, if: achieved_or_not == 0
+  validates go_wrong, presence: true, unless: achieved?
 end
