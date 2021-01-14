@@ -81,15 +81,14 @@
 | ------------------ | --------------- | ------------------------------ |
 | user               | references      | null: false, foreign_key: true |
 | room               | references      | null: false, foreign_key: true |
-| nickname           | string          | null: false                    |
 | study_time         | time            | null: false                    |
 | concentrated_time  | time            | null: false                    |
 | good_way           | text            | null: false                    |
-| achievement        | binary          | null: false                    |
-| why_not            | text            |                                |
+| achieved           | boolean         | null: false                    |
+| go_wrong           | text            |                                |
 | tomorrow_plan      | text            | null: false                    |
 | study_content      | text            | null: false                    |
-| solution_proposal  | text            | null: false                    |
+| advice             | text            | null: false                    |
 
 #### Association
 

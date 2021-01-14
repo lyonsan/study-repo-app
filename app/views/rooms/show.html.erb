@@ -14,7 +14,7 @@
     </div>
 
     <% if user_signed_in? && @room.users.include?(current_user) %>
-      <%= link_to "学習報告ルームへ", "#", class:"room-link" %>
+      <%= link_to "学習報告ルームへ", room_reports_path(@room), class:"room-link" %>
       <div class="room-edit-btn">
         <%= link_to 'ルームの編集', edit_room_path(@room) , method: :get, class: "room-link" %>
         <p class='or-text'>or</p>

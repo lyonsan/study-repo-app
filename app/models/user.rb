@@ -16,5 +16,6 @@ class User < ApplicationRecord
   validates :email, uniqueness: { case_sensitive: false }
   has_many :room_users
   has_many :rooms, through: :room_users
+  has_many :reports
   belongs_to_active_hash :study_genre
 end

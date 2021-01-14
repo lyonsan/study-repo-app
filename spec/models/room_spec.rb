@@ -19,7 +19,6 @@ RSpec.describe Room, type: :model do
       it 'purpose_roomがないと作成できない' do
         @room.purpose_room = nil
         @room.valid?
-        binding.pry
         expect(@room.errors.full_messages).to include "Purpose room can't be blank"
       end
     end
