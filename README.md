@@ -84,7 +84,7 @@
 | study_time         | time            | null: false                    |
 | concentrated_time  | time            | null: false                    |
 | good_way           | text            | null: false                    |
-| achieved_or_not    | binary          | null: false                    |
+| achieved           | boolean         | null: false                    |
 | go_wrong           | text            |                                |
 | tomorrow_plan      | text            | null: false                    |
 | study_content      | text            | null: false                    |
