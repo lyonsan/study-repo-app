@@ -27,10 +27,10 @@ RSpec.describe Report, type: :model do
         expect(@report.errors.full_messages).to include "Concentrated time can't be blank"
       end
       it 'concentrated_timeがstudy_timeを上回ると投稿できない' do
-        @report.study_time = "02:00"
-        @report.concentrated_time = "03:00"
+        @report.study_time = '02:00'
+        @report.concentrated_time = '03:00'
         @report.valid?
-        expect(@report.errors.full_messages).to include "Concentrated time is shorter than Study Time"
+        expect(@report.errors.full_messages).to include 'Concentrated time is shorter than Study Time'
       end
       it 'good_wayがないと投稿できない' do
         @report.good_way = nil

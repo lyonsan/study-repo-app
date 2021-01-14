@@ -12,8 +12,11 @@ class Report < ApplicationRecord
   validates :achieved, inclusion: { in: [true, false] }
   validates :go_wrong, presence: true, unless: :achieved
   validate :concentrated_check
-  
+
   def concentrated_check
-    errors.add(:concentrated_time, "is shorter than Study Time") if self.study_time.present? && self.concentrated_time.present? && self.concentrated_time > self.study_time
+    if study_time.present? && concentrated_time.present? && concentrated_time > study_time
+      errors.add(:concentrated_time,
+                 'is shorter than Study Time')
+    end
   end
 end

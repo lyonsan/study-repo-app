@@ -28,7 +28,7 @@
     <div class="form-group-wide">
       <div class='form-text-wrap'>
         <%= f.label :good_way, "本日用いた学習方略のうち、特によかったものとその理由を入力してください", class:"form-text" %>
-        <span class="indispensable">※140字まで</span>
+        <span class="indispensable">必須 ※140字まで</span>
       </div>
       <%= f.text_area :good_way, class:"input-introduction", placeholder:"例）20分勉強し、5分間で自分の言葉でまとめ、5分間休憩のサイクル（ポモドーロ勉強法）で勉強した。", maxlength:"140" %>
     </div>
@@ -55,20 +55,21 @@
     <div class="form-group-wide">
       <div class='form-text-wrap'>
         <%= f.label :tomorrow_plan, "明日何をどれくらい学習するか計画を立てましょう", class:"form-text" %>
-        <span class="indispensable">※140字まで</span>
+        <span class="indispensable">必須 ※140字まで</span>
       </div>
       <%= f.text_area :tomorrow_plan, class:"input-introduction", placeholder:"例）railsを用いたアプリケーションの投稿機能を完成させる。（3時間程度）", maxlength:"140" %>
     </div>
     <div class="form-group-wide">
       <div class='form-text-wrap'>
         <%= f.label :study_content, "本日学習した内容や知識を端的にまとめてください", class:"form-text" %>
+        <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :study_content, class:"input-contents", placeholder:"例）form_withはrailsで情報を送信するためのヘルパーメソッドである。" %>
+      <%= f.text_area :study_content, class:"input-contents", placeholder:"例）form_withはrailsでフォームを生成するためのヘルパーメソッドである。" %>
     </div>
     <div class="form-group-wide">
       <div class='form-text-wrap'>
         <%= f.label :advice, "メンバーに向けて、オススメの学習方略や新たにえた知識を共有しましょう", class:"form-text" %>
-        <span class="indispensable">※140字まで</span>
+        <span class="indispensable">必須 ※140字まで</span>
       </div>
       <%= f.text_area :advice, class:"input-introduction", placeholder:"例）メリハリをつけることが大事ですね。", maxlength:"140" %>
     </div>
