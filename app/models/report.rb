@@ -14,6 +14,6 @@ class Report < ApplicationRecord
   validate :concentrated_check
   
   def concentrated_check
-    errors.add(:concentrated_time, "is shorter than Study Time") if self.concentrated_time > self.study_time
+    errors.add(:concentrated_time, "is shorter than Study Time") if self.study_time.present? && self.concentrated_time.present? && self.concentrated_time > self.study_time
   end
 end
