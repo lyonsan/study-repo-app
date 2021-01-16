@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_room, only: [:index, :new, :create]
+  before_action :set_room, only: [:index, :new, :create, :destroy]
   def index
     redirect_to root_path unless user_signed_in? && @room.users.include?(current_user)
     @reports = @room.reports.includes(:user).order(created_at: 'DESC')
@@ -14,6 +14,11 @@ class ReportsController < ApplicationController
   def create
     @report = @room.reports.new(report_params)
     render :new unless @report.save
+  end
+
+  def destroy
+    report = Report.find(params[:id])
+    report.destroy
   end
 
   private
