@@ -3,8 +3,6 @@
     <%= report.user.nickname %>
   </div>
   <div class="report-date">
-  <!--lメソッドで、指定した場所の時間に合わせられる-->
-  <!--lについて調べる-->
     <%= l report.created_at, format: :short %>
   </div>
 </div>
@@ -24,7 +22,7 @@
   <div class="report-content">
     <h2>本日用いた学習方略のうち、特によかったものとその理由</h2>
     <div class="report-input">
-      <%= report.good_way %>
+      <%= safe_join(report.good_way.split("\n"),tag(:br)) %>
     </div>
   </div>
   <div class="report-content">
@@ -41,38 +39,32 @@
     <div class="report-content">
       <h2>(いいえの方)計画通りに学習できなかった理由</h2>
       <div class="report-input">
-        <%= report.go_wrong %>
+        <%= safe_join(report.go_wrong.split("\n"),tag(:br)) %>
       </div>
     </div>
   <% end %>
   <div class="report-content">
     <h2>明日の計画</h2>
     <div class="report-input">
-      <%= report.tomorrow_plan %>
+      <%= safe_join(report.tomorrow_plan.split("\n"),tag(:br)) %>
     </div>
   </div>
   <div class="report-content">
     <h2>本日用いた学習方略のうち、特によかったものとその理由</h2>
     <div class="report-input">
-      <%= report.good_way %>
+      <%= safe_join(report.good_way.split("\n"),tag(:br)) %>
     </div>
   </div>
   <div class="report-content">
     <h2>本日学習した内容や知識</h2>
     <div class="report-input">
-      <%= report.study_content %>
-    </div>
-  </div>
-  <div class="report-content">
-    <h2>本日用いた学習方略のうち、特によかったものとその理由</h2>
-    <div class="report-input">
-      <%= report.good_way %>
+      <%= safe_join(report.study_content.split("\n"),tag(:br)) %>
     </div>
   </div>
   <div class="report-content">
     <h2>オススメの学習方略</h2>
     <div class="report-input">
-      <%= report.advice %>
+      <%= safe_join(report.advice.split("\n"),tag(:br)) %>
     </div>
   </div>
 </div>
