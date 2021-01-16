@@ -10,3 +10,23 @@ ja:
       - :year
       - :month
       - :day
+  
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        birthday: 誕生日
+        study_genre_id: 勉強していること
+      room:
+        image: 画像
+        title: ルーム名
+        purpose_room: 学習報告ルームの目的
+      report:
+        study_time: 本日の学習時間
+        concentrated_time: 集中して学習を行えた時間
+        good_way: 良かった学習方略
+        achieved: 計画通りに学習を進めることができたか
+        go_wrong: 計画通りに学習を進めることができなかった理由
+        tomorrow_plan: 明日の計画
+        study_content: 学習した内容
+        advice: オススメの学習方略
