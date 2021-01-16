@@ -1,0 +1,6 @@
+ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      short: "%-m月%-d日 %-H:%-M"
+      length: "%-H:%M"

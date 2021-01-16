@@ -1,0 +1,75 @@
+.report-wrapper {
+  display: flex;
+  background-color: #EEEEEE;
+  justify-content: center;
+}
+
+.report-main {
+  width: 50vw;
+  min-width:60vh;
+  min-height:100vh;
+  padding-bottom: 15vh;
+}
+
+.main-room-title {
+  margin-top:15vh;
+}
+
+.main-main {
+  margin-top: 15vh;
+}
+
+.reports-mine {
+  padding:3vh;
+  background-color:  #c7dcdd;
+  margin-top:4vh;
+  margin-left:3vw;
+  border-radius: 2vh;
+}
+
+.reports-others {
+  padding:3vh;
+  background-color: #FFF;
+  margin-top:4vh;
+  margin-right: 3vw;
+  border-radius: 2vh;
+}
+
+.report-top {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2vh;
+}
+
+.report-user {
+  font-size: 4vh;
+  font-weight: bold;
+}
+
+.report-date {
+  font-size: 1.5vh;
+}
+
+
+
+.report-content {
+  padding-top:1vh;
+}
+
+.report-content h2 {
+  font-size: 2vh;
+  font-weight: bold;
+  color:saddlebrown
+}
+
+.report-input {
+  font-size: 2vh;
+  background-color: #EEEEEE;
+  padding:0.5vh;
+  border-radius: 0.5vh;
+}
+
+.report-destroy {
+  color: #777777;
+  font-size: 1vh;
+}

@@ -1,0 +1,16 @@
+
+<div class="main-main">
+<!--collectionのあとの@messagesの数だけ部分テンプレート(_message.html.erb)が繰り返される-->
+  <% @reports.each do |report| %>
+    <% if report.user == current_user %>
+      <div class="reports-mine">
+        <%= render partial:'shared/report', locals: {report: report} %>
+        <%= link_to '削除', "#", method: :delete, class:'report-destroy' %>
+      </div>
+    <% else %>
+      <div class="reports-others">
+        <%= render partial:'shared/report', locals: {report: report} %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

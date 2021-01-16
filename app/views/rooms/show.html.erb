@@ -40,7 +40,13 @@
         <tr>
           <th class="detail-room">最終投稿日時</th>
           <td class="detail-value">
-            最終投稿日時
+            <% if @room.reports.present? %>
+              <% @room.reports.last(1).each do |report| %>
+                <%= l report.created_at, format: :short %>
+              <% end %>
+            <% else %>
+              報告がありません
+            <% end %>
           </td>
         </tr>
       </tbody>
