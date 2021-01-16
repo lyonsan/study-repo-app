@@ -4,3 +4,9 @@ ja:
       default: "%Y/%m/%d %H:%M:%S"
       short: "%-m月%-d日 %-H:%-M"
       length: "%-H:%M"
+
+  date:
+    order:
+      - :year
+      - :month
+      - :day
