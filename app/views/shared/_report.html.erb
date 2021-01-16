@@ -1,0 +1,78 @@
+<div class="report-top">
+  <div class="report-user">
+    <%= report.user.nickname %>
+  </div>
+  <div class="report-date">
+  <!--lメソッドで、指定した場所の時間に合わせられる-->
+  <!--lについて調べる-->
+    <%= l report.created_at, format: :short %>
+  </div>
+</div>
+<div class="report-bottom">
+  <div class="report-content">
+    <h2>本日の学習時間</h2>
+    <div class="report-input">
+      <%= l report.study_time, format: :length %>
+    </div>
+  </div>
+  <div class="report-content">
+    <h2>集中して学習できた時間</h2>
+    <div class="report-input">
+      <%= l report.concentrated_time, format: :length %>
+    </div>
+  </div>
+  <div class="report-content">
+    <h2>本日用いた学習方略のうち、特によかったものとその理由</h2>
+    <div class="report-input">
+      <%= report.good_way %>
+    </div>
+  </div>
+  <div class="report-content">
+    <h2>計画通りに学習できた？</h2>
+    <div class="report-input">
+      <% if report.achieved %>
+        <p>はい</p>
+      <% else %>
+        <p>いいえ</p>
+      <% end %>
+    </div>
+  </div>
+  <% if report.go_wrong.present? %>
+    <div class="report-content">
+      <h2>(いいえの方)計画通りに学習できなかった理由</h2>
+      <div class="report-input">
+        <%= report.go_wrong %>
+      </div>
+    </div>
+  <% end %>
+  <div class="report-content">
+    <h2>明日の計画</h2>
+    <div class="report-input">
+      <%= report.tomorrow_plan %>
+    </div>
+  </div>
+  <div class="report-content">
+    <h2>本日用いた学習方略のうち、特によかったものとその理由</h2>
+    <div class="report-input">
+      <%= report.good_way %>
+    </div>
+  </div>
+  <div class="report-content">
+    <h2>本日学習した内容や知識</h2>
+    <div class="report-input">
+      <%= report.study_content %>
+    </div>
+  </div>
+  <div class="report-content">
+    <h2>本日用いた学習方略のうち、特によかったものとその理由</h2>
+    <div class="report-input">
+      <%= report.good_way %>
+    </div>
+  </div>
+  <div class="report-content">
+    <h2>オススメの学習方略</h2>
+    <div class="report-input">
+      <%= report.advice %>
+    </div>
+  </div>
+</div>

@@ -1,2 +1,7 @@
-<h1>報告一覧</h1>
-<%= link_to "報告を行う", new_room_report_path(@room) %>
+<%= render "shared/report_header"%>
+
+<div class="report-wrapper">
+  <div class="report-main">
+    <%= render "shared/main_report" %>
+  </div>
+</div>
