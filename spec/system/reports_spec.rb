@@ -91,8 +91,37 @@ RSpec.describe "学習報告投稿機能", type: :system do
     it 'ログインしていないと投稿できない' do
       # ルーム詳細ページに遷移
       visit room_path(@room_user.room)
-      # 「学習報告ルームへ」のリンクがあることを確認
+      # 「学習報告ルームへ」のリンクがないことを確認
       expect(page).to have_no_content("学習報告ルームへ")
+    end
+  end
+end
+
+RSpec.describe '学習報告の削除機能', type: :system do
+  before do
+    @room_user = FactoryBot.create(:room_user)
+    @report = FactoryBot.build(:report)
+  end
+  context '学習ルーム削除がうまくいき、そのルームで行われていた学習報告も削除される時' do
+    it '学習ルームに所属するメンバーは学習ルームを削除することができ、その場合同時に学習報告も削除される' do
+      # サインインする
+      sign_in(@room_user.user)
+      # ルームの中で学習報告を行う
+      report_create(@room_user.room, @report)
+      # 学習報告ルームへのリンクがあることを確認する
+      expect(page).to have_content("トップページに戻る")
+      # トップページに遷移する
+      visit root_path
+      # ルーム詳細ページに遷移
+      visit room_path(@room_user.room)
+      # 「削除」ボタンがあることを確認
+      expect(page).to have_content("削除")
+      # 「削除」ボタンをクリックすると、Reportモデルのカウントが減少する
+      expect do
+        click_link '削除'
+      end.to change { Report.count }.by(-1)
+      # 削除完了ページに遷移していることを確認する
+      expect(current_path).to eq "/rooms/#{@room_user.room_id}"
     end
   end
 end
