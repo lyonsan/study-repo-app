@@ -158,3 +158,29 @@ RSpec.describe '学習報告ルームの情報編集機能', type: :system do
     end
   end
 end
+
+
+RSpec.describe '学習報告ルームの削除機能', type: :system do
+  before do
+    @room_user = FactoryBot.create(:room_user)
+  end
+  context '学習ルーム削除がうまくいく時' do
+    it '学習ルームに所属するメンバーは学習ルームを削除することができ、その場合同時に学習報告も削除される' do
+      # サインインする
+      sign_in(@room_user.user)
+      # 生成されたルームが存在することを確認する
+      expect(page).to have_content(@room_user.room.title)
+      # ルーム詳細ページに遷移
+      visit room_path(@room_user.room)
+      # 「削除」ボタンがあることを確認
+      expect(page).to have_content("削除")
+      # 「削除」ボタンをクリックすると、Reportモデルのカウントが減少する
+      expect do
+        click_link '削除'
+      end.to change { Room.count }.by(-1)
+      # 削除完了ページに遷移していることを確認する
+      expect(current_path).to eq "/rooms/#{@room_user.room_id}"
+    end
+
+  end
+end

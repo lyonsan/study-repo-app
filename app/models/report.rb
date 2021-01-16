@@ -16,7 +16,7 @@ class Report < ApplicationRecord
   def concentrated_check
     if study_time.present? && concentrated_time.present? && concentrated_time > study_time
       errors.add(:concentrated_time,
-                 'is shorter than Study Time')
+                 'が本日の学習時間を超えないようにしてください')
     end
   end
 end
