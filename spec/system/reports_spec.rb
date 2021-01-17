@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "学習報告投稿機能", type: :system do
+RSpec.describe '学習報告投稿機能', type: :system do
   before do
     @room_user = FactoryBot.create(:room_user)
     @report = FactoryBot.build(:report)
@@ -15,11 +15,11 @@ RSpec.describe "学習報告投稿機能", type: :system do
       # ルーム詳細ページに遷移
       visit room_path(@room_user.room)
       # 「学習報告ルームへ」のリンクがあることを確認
-      expect(page).to have_content("学習報告ルームへ")
+      expect(page).to have_content('学習報告ルームへ')
       # 学習報告一覧ルームに遷移する
       visit room_reports_path(@room_user.room)
       # 「学習報告を行う」のリンクがあることを確認
-      expect(page).to have_content("学習報告を行う")
+      expect(page).to have_content('学習報告を行う')
       # 学習報告ページに遷移する
       visit new_room_report_path(@room_user.room)
       # 報告情報を報告する
@@ -37,15 +37,15 @@ RSpec.describe "学習報告投稿機能", type: :system do
       # 投稿完了ページに遷移することを確認する
       expect(current_path).to eq room_reports_path(@room_user.room)
       # 「学習報告が完了しました!」と表示されている
-      expect(page).to have_content("学習報告が完了しました!")
+      expect(page).to have_content('学習報告が完了しました!')
       # 学習報告ルームへのリンクがあることを確認する
-      expect(page).to have_content("学習報告ルームへ")
+      expect(page).to have_content('学習報告ルームへ')
       # 学習報告一覧ルームに遷移する
       visit room_reports_path(@room_user.room)
       # 学習報告一覧には先ほど投稿した学習報告があることを確認する
-      expect(page).to have_content(I18n.l @report.study_time, format: :length)
-      expect(page).to have_content(I18n.l @report.concentrated_time, format: :length)
-      expect(page).to have_content("はい")
+      expect(page).to have_content(I18n.l(@report.study_time, format: :length))
+      expect(page).to have_content(I18n.l(@report.concentrated_time, format: :length))
+      expect(page).to have_content('はい')
       expect(page).to have_content(@report.tomorrow_plan)
       expect(page).to have_content(@report.study_content)
       expect(page).to have_content(@report.advice)
@@ -61,11 +61,11 @@ RSpec.describe "学習報告投稿機能", type: :system do
       # ルーム詳細ページに遷移
       visit room_path(@room_user.room)
       # 「学習報告ルームへ」のリンクがあることを確認
-      expect(page).to have_content("学習報告ルームへ")
+      expect(page).to have_content('学習報告ルームへ')
       # 学習報告一覧ルームに遷移する
       visit room_reports_path(@room_user.room)
       # 「学習報告を行う」のリンクがあることを確認
-      expect(page).to have_content("学習報告を行う")
+      expect(page).to have_content('学習報告を行う')
       # 学習報告ページに遷移する
       visit new_room_report_path(@room_user.room)
       # 報告情報を報告する
@@ -92,7 +92,7 @@ RSpec.describe "学習報告投稿機能", type: :system do
       # ルーム詳細ページに遷移
       visit room_path(@room_user.room)
       # 「学習報告ルームへ」のリンクがないことを確認
-      expect(page).to have_no_content("学習報告ルームへ")
+      expect(page).to have_no_content('学習報告ルームへ')
     end
   end
 end
@@ -109,13 +109,13 @@ RSpec.describe '学習報告の削除機能', type: :system do
       # ルームの中で学習報告を行う
       report_create(@room_user.room, @report)
       # 学習報告ルームへのリンクがあることを確認する
-      expect(page).to have_content("トップページに戻る")
+      expect(page).to have_content('トップページに戻る')
       # トップページに遷移する
       visit root_path
       # ルーム詳細ページに遷移
       visit room_path(@room_user.room)
       # 「削除」ボタンがあることを確認
-      expect(page).to have_content("削除")
+      expect(page).to have_content('削除')
       # 「削除」ボタンをクリックすると、Reportモデルのカウントが減少する
       expect do
         click_link '削除'

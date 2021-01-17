@@ -23,7 +23,7 @@ RSpec.describe User, type: :model do
       it 'emailがないと登録できない' do
         @user.email = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include "Eメールを入力してください"
+        expect(@user.errors.full_messages).to include 'Eメールを入力してください'
       end
       it 'emailに@がないと登録できない' do
         @user.email = 'email'
@@ -65,17 +65,17 @@ RSpec.describe User, type: :model do
         @user.password = '111aaa'
         @user.password_confirmation = '222aaa'
         @user.valid?
-        expect(@user.errors.full_messages).to include "パスワード（確認用）とパスワードの入力が一致しません"
+        expect(@user.errors.full_messages).to include 'パスワード（確認用）とパスワードの入力が一致しません'
       end
       it 'nicknameがないと登録できない' do
         @user.nickname = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include "ニックネームを入力してください"
+        expect(@user.errors.full_messages).to include 'ニックネームを入力してください'
       end
       it 'birthdayがないと登録できない' do
         @user.birthday = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include "誕生日を入力してください"
+        expect(@user.errors.full_messages).to include '誕生日を入力してください'
       end
       it 'study_genre_idが1だと登録できない' do
         @user.study_genre_id = 1

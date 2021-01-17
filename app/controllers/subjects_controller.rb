@@ -14,8 +14,8 @@ class SubjectsController < ApplicationController
   end
 
   private
+
   def subject_params
     params.require(:subject).permit(:name, :purpose_subject).merge(user_id: current_user.id)
   end
-
 end

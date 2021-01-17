@@ -2,9 +2,9 @@ module ReportCreateSupport
   def report_create(room, report)
     expect(page).to have_content(room.title)
     visit room_path(room)
-    expect(page).to have_content("学習報告ルームへ")
+    expect(page).to have_content('学習報告ルームへ')
     visit room_reports_path(room)
-    expect(page).to have_content("学習報告を行う")
+    expect(page).to have_content('学習報告を行う')
     visit new_room_report_path(room)
     fill_in '本日の学習時間を入力してください', with: report.study_time
     fill_in '集中して学習を行えた時間を入力してください', with: report.concentrated_time
@@ -17,7 +17,6 @@ module ReportCreateSupport
       find('input[name="commit"]').click
     end.to change { Report.count }.by(1)
     expect(current_path).to eq room_reports_path(room)
-    expect(page).to have_content("学習報告が完了しました!")
-    
+    expect(page).to have_content('学習報告が完了しました!')
   end
 end

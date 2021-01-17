@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "科目別メモルームの作成機能", type: :system do
+RSpec.describe '科目別メモルームの作成機能', type: :system do
   before do
     @user = FactoryBot.create(:user)
     @subject_name = Faker::Team.name
