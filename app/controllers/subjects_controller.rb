@@ -1,6 +1,7 @@
 class SubjectsController < ApplicationController
   before_action :authenticate_user!
   def index
+    @subjects = Subject.all.order(created_at: 'DESC')
   end
 
   def new
