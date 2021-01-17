@@ -13,7 +13,7 @@
     
     <div class="form-group-wide">
       <div class='form-text-wrap'>
-        <%= f.label :name, "メモの題名", class:"form-text" %>
+        <%= f.label :topic, "メモの題名", class:"form-text" %>
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :topic, class:"input-default", maxlength:"40" %>
@@ -44,13 +44,8 @@
       </div>
       <%= f.text_area :explanation, class:"input-contents" %>
     </div>
-    <div class="form-group">
-      <h2 class='form-bottom-text'>
-        「科目作成」ボタンを押すと、学習報告ルームが生成されます。
-      </h2>
-    </div>
-    <div class='register-btn'>
-      <%= f.submit "科目作成" ,class:"register-link" %>
+   <div class='register-btn'>
+      <%= f.submit "メモ作成" ,class:"register-link" %>
     </div>
   </div>
   <% end %>

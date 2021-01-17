@@ -2,7 +2,7 @@ class MemosController < ApplicationController
   before_action :authenticate_user!
   before_action :set_subject, only: [:index, :new, :create]
   def index
-    
+    redirect_to root_path unless user_signed_in? && @subject.user == current_user
   end
 
   def new
