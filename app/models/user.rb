@@ -17,5 +17,7 @@ class User < ApplicationRecord
   has_many :room_users
   has_many :rooms, through: :room_users
   has_many :reports
+  has_many :subjects
+  has_many :memos
   belongs_to_active_hash :study_genre
 end

@@ -115,14 +115,14 @@
 | ------------------ | --------------- | ------------------------------ |
 | user               | references      | null: false, foreign_key: true |
 | subjects           | references      | null: false, foreign_key: true |
-| title              | integer         | null: false                    |
+| topic              | string          | null: false                    |
 | point              | text            |                                |
 | explanation        | text            |                                |
 
 #### Association
 
 - belongs_to :user
-- belongs_to :subjects
+- belongs_to :subject
 
 
 

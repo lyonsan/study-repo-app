@@ -33,3 +33,8 @@ ja:
       subject:
         name: カテゴリ/科目名
         purpose_subject: 目的/主旨
+      memo:
+        topic: 題目
+        image: 画像
+        point: 関係する記述
+        explanation: メモ
