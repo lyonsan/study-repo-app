@@ -99,9 +99,10 @@
 
 | Column             | Type            | option                         |
 | ------------------ | --------------- | ------------------------------ |
-| name               | string          | null: false                    |
-| purpose_subject    | text            | null: false                    |
 | user               | references      | null: false, foreign_key: true |
+| name               | string          | null: false                    |
+| purpose_subject    | text            |                                |
+
 
 #### Association
 
@@ -116,7 +117,7 @@
 | subjects           | references      | null: false, foreign_key: true |
 | title              | integer         | null: false                    |
 | point              | text            |                                |
-| explanation        | text            | null: false                    |
+| explanation        | text            |                                |
 
 #### Association
 

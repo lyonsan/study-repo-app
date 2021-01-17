@@ -30,3 +30,6 @@ ja:
         tomorrow_plan: 明日の計画
         study_content: 学習した内容
         advice: オススメの学習方略
+      subject:
+        name: カテゴリ/科目名
+        purpose_subject: 目的/主旨
