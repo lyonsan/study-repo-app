@@ -1,18 +1,35 @@
 <%= render "shared/header_subjects" %>
-  <div>
-    <%= link_to "メモ科目作成へ", new_subject_path %>
+<div class='room-contents'>
+  <h2 class='title'>学習報告ルーム一覧</h2>
+  <ul class='room-lists'>
+    <%# ユーザーの報告ルームが存在する場合表示 %>
+      <%# ルーム毎に表示 %>
+    <% @subjects.each do |subject| %>
+      <% if subject.user == current_user %>
+        <li class='got-list'>
+          <%= link_to "#" do %>
+            <div class='room-info'>
+              <h3 class='room-name'>
+                <%= subject.name %>
+              </h3>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+  <div class='new-message'>
+    <%= link_to '#' do %>
+    <div class='room-info'>
+      <h3 class='room-name'>
+        メモルームを作成しましょう！
+      </h3>
+    </div>
+    <% end %>
   </div>
-  <div>
-    <%= link_to "メモ科目作成へ", new_subject_path %>
-  </div>
-  <div>
-    <%= link_to "メモ科目作成へ", new_subject_path %>
-  </div>
-  <div>
-    <%= link_to "メモ科目作成へ", new_subject_path %>
-  </div>
-  <div>
-    <%= link_to "カテゴリー作成へ", new_subject_path %>
-  </div>
+  
+  <h2 class='title'>メモルーム新規作成はこちら</h2>
+  <%= link_to "メモルーム作成ページ", new_subject_path, class: :regi_session %>
+</div>
   
 <%= render "shared/footer" %>
