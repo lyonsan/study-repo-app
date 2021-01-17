@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :rooms do
     resources :reports, only: [:index, :new, :create, :destroy]
   end
-  resources :subject, only: [:index, :new, :create]
+  resources :subjects, only: [:index, :new, :create]
 end

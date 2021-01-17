@@ -6,7 +6,7 @@
     </ul>
     <ul class='lists-right'>
       <!--プルダウンで表示させる-->
-      <li><%= link_to 'ユーザー一覧', "#", class: "user-lists" %></li>
+      <li><%= link_to 'メモ', subjects_path, class: "subjects" %></li>
       <li><%= link_to 'トップページ', root_path , class: "top-link" %></li>
       <li><%= link_to '学習報告を行う', new_room_report_path(@room) , class: "new-report" %></li>
     </ul>
