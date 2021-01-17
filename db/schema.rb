@@ -35,13 +35,13 @@ ActiveRecord::Schema.define(version: 2021_01_17_042046) do
 
   create_table "memos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "subjects_id"
+    t.bigint "subject_id"
     t.string "topic", null: false
     t.text "point"
     t.text "explanation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["subjects_id"], name: "index_memos_on_subjects_id"
+    t.index ["subject_id"], name: "index_memos_on_subject_id"
     t.index ["user_id"], name: "index_memos_on_user_id"
   end
 
@@ -104,7 +104,7 @@ ActiveRecord::Schema.define(version: 2021_01_17_042046) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "memos", "subjects", column: "subjects_id"
+  add_foreign_key "memos", "subjects"
   add_foreign_key "memos", "users"
   add_foreign_key "reports", "rooms"
   add_foreign_key "reports", "users"
