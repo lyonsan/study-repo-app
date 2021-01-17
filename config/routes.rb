@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'memos/index'
+  get 'memos/new'
   get 'subjects/index'
   get 'subjects/new'
   devise_for :users
@@ -6,5 +8,7 @@ Rails.application.routes.draw do
   resources :rooms do
     resources :reports, only: [:index, :new, :create, :destroy]
   end
-  resources :subjects, only: [:index, :new, :create]
+  resources :subjects, only: [:index, :new, :create] do
+    resources :memos, only: [:index, :new, :create]
+  end
 end
