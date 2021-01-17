@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'subjects/index'
+  get 'subjects/new'
   devise_for :users
   root to: "rooms#index"
   resources :rooms do
