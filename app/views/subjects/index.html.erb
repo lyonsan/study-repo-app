@@ -7,7 +7,7 @@
     <% @subjects.each do |subject| %>
       <% if subject.user == current_user %>
         <li class='got-list'>
-          <%= link_to "#" do %>
+          <%= link_to subject_memos_path(subject) do %>
             <div class='room-info'>
               <h3 class='room-name'>
                 <%= subject.name %>
