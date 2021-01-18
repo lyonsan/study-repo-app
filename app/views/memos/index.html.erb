@@ -8,4 +8,7 @@
     <%= render "shared/memo_main" %>
   </div>
 </div>
+<div class="subject-destroy">
+  <%= link_to "科目ルームの削除", subject_path(@subject), method: :delete, class: 'subject-destroy-link' %>
+</div>
 

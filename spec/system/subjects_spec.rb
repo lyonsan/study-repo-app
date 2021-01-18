@@ -30,7 +30,7 @@ RSpec.describe '科目別メモルームの作成機能', type: :system do
       # 「新規ルーム作成が完了しました!」の表示があることを確認する
       expect(page).to have_content('新規ルーム作成が完了しました!')
       # メモ一覧ページへのリンクがあることを確認する
-      expect(page).to have_content('メモ一覧ページに戻る')
+      expect(page).to have_content('一覧ページに戻る')
       # メモ一覧ページに遷移する
       visit subjects_path
       # ページには先ほど作成したルームへのリンクがあることを確認する
@@ -64,6 +64,34 @@ RSpec.describe '科目別メモルームの作成機能', type: :system do
       end.to change { Subject.count }.by(0)
       # 作成ページに戻されることを確認する
       expect(current_path).to eq '/subjects'
+    end
+  end
+end
+
+RSpec.describe '科目別メモルームの削除機能', type: :system do
+  before do
+    @subject = FactoryBot.create(:subject)
+  end
+  context '科目別ルーム削除がうまくいく時' do
+    it 'ルーム作成者は科目ルームを削除することができる' do
+      # サインインする
+      sign_in(@subject.user)
+      # メモルーム一覧ページへのリンクがあることを確認する
+      expect(page).to have_content('メモ')
+      # メモルーム一覧ページに遷移する
+      visit subjects_path
+      # 生成された科目ルームが存在することを確認する
+      expect(page).to have_content(@subject.name)
+      # メモ一覧ページに移動
+      visit subject_memos_path(@subject)
+      # 「科目ルームの削除」があることを確認する
+      expect(page).to have_content('科目ルームの削除')
+      # ボタンを押すと、Subjectモデルのカウントが1下がることを確認する
+      expect do
+        click_link '科目ルームの削除'
+      end.to change { Subject.count }.by(-1)
+      # 削除完了ページに遷移していることを確認する
+      expect(current_path).to eq "/subjects/#{@subject.id}"
     end
   end
 end

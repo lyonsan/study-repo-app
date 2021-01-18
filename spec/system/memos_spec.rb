@@ -81,3 +81,25 @@ RSpec.describe "メモ作成機能", type: :system do
     end
   end
 end
+RSpec.describe 'メモの削除機能', type: :system do
+  before do
+    @subject = FactoryBot.create(:subject)
+    @memo = FactoryBot.build(:memo)
+  end
+  context '科目別ルーム削除がうまくいく時' do
+    it 'ルーム作成者は科目ルームを削除することができ、その場合科目ルームに紐づいたメモも同時に削除される' do
+      # サインインする
+      sign_in(@subject.user)
+      # 作成された科目ルームにアクセスし、新規メモを作成し、メモ一覧ページへ遷移する
+      memo_create(@subject, @memo)
+      # 「科目ルームの削除」があることを確認する
+      expect(page).to have_content('科目ルームの削除')
+      # ボタンを押すと、Memoモデルのカウントが1下がることを確認する
+      expect do
+        click_link '科目ルームの削除'
+      end.to change { Memo.count }.by(-1)
+      # 削除完了ページに遷移していることを確認する
+      expect(current_path).to eq "/subjects/#{@subject.id}"
+    end
+  end
+end

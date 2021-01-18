@@ -164,7 +164,7 @@ RSpec.describe '学習報告ルームの削除機能', type: :system do
     @room_user = FactoryBot.create(:room_user)
   end
   context '学習ルーム削除がうまくいく時' do
-    it '学習ルームに所属するメンバーは学習ルームを削除することができ、その場合同時に学習報告も削除される' do
+    it '学習ルームに所属するメンバーは学習ルームを削除することができる' do
       # サインインする
       sign_in(@room_user.user)
       # 生成されたルームが存在することを確認する

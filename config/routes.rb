@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :rooms do
     resources :reports, only: [:index, :new, :create, :destroy]
   end
-  resources :subjects, only: [:index, :new, :create] do
+  resources :subjects, only: [:index, :new, :create, :destroy] do
     resources :memos, only: [:index, :new, :create]
   end
 end
