@@ -13,6 +13,11 @@ class SubjectsController < ApplicationController
     render :new unless @subject.save
   end
 
+  def destroy
+    subject = Subject.find(params[:id])
+    subject.destroy
+  end
+
   private
 
   def subject_params
