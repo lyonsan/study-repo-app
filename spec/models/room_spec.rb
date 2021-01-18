@@ -14,12 +14,12 @@ RSpec.describe Room, type: :model do
       it 'titleがないと作成できない' do
         @room.title = nil
         @room.valid?
-        expect(@room.errors.full_messages).to include "ルーム名を入力してください"
+        expect(@room.errors.full_messages).to include 'ルーム名を入力してください'
       end
       it 'purpose_roomがないと作成できない' do
         @room.purpose_room = nil
         @room.valid?
-        expect(@room.errors.full_messages).to include "学習報告ルームの目的を入力してください"
+        expect(@room.errors.full_messages).to include '学習報告ルームの目的を入力してください'
       end
     end
   end

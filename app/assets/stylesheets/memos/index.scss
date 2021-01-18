@@ -1,0 +1,76 @@
+.memo-wrapper {
+  display: flex;
+}
+.memo-side {
+  width: 200px;
+  background-color: #EEEEEE;
+  min-height: 100vh;
+}
+
+.memo-side-main {
+  padding-top: 15vh;
+}
+
+.memo-list-title {
+  font-weight: bold;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.memo-side-name {
+  padding:1vh;
+  background-color: #0c5510;
+  color: #EEEEEE;
+}
+
+.memo-side-name:hover {
+  padding:1vh;
+  background-color: #326834;
+  color: #EEEEEE;
+}
+
+.memo-main {
+  width: calc( 100vw - 200px) ;
+}
+
+.memo-main-wrapper {
+  margin: 5vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.memo-main-header {
+  padding-top: 15vh;
+}
+
+.memo-main-header-title {
+  font-size: 10vh;
+  font-weight: bold;
+  padding-bottom: 1vh;
+  border-bottom: solid 2px #0c5510;
+}
+
+.memo-search {
+  margin: 0 auto;
+}
+
+.memo-search h1 {
+  font-size: 6vh;
+}
+
+.memo-lists {
+  display: flex;
+  flex-direction: column;
+}
+
+.memo-list {
+  padding:1vh;
+}
+
+.memo-topic {
+  border-radius: 1vh;
+  background-color: #EEEEEE;
+  padding: 2vh;
+  color:#333333;
+  text-decoration: underline;
+}
