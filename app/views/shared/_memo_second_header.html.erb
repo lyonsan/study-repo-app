@@ -1,0 +1,12 @@
+<header class='memo-header'>
+  <div class='nav-memo'>
+    <ul class='lists-left'>
+      <li><%= link_to @subject.name, class: "category-list" %></li>
+    </ul>
+    <ul class='lists-right'>
+      <li><%= link_to '学習報告', root_path, class: "top-link" %></li>
+      <li><%= link_to '科目一覧へ', subjects_path , class: "subjects" %></li>
+      <li><%= link_to 'メモルームへ', subject_memos_path(@subject) , class: "new-memo" %></li>
+    </ul>
+  </div>
+</header>

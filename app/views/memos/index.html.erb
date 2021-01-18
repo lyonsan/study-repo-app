@@ -1,6 +1,11 @@
-<h1>Memos#index</h1>
-<p>Find me in app/views/memos/index.html.erb</p>
-<div>
-  <%= link_to 'メモ作成ページへ', new_subject_memo_path(@subject) %>
+<%= render "shared/memo_header" %>
+<div class="memo-wrapper">
+  <div class="memo-side">
+    <%= render "shared/memo_side_bar" %>
+  </div>
+
+  <div class="memo-main">
+    <%= render "shared/memo_main" %>
+  </div>
 </div>
 

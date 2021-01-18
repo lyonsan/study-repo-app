@@ -2,15 +2,15 @@
   box-sizing: border-box;
 }
 
-.report-header {
+.memo-header {
   width: 100vw;
   padding: 2vh 15vw;
   position: fixed;
   top:0;
   z-index: 10;
-  background-color: #96d4d8;
+  background-color: #0c5510;
 }
-.nav-report {
+.nav-memo {
   font-size: 18px;
   display: flex;
   justify-content: space-between;
@@ -19,17 +19,7 @@
   padding: 1vh 0;
 }
 
-.top-link {
-  text-decoration: none;
-  margin-right: 3vw;
-  color: rgba(256, 256, 256, 0.8);
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
-  font-weight: bold;
-}
-
-
-
-.new-report {
+.new-memo {
   text-decoration: none;
   color: rgba(256, 256, 256, 0.8);
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);

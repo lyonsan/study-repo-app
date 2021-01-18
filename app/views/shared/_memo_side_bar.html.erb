@@ -1,0 +1,10 @@
+<div class="memo-side-main">
+  <h2 class="memo-list-title">他の科目一覧</h2>
+  <% @subjects.each do |subject| %>
+    <%= link_to subject_memos_path(subject) do %>
+      <div class="memo-side-name">
+        <%= subject.name %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

@@ -2,7 +2,10 @@ class MemosController < ApplicationController
   before_action :authenticate_user!
   before_action :set_subject, only: [:index, :new, :create]
   def index
-    redirect_to root_path unless user_signed_in? && @subject.user == current_user
+    redirect_to root_path unless user_signed_in? && @subject.user_id == current_user.id
+    @memos = @subject.memos.includes(:user).order(created_at: 'DESC')
+    @subjects = Subject.where(user_id: current_user.id).where.not(id: params[:subject_id])
+    # @subjects = Subject.where(user_id: current_user.id).where.not(params[:subject_id])
   end
 
   def new
