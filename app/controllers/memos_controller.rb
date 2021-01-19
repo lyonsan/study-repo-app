@@ -1,6 +1,6 @@
 class MemosController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_subject, only: [:index, :new, :create]
+  before_action :set_subject, only: [:index, :new, :create, :show]
   def index
     redirect_to root_path unless user_signed_in? && @subject.user_id == current_user.id
     @memos = @subject.memos.includes(:user).order(created_at: 'DESC')
@@ -16,6 +16,10 @@ class MemosController < ApplicationController
   def create
     @memo = @subject.memos.new(memo_params)
     render :new unless @memo.save
+  end
+
+  def show
+    @memo = Memo.find(params[:id])
   end
 
   private

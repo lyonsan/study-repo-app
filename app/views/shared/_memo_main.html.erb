@@ -8,7 +8,7 @@
   <div class="memo-contents">
     <ul class="memo-lists">
       <% @memos.each do |memo| %>
-        <%= link_to "#" do %>
+        <%= link_to subject_memo_path(@subject, memo) do %>
           <li class="memo-list">
             <div class="memo-topic">
               <%= memo.topic %>

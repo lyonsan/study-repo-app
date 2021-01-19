@@ -1,0 +1,27 @@
+<%= render "shared/memo_header" %>
+<div class="memo-show-main">
+  <div class="memo-text">
+    <h2 class="memo-text-contents">題目</h2>
+  </div>
+  <div class="memo-show-title">
+    <%= @memo.topic %>
+  </div>
+  <div class="memo-text">
+    <h2 class="memo-text-contents">該当箇所の画像</h2>
+  </div>
+  <div class="memo-show-contents">
+    <%= image_tag @memo.image, class: "memo-img" if @memo.image.attached? %>
+  </div>
+  <div class="memo-text">
+    <h2 class="memo-text-contents">関連する記述</h2>
+  </div>
+  <div class="memo-show-contents">
+    <%= @memo.point %>
+  </div>
+  <div class="memo-text">
+    <h2 class="memo-text-contents">メモ</h2>
+  </div>
+  <div class="memo-show-contents">
+    <%= @memo.explanation %>
+  </div>
+</div>
