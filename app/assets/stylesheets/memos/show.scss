@@ -31,3 +31,16 @@
   font-size: 2vh;
   margin-bottom: 2vh;
 }
+
+.memo-show-markdown {
+  padding:2vh;
+  background-color: #EEEEEE;
+  border-radius: 0.5vh;
+  margin-bottom: 2vh;
+}
+.memo-show-markdown li{
+  list-style: initial;
+}
+.memo-show-markdown code {
+  background-color: ivory;
+}

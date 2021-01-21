@@ -24,17 +24,17 @@ div,
 dl,
 dt,
 dd,
-ul,
+/* ul, */
 ol,
-li,
+/* li,
 h1,
 h2,
 h3,
 h4,
-h5,
-h6,
+h5, */
+/* h6, */
 pre,
-code,
+/* code, */
 form,
 fieldset,
 legend,
@@ -75,6 +75,7 @@ var {
   font-weight:normal;
 }
 
+/* マークダウンのために暫定で消す */
 ol,
 ul {
   list-style:none;
@@ -84,6 +85,7 @@ caption,
 th {
   text-align:left;
 }
+/*
 h1,
 h2,
 h3,
@@ -92,7 +94,7 @@ h5,
 h6 {
   font-size:100%;
   font-weight:normal;
-}
+} */
 q:before,
 q:after {
   content:'';
