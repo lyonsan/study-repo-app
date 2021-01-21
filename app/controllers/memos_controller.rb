@@ -19,6 +19,7 @@ class MemosController < ApplicationController
   end
 
   def show
+    redirect_to root_path unless user_signed_in? && @subject.user == current_user
     @memo = Memo.find(params[:id])
   end
 

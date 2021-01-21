@@ -44,3 +44,17 @@
 .memo-show-markdown code {
   background-color: ivory;
 }
+
+.memo-show-btn {
+  display: flex;
+  padding: 2vh 0vh;
+}
+
+.btn-edit-destroy {
+  color:black;
+  text-decoration: underline;
+  padding: 2vh;
+  background-color: #EEEEEE;
+  border-radius: 0.5vh;
+  margin-right: 2vh;
+}
