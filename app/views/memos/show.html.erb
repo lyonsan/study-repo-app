@@ -26,6 +26,6 @@
   </div>
   <div class="memo-show-btn">
     <%= link_to "編集", "#", class:"btn-edit-destroy" %>
-    <%= link_to "削除", "#", class:"btn-edit-destroy" %>
+    <%= link_to "削除", subject_memo_path(@subject, @memo), method: :delete, class:"btn-edit-destroy" %>
   </div>
 </div>
