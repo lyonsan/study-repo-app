@@ -1,7 +1,7 @@
 <header class='memo-header'>
   <div class='nav-memo'>
     <ul class='lists-left'>
-      <li><%= link_to @subject.name, class: "category-list" %></li>
+      <li><%= link_to @subject.name, subject_memos_path(@subject), class: "category-list" %></li>
     </ul>
     <ul class='lists-right'>
       <li><%= link_to '学習報告', root_path, class: "top-link" %></li>
