@@ -1,0 +1,69 @@
+<%= render "shared/memo_second_header"%>
+
+<div class="registration-body">
+  <%= form_with model: [@subject, @memo], url: subject_memo_path, class: 'registration-main', local: true do |f| %>
+  <div class='form-wrap'>
+    <div class='form-header'>
+      <h1 class='form-header-text'>
+        メモの作成
+      </h1>
+    </div>
+
+    <%= render 'shared/error_messages', model: f.object %>
+    
+    <div class="form-group-wide">
+      <div class='form-text-wrap'>
+        <%= f.label :topic, "メモの題名", class:"form-text" %>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :topic, class:"input-default", maxlength:"40" %>
+    </div>
+    <div class="form-group-wide">
+      <div class='form-text-wrap'>
+        <label class="form-text">スクリーンショット等画像</label>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, class:"room-image" %>
+      </div>
+    </div>
+
+    <div class="form-group-wide">
+      <div class='form-text-wrap'>
+        <%= f.label :point, "関係する記述（コードや問題文等）を書きましょう", class:"form-text" %>
+        <span class="indispensable">任意</span>
+      </div>
+      <%= f.text_area :point, class:"input-contents" %>
+    </div>
+    <div class="form-group-wide">
+      <div id="editor">
+        <div class='form-text-wrap'>
+          <%= f.label :explanation, "メモを書きましょう", class:"form-text" %>
+          <span class="indispensable">任意</span>
+        </div>
+        <%= f.text_area :explanation, class:"input-contents", "v-model" => "input", name: "memo[explanation]" %>
+      <div v-html='input | marked'></div>
+    </div>
+   <div class='register-btn'>
+      <%= f.submit "メモ作成" ,class:"register-link" %>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  window.onload = function() {
+    new Vue({
+    el: '#editor',
+    data: {
+      input: '<%== j @memo.explanation %>',
+    },
+    filters: {
+    marked: marked,
+    },
+    });
+  };
+</script>
+<%= render "shared/footer"%>
