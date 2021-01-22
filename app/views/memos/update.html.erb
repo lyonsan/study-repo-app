@@ -1,0 +1,18 @@
+<%= render "shared/memo_second_header" %>
+<div class="subject-create-contents">
+  <div class="message">
+    <div class="success">
+      <h2 class="create-message">メモを編集しました!</h2>
+    </div>
+  </div>
+  <ul class='feature-lists'>
+    <li class='list'>
+      <%= link_to "ルームへ", subject_memos_path(@subject), class: :regi_session %>
+    </li>
+    <li class='list'>
+      <%= link_to "一覧ページに戻る", subjects_path, class: :regi_session %>
+    </li>
+  </ul>
+</div>
+
+<%= render "shared/footer" %>

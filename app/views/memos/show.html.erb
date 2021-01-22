@@ -25,7 +25,7 @@
     <%= sanitize markdown(@memo.explanation), tags: %w(h1 h2 h3 h4 h5 strong em a p), attributes: %w(href) %>
   </div>
   <div class="memo-show-btn">
-    <%= link_to "編集", "#", class:"btn-edit-destroy" %>
+    <%= link_to "編集", edit_subject_memo_path(@subject, @memo), class:"btn-edit-destroy" %>
     <%= link_to "削除", subject_memo_path(@subject, @memo), method: :delete, class:"btn-edit-destroy" %>
   </div>
 </div>
