@@ -19,6 +19,9 @@ class User < ApplicationRecord
   has_many :reports
   has_many :subjects
   has_many :memos
+  has_many :chat_users
+  has_many :chats, through: :chat_users
+  has_many :messages
   belongs_to_active_hash :study_genre
 
   def self.search(search, study_genre)

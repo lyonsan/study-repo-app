@@ -48,6 +48,9 @@
 - has_many :reports
 - has_many :subjects
 - has_many :memos
+- has_many :chat_users
+- has_many :chats, through: :chat_users
+- has_many :messages
 - belongs_to_active_hash :study_genre
 
 ### roomsテーブル
@@ -123,6 +126,44 @@
 
 - belongs_to :user
 - belongs_to :subject
+
+### chats テーブル
+
+| Column             | Type            | option           |
+| ------------------ | --------------- | ---------------- |
+| theme              | string          |                  |
+
+#### Association
+
+- has_many :chat_users
+- has_many :users, through: :chat_users
+- has_many :messages
+
+### chat_users テーブル
+
+| Column             | Type            | option                         |
+| ------------------ | --------------- | ------------------------------ |
+| user               | references      | null: false, foreign_key: true |
+| chat               | references      | null: false, foreign_key: true |
+
+#### Association
+
+- belongs_to :user
+- belongs_to :chat
+
+### messages テーブル
+
+| Column             | Type            | option                         |
+| ------------------ | --------------- | ------------------------------ |
+| user               | references      | null: false, foreign_key: true |
+| chat               | references      | null: false, foreign_key: true |
+| content            | text            | null: false                    |
+
+#### Association
+
+- belongs_to :user
+- belongs_to :chat
+
 
 
 
