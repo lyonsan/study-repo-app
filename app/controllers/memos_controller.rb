@@ -1,6 +1,6 @@
 class MemosController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_subject, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  before_action :set_subject
   before_action :set_memo, only: [:show, :edit, :update]
   def index
     redirect_to root_path unless user_signed_in? && @subject.user_id == current_user.id
@@ -34,6 +34,12 @@ class MemosController < ApplicationController
 
   def update
     render :edit unless @memo.update(memo_params)
+  end
+
+  def search
+    redirect_to root_path unless user_signed_in? && @subject.user == current_user
+    @subjects = Subject.where(user_id: current_user.id).where.not(id: params[:subject_id])
+    @memos = Memo.search(params[:keyword]).where(subject_id: params[:subject_id]).order(created_at: 'DESC')
   end
 
   private

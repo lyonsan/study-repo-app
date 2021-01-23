@@ -1,0 +1,14 @@
+<%= render "shared/memo_header" %>
+<div class="memo-wrapper">
+  <div class="memo-side">
+    <%= render "shared/memo_side_bar" %>
+  </div>
+
+  <div class="memo-main">
+    <%= render "shared/memo_main" %>
+  </div>
+</div>
+<div class="subject-destroy">
+  <%= link_to "科目ルームの削除", subject_path(@subject), method: :delete, class: 'subject-destroy-link' %>
+</div>
+
