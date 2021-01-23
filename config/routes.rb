@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     resources :reports, only: [:index, :new, :create, :destroy]
   end
   resources :subjects, only: [:index, :new, :create, :destroy] do
-    resources :memos, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+    resources :memos do
+      collection do
+        get 'search'
+      end
+    end
   end
 end
