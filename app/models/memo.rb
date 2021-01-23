@@ -9,6 +9,8 @@ class Memo < ApplicationRecord
       Memo.where('topic LIKE(?)',
                  "%#{search}%").or(Memo.where('point LIKE(?)',
                                               "%#{search}%")).or(Memo.where('explanation LIKE(?)', "%#{search}%"))
+    else
+      Memo.all
     end
   end
 end

@@ -20,4 +20,20 @@ class User < ApplicationRecord
   has_many :subjects
   has_many :memos
   belongs_to_active_hash :study_genre
+
+  def self.search(search, study_genre)
+    if search != '' && study_genre != '1'
+      User.where('nickname LIKE(?)',
+                 "%#{search}%").or(User.where('self_introduction LIKE(?)',
+                                              "%#{search}%")).where(study_genre_id: study_genre)
+    elsif search != '' && study_genre == '1'
+      User.where('nickname LIKE(?)',
+                 "%#{search}%").or(User.where('self_introduction LIKE(?)',
+                                              "%#{search}%"))
+    elsif search == '' && study_genre != '1'
+      User.where(study_genre_id: study_genre)
+    else
+      User.all
+    end
+  end
 end

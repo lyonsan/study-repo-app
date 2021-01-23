@@ -8,4 +8,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @rooms = @user.rooms.order(created_at: 'DESC')
   end
+
+  def search
+    @users = User.search(params[:keyword], params[:study_genre_id]).order(created_at: 'DESC')
+  end
 end
