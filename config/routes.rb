@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'memos/index'
-  get 'memos/new'
-  get 'subjects/index'
-  get 'subjects/new'
   devise_for :users
   root to: "rooms#index"
   resources :rooms do
@@ -15,4 +11,5 @@ Rails.application.routes.draw do
       end
     end
   end
+  resources :users, only: [:index]
 end
