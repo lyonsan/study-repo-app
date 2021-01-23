@@ -1,0 +1,36 @@
+<%= render "shared/header" %>
+
+<div class="user-show">
+  <div class="user-box">
+    <h2 class="nickname">
+      <%= @user.nickname %>
+    </h2>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-user">勉強していること</th>
+          <td class="detail-value"><%= @user.study_genre.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-user">自己紹介/勉強していることの詳細</th>
+          <td class="detail-value">
+            <%= @user.self_introduction %>
+          </td>
+        </tr>
+        <tr>
+          <th class="detail-user">学習報告ルーム</th>
+          <td class="detail-value">
+            <% @rooms.each do |room| %>
+              <%= link_to room.title, room_path(room), class:'user-rooms' %>
+            <% end %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="user-messages">
+      <h1>メッセージ機能</h1>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
