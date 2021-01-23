@@ -5,8 +5,10 @@ class Memo < ApplicationRecord
   validates :topic, presence: true
 
   def self.search(search)
-    if search != ""
-      Memo.where('topic LIKE(?)', "%#{search}%").or(Memo.where('point LIKE(?)', "%#{search}%")).or(Memo.where('explanation LIKE(?)', "%#{search}%"))
+    if search != ''
+      Memo.where('topic LIKE(?)',
+                 "%#{search}%").or(Memo.where('point LIKE(?)',
+                                              "%#{search}%")).or(Memo.where('explanation LIKE(?)', "%#{search}%"))
     end
   end
 end

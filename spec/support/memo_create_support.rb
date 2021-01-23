@@ -1,7 +1,7 @@
 module MemoCreateSupport
   def memo_create(subject, memo)
     # 「メモ」ページへのリンクがあることを確認する
-    expect(page).to have_content("メモ")
+    expect(page).to have_content('メモ')
     # 科目ルーム一覧ページに遷移する
     visit subjects_path
     # 生成された科目ルームが存在することを確認する
@@ -9,7 +9,7 @@ module MemoCreateSupport
     # メモ一覧ページに移動
     visit subject_memos_path(subject)
     # 「メモを作成する」のリンクがあることを確認
-    expect(page).to have_content("メモを作成する")
+    expect(page).to have_content('メモを作成する')
     # メモ新規作成ページへ遷移
     visit new_subject_memo_path(subject)
     # 今回貼り付ける画像を定義する
@@ -25,7 +25,7 @@ module MemoCreateSupport
     # 作成完了ページに遷移することを確認する
     expect(current_path).to eq subject_memos_path(subject)
     # 「メモを作成しました!」の文字があることを確認する
-    expect(page).to have_content("メモを作成しました!")
+    expect(page).to have_content('メモを作成しました!')
     # メモ一覧ページに遷移する
     visit subject_memos_path(subject)
     # 先ほど作成したメモが存在することを確認する
