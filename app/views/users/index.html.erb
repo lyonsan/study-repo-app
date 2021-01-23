@@ -1,0 +1,17 @@
+<%= render "shared/header" %>
+<div class="users-wrapper">
+  <div class="users-header">
+    <h1 class="users-header-title">ユーザー一覧</h1>
+  </div>
+  <div class="users-main">
+    <% @users.each do |user| %>
+      <%= link_to "#" do %>
+        <div class="user-name">
+          <%= user.nickname %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

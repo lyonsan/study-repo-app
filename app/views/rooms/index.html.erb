@@ -126,6 +126,21 @@
         </li>
       <% end %>
     </ul>
+    <%# ユーザー一覧へのリンク %>
+    <div class='feature-contents'>
+      <h2 class='title'>
+        こんなユーザーがいます
+      </h2>
+      <div class='explanation'>
+        <p>実際にサービスを利用しているユーザーを見ることができます</p>
+      </div>
+      <ul class='feature-lists'>
+        <li class='list'>
+          <%= link_to "ユーザー一覧ページへ", users_path, class: :regi_session %>
+        </li>
+      </ul>
+    </div>
+    <%# ユーザー一覧へのリンク %>
     <%# 登録・ログイン %>
     <div class='feature-contents'>
       <h2 class='title'>

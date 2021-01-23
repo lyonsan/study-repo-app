@@ -31,11 +31,16 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       expect(current_path).to eq root_path
       # ログアウトボタン、ユーザー名、メモルームへのリンクボタンが表示されていることを確認する
       expect(page).to have_content('ログアウト')
+      expect(page).to have_content('ユーザー一覧')
       expect(page).to have_content(@user.nickname)
       expect(page).to have_content('メモ')
       # 新規登録ページへ遷移するボタンやログインページに遷移するボタンが表示されていないことを確認する
       expect(page).to have_no_content('新規登録')
       expect(page).to have_no_content('ログイン')
+      # ユーザー一覧ページに遷移する
+      visit users_path
+      # ユーザー一覧ページに新規登録したユーザーが表示されていることを確認する
+      expect(page).to have_content(@user.nickname)
     end
   end
   context 'ユーザー新規登録ができない時' do
