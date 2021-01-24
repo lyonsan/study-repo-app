@@ -18,6 +18,11 @@ class ChatsController < ApplicationController
     redirect_to chat_path(@chat)
   end
 
+  def destroy
+    chat = Chat.find(params[:id])
+    chat.destroy
+  end
+
   private
 
   def chat_user_params
