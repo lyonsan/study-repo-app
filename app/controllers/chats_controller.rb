@@ -3,8 +3,9 @@ class ChatsController < ApplicationController
   def show
     @chat = Chat.find(params[:id])
     if ChatUser.where(user_id: current_user.id, chat_id: @chat.id).present?
-      @messages = @chat.messages
+      @messages = @chat.messages.includes(:user).order(created_at: 'DESC')
       @users = @chat.users
+      @message = Message.new
     else
       redirect_to root_path
     end

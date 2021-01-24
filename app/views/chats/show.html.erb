@@ -1,27 +1,22 @@
+<%= render "shared/header" %>
+
 <div class="chat-body">
   <div class="chat-header">
     <% @users.each do |user| %>
       <% if user != current_user %>
-        <%= link_to user.nickname, user_path(user) %>
+        <%= link_to "#{user.nickname}さんとのチャット", user_path(user), class:"chat-user" %>
       <% end %>
     <% end %>
   </div>
   <div class="chat-main">
     <div class="message-form">
-      <%= form_with model: @message do |f| %>
-        <%= f.text_field :content %>
-        <%= f.submit '送信' %>
+      <%= form_with model: [@chat, @message] do |f| %>
+        <%= f.text_field :content, placeholder: "メッセージを送りましょう", class:"message-input" %>
+        <%= f.submit '送信', class:"send-btn" %>
       <% end %>
     </div>
-    <% @messages.each do |message| %>
-      <div class="message">
-        <div class="message-time">
-          <%= message.created_at %>
-        </div>
-        <div class="message-content">
-          <%= message.content %>
-        </div>
-      </div>
-    <% end %>
+    <div id='messages'>
+      <%= render @messages %>
+    </div>
   </div>
 </div>
