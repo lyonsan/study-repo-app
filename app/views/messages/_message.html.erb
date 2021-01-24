@@ -1,0 +1,13 @@
+<div class="message-body" id="message-<%= message.id %>">
+  <div class="message-top">
+    <div class="message-user">
+      <%= message.user.nickname %>
+    </div>
+    <div class="message-create-at">
+      <%= l message.created_at, format: :short %>
+    </div>
+  </div>
+  <div class="message-bottom">
+    <%= message.content %>
+  </div>
+</div>
