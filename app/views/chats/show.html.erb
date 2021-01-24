@@ -1,2 +1,27 @@
-<h1>Chats#show</h1>
-<p>Find me in app/views/chats/show.html.erb</p>
+<div class="chat-body">
+  <div class="chat-header">
+    <% @users.each do |user| %>
+      <% if user != current_user %>
+        <%= link_to user.nickname, user_path(user) %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="chat-main">
+    <div class="message-form">
+      <%= form_with model: @message do |f| %>
+        <%= f.text_field :content %>
+        <%= f.submit '送信' %>
+      <% end %>
+    </div>
+    <% @messages.each do |message| %>
+      <div class="message">
+        <div class="message-time">
+          <%= message.created_at %>
+        </div>
+        <div class="message-content">
+          <%= message.content %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

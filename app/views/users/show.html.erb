@@ -28,7 +28,18 @@
       </tbody>
     </table>
     <div class="user-messages">
-      <h1>メッセージ機能</h1>
+      <% unless @user == current_user %>
+        <% if @chat_id %>
+          <%= link_to "チャットへ", chat_path(@chat_id)%>
+        <% else %>
+          <%= form_with(model: @chat, local: true) do |f| %>
+            <%= fields_for @chat_user do |c| %>
+              <%= c.hidden_field :user_id, value: @user.id %>
+            <% end %>
+            <%= f.submit "チャットを始める" %>
+          <% end %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

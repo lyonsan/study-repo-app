@@ -61,9 +61,13 @@ ActiveRecord::Schema.define(version: 2021_01_23_231516) do
   end
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "chat_id"
     t.text "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["chat_id"], name: "index_messages_on_chat_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "reports", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -129,6 +133,8 @@ ActiveRecord::Schema.define(version: 2021_01_23_231516) do
   add_foreign_key "chat_users", "users"
   add_foreign_key "memos", "subjects"
   add_foreign_key "memos", "users"
+  add_foreign_key "messages", "chats"
+  add_foreign_key "messages", "users"
   add_foreign_key "reports", "rooms"
   add_foreign_key "reports", "users"
   add_foreign_key "room_users", "rooms"
