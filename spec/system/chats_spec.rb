@@ -66,7 +66,7 @@ RSpec.describe 'チャットルーム削除', type: :system do
       # 「別のユーザーとのチャットルーム」の文字を確認する
       expect(page).to have_content "#{@user1.nickname}さんとのチャット"
       # 「チャットルームを削除する」のリンクがあることを確認する
-      expect(page).to have_content "チャットルームを削除する"
+      expect(page).to have_content 'チャットルームを削除する'
       # 「チャットルームを削除する」を押すとChatモデルのカウントが1減る
       expect do
         click_link 'チャットルームを削除する'
