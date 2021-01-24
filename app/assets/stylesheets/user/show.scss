@@ -61,3 +61,36 @@
   color: black;
   text-decoration: underline;
 }
+
+.regi-session {
+  display: flex;
+  justify-content: space-around;
+}
+
+.regi-btn {
+  background-color: blue;
+  color: #eee;
+  padding: 2vh 5vh;
+  border-radius: 2px;
+}
+
+.session-btn {
+  background-color: #333333;
+  color: #eee;
+  padding: 2vh 5vh;
+  border-radius: 2px;
+}
+
+.regi-btn:hover {
+  background-color: rgb(67, 67, 231);
+  color: #eee;
+  padding: 2vh 5vh;
+  border-radius: 2px;
+}
+
+.session-btn:hover {
+  background-color: #7c7a7a;
+  color: #eee;
+  padding: 2vh 5vh;
+  border-radius: 2px;
+}

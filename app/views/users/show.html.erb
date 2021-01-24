@@ -39,7 +39,7 @@
             <%= f.submit "チャットを始める", class:"user-chats-btn" %>
           <% end %>
         <% end %>
-      <% else %>
+      <% elsif @user == current_user && user_signed_in? %>
         <div class="user-lists-title">
           <h2>チャットを行っているユーザー</h2>
         </div>
@@ -55,8 +55,20 @@
               <% end %>
             </ul>
           </div>
-          
         <% end %>
+      <% else %>
+        <div class="user-lists-title">
+          <h2>ユーザー登録してメッセージを送ろう!</h2>
+        </div>
+        <div class="regi-session">
+          <div class="regi-session-btn">
+            <%= link_to "新規登録", new_user_registration_path, class:"regi-btn" %>
+          </div>
+          <div class="regi-session-btn">
+            <%= link_to "ログイン", new_user_session_path, class:"session-btn" %>
+          </div>
+          </ul>
+        </div>
       <% end %>
     </div>
   </div>
