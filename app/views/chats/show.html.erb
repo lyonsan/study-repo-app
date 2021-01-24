@@ -11,6 +11,7 @@
   <div class="chat-main">
     <div class="message-form">
       <%= form_with model: [@chat, @message] do |f| %>
+        <%= f.label :content, "メッセージ記入欄" %>
         <%= f.text_field :content, placeholder: "メッセージを送りましょう", class:"message-input" %>
         <%= f.submit '送信', class:"send-btn" %>
       <% end %>
