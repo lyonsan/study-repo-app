@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Chats", type: :system do
+RSpec.describe 'Chats', type: :system do
   before do
     @user = FactoryBot.create(:user)
     @user1 = FactoryBot.create(:user)

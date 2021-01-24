@@ -15,5 +15,4 @@ RSpec.describe Chat, type: :model do
       end
     end
   end
-
 end

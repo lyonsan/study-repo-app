@@ -10,7 +10,10 @@ class UsersController < ApplicationController
     if user_signed_in?
       @chats = current_user.chats.order(created_at: 'DESC')
       @chat_id = (@user.chat_users.pluck(:chat_id) & current_user.chat_users.pluck(:chat_id)).first
-      @chat, @chat_user = Chat.new, ChatUser.new unless @chat_id
+      unless @chat_id
+        @chat = Chat.new
+        @chat_user = ChatUser.new
+      end
     end
   end
 
