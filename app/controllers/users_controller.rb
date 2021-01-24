@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @rooms = @user.rooms.order(created_at: 'DESC')
+    @chats = Chat.all.order(created_at: 'DESC')
     @chat_id = (@user.chat_users.pluck(:chat_id) & current_user.chat_users.pluck(:chat_id)).first
     @chat, @chat_user = Chat.new, ChatUser.new unless @chat_id
   end

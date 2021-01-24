@@ -26,3 +26,38 @@
   color: black;
   text-decoration: underline;
 }
+
+.user-messages {
+  padding-top: 5vh;
+}
+
+.user-chats-btn {
+  padding: 2vh;
+  border-radius: 2px;
+  background-color: #333333;
+  color:#eee;
+  border: none;
+}
+
+.user-lists-title {
+  margin: 0 auto;
+}
+
+.user-lists-title h2 {
+  text-align: center;
+}
+
+.user-lists {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.user-list {
+  text-align: center;
+}
+
+.user-list-name {
+  color: black;
+  text-decoration: underline;
+}

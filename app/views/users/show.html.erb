@@ -28,16 +28,34 @@
       </tbody>
     </table>
     <div class="user-messages">
-      <% unless @user == current_user %>
+      <% if @user != current_user && user_signed_in? %>
         <% if @chat_id %>
-          <%= link_to "チャットへ", chat_path(@chat_id)%>
+          <%= link_to "チャットへ", chat_path(@chat_id), class:"user-chats-btn" %>
         <% else %>
           <%= form_with(model: @chat, local: true) do |f| %>
             <%= fields_for @chat_user do |c| %>
               <%= c.hidden_field :user_id, value: @user.id %>
             <% end %>
-            <%= f.submit "チャットを始める" %>
+            <%= f.submit "チャットを始める", class:"user-chats-btn" %>
           <% end %>
+        <% end %>
+      <% else %>
+        <div class="user-lists-title">
+          <h2>チャットを行っているユーザー</h2>
+        </div>
+        <% @chats.each do |chat| %>
+          <div class="chat-user-list">
+            <ul class="user-lists">
+              <% chat.users.each do |user| %>
+                <% if user != current_user %>
+                  <li class="user-list">
+                    <%= link_to user.nickname, user_path(user), class:"user-list-name" %>
+                  </li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+          
         <% end %>
       <% end %>
     </div>
