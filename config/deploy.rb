@@ -1,4 +1,4 @@
-lock '3.14.1'
+lock '3.15.0'
 
 set :application, 'study-repo-app'
 
