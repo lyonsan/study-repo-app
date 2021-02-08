@@ -9,7 +9,7 @@ RUN mkdir /myproject
 WORKDIR /myproject
 
 ADD Gemfile /myproject/Gemfile
-ADD Gemfile /myproject/gemfile.lock
+ADD Gemfile.lock /myproject/Gemfile.lock
 
 RUN bundle install
 
