@@ -5,10 +5,10 @@ services:
     command: mysqld --character-set-server=utf8
     environment:
       MYSQL_DATABASE: study_repo_app_development
-      MYSQL_ROOT_PASSWORD: <%= ENV['MYSQL_PASSWORD'] %>
-      MYSQL_USER: <%= ENV['MYSQL_USER'] %>
+      MYSQL_ROOT_PASSWORD: <%= D_MYSQL_PASSWORD %>
+      MYSQL_USER: <%= D_MYSQL_USER %>
     ports:
-      - "4306:3306"
+      - "3306:3306"
   web:
     build:
       context: .
@@ -24,6 +24,8 @@ services:
       - .:/myproject
     environment:
       - "SELENIUM_DRIVER_URL=http://selenium_chrome:4444/wd/hub"
+      - MYSQL_HOST=db
+      - MYSQL_PASSWORD=<%= D_MYSQL_PASSWORD %>
   selenium_chrome:
     image: selenium/standalone-chrome-debug
     logging:
