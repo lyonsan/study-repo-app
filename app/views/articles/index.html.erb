@@ -1,0 +1,9 @@
+<p><%= link_to '記事作成', new_article_path %></p>
+<% @articles.each do |article| %>
+  <div>
+    <h3><%= article.user.nickname %></h3>
+    <%= article.summary %>
+    <%= article.study_genre.name %>
+    <%= article.detail %>
+  </div>
+<% end %>

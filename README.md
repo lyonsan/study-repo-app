@@ -164,7 +164,17 @@
 - belongs_to :user
 - belongs_to :chat
 
+### articles テーブル
+| Column             | Type            | option                         |
+| ------------------ | --------------- | ------------------------------ |
+| user               | references      | null: false, foreign_key: true |
+| study_genre_id     | integer         | null: false                    |
+| summary            | string          | null: false                    |
+| detail             | string          | null: false                    |
 
+#### Association
+- belongs_to :user
+- belongs_to_active_hash :study_genre
 
 
 ## ローカルでの動作方法

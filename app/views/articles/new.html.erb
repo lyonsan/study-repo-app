@@ -1,0 +1,13 @@
+<%= form_with model: @article, url: articles_path, local: true do |f| %>
+  <%= f.label :summary, '記事タイトル' %>
+  <%= f.text_area :summary, placeholder: '最大40文字まで', maxlength: "40" %>
+  <%= f.label :study_genre_id, "勉強していること"%>
+  <%= f.collection_select(:study_genre_id, StudyGenre.all, :id, :name, {}) %>
+  <%= f.label :detail, '本文' %>
+  <%= f.text_area :detail, placeholder: '本文を記入してください。' %>
+  <%= f.submit "記事投稿" %>
+<% end %>
+
+
+
+<%= link_to '記事一覧へ', articles_path %>
