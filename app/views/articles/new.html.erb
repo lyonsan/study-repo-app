@@ -3,7 +3,7 @@
   <div class="article-form-wrapper">
     <%= f.label :summary, '記事タイトル' %>
     <%= f.text_area :summary, placeholder: '最大40文字まで', "v-model" => "input", maxlength: "40" %>
-    <%= f.label :study_genre_id, "勉強していること"%>
+    <%= f.label :study_genre_id, "ジャンル"%>
     <%= f.collection_select(:study_genre_id, StudyGenre.all, :id, :name, {}) %>
     <%= f.label :detail, '本文' %>
     <div id="detail" class="article-detail">

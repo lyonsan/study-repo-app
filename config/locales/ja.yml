@@ -38,3 +38,7 @@ ja:
         image: 画像
         point: 関係する記述
         explanation: メモ
+      article:
+        summary: 記事タイトル
+        detail: 詳細
+        study_genre_id: ジャンル
