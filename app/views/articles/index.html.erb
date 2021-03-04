@@ -3,6 +3,9 @@
 <% @articles.each do |article| %>
   <div class="article-list">
     <h3><%= article.summary %></h3>
+    <% article.tags.each do |tag| %>
+      #<%= tag.keyword %>
+    <% end %>
     <%= article.study_genre.name %>
     <%= article.user.nickname %>
   </div>
