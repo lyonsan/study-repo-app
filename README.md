@@ -174,7 +174,28 @@
 
 #### Association
 - belongs_to :user
+- has_many :article_tag_relations
+- has_many :tags, through: :article_tag_relations
 - belongs_to_active_hash :study_genre
+
+### tags テーブル
+| Column             | Type            | option                         |
+| ------------------ | --------------- | ------------------------------ |
+| keyword            | string          | null: false, uniqueness: true  |
+
+#### Association
+- has_many :article_tag_relations
+- has_many :article, through: :article_tag_relations
+
+### article_tag_relations テーブル
+| Column             | Type            | option                         |
+| ------------------ | --------------- | ------------------------------ |
+| article            | references      | foreign_key: true              |
+| tag                | references      | foreign_key: true              |
+
+#### Association
+- belongs_to :article
+- belongs_to :tag
 
 
 ## ローカルでの動作方法
