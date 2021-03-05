@@ -1,17 +1,23 @@
-<div>
-  <div>
-    <h1><%= @article.summary %></h1>
+<div class="article-show-wrapper">
+  <div class="article-header">
+    <div class="article-title">
+      <h1><%= @article.summary %></h1>
+    </div>
+    <div class="article-user">
+      <p>投稿者:<%= link_to @article.user.nickname, user_path(@article.user) %></p>
+    </div>
   </div>
-  <div>
+  <ul class="article-tags">
     <% @article.tags.each do |tag| %>
-      #<%= tag.keyword %>
+      <li class="article-tag">
+        <p>#<%= tag.keyword %></p>
+      </li>
     <% end %>
+  </ul>
+  <div class="article-genre">
+    <p>ジャンル:<%= @article.study_genre.name %></p>
   </div>
-  <div>
-    <h3><%= @article.study_genre.name %></h3>
-  </div>
-  <div>投稿者:<%= link_to @article.user.nickname, "#" %></div>
-  <div>
+  <div class="article-main">
     <p><%= @article.detail %></p>
   </div>
   <div><%= link_to "記事一覧に戻る", articles_path %>

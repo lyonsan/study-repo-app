@@ -1,0 +1,26 @@
+.article-show-wrapper {
+  max-width: 1000px;
+  padding: 15px;
+}
+
+.article-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.article-tags {
+  display: flex;
+}
+
+.article-tag {
+  padding: 2px;
+  border-radius: 5px;
+  background-color: blanchedalmond;
+}
+
+.article-main {
+  width: 100%;
+  padding: 15px 5px;
+  border-bottom: solid 1px #777777;
+  border-top: solid 1px #777777;
+}
