@@ -4,9 +4,10 @@ class ArticlesTag
 
   with_options presence: true do
     validates :summary
-    validates :study_genre_id
     validates :detail
-    validates :keyword
+  end
+  with_options numericality: { other_than: 1, message: 'を選択してください' } do
+    validates :study_genre_id
   end
 
 
