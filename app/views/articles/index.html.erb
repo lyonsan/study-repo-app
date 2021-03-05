@@ -1,13 +1,15 @@
 <p><%= link_to '記事作成', new_article_path %></p>
 <div class="article-lists">
 <% @articles.each do |article| %>
-  <div class="article-list">
-    <h3><%= article.summary %></h3>
-    <% article.tags.each do |tag| %>
-      #<%= tag.keyword %>
-    <% end %>
-    <%= article.study_genre.name %>
-    <%= article.user.nickname %>
-  </div>
+  <%= link_to article_path(article) do %>
+    <div class="article-list">
+      <h3><%= article.summary %></h3>
+      <% article.tags.each do |tag| %>
+        #<%= tag.keyword %>
+      <% end %>
+      <%= article.study_genre.name %>
+      <%= article.user.nickname %>
+    </div>
+  <% end %>
 <% end %>
 </div>

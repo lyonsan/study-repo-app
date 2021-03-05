@@ -1,0 +1,18 @@
+<div>
+  <div>
+    <h1><%= @article.summary %></h1>
+  </div>
+  <div>
+    <% @article.tags.each do |tag| %>
+      #<%= tag.keyword %>
+    <% end %>
+  </div>
+  <div>
+    <h3><%= @article.study_genre.name %></h3>
+  </div>
+  <div>投稿者:<%= link_to @article.user.nickname, "#" %></div>
+  <div>
+    <p><%= @article.detail %></p>
+  </div>
+  <div><%= link_to "記事一覧に戻る", articles_path %>
+</div>
