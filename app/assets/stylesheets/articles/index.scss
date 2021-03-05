@@ -1,0 +1,12 @@
+.article-lists {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  min-width: 1000px;
+}
+
+.article-list {
+  background-color: #eeeeee;
+  padding: 5px;
+  margin: 5px;
+}

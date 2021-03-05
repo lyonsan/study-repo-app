@@ -164,7 +164,38 @@
 - belongs_to :user
 - belongs_to :chat
 
+### articles テーブル
+| Column             | Type            | option                         |
+| ------------------ | --------------- | ------------------------------ |
+| user               | references      | null: false, foreign_key: true |
+| study_genre_id     | integer         | null: false                    |
+| summary            | string          | null: false                    |
+| detail             | string          | null: false                    |
 
+#### Association
+- belongs_to :user
+- has_many :article_tag_relations
+- has_many :tags, through: :article_tag_relations
+- belongs_to_active_hash :study_genre
+
+### tags テーブル
+| Column             | Type            | option                         |
+| ------------------ | --------------- | ------------------------------ |
+| keyword            | string          | null: false, uniqueness: true  |
+
+#### Association
+- has_many :article_tag_relations
+- has_many :article, through: :article_tag_relations
+
+### article_tag_relations テーブル
+| Column             | Type            | option                         |
+| ------------------ | --------------- | ------------------------------ |
+| article            | references      | foreign_key: true              |
+| tag                | references      | foreign_key: true              |
+
+#### Association
+- belongs_to :article
+- belongs_to :tag
 
 
 ## ローカルでの動作方法
