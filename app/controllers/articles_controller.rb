@@ -43,8 +43,10 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
-  def tag_search
+  def tagsearch
     return nil if params[:key_tag] == ""
+    tag = Tag.where(['tag_name LIKE ?', "%#{params[:key_tag]}%"])
+    render json: { key_tag: tag }
   end
 
   private
