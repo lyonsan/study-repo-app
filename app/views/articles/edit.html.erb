@@ -1,0 +1,45 @@
+<div class="article-new-form">
+  <%= form_with model: @form, url: article_path, method: :patch, local: true do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
+  <div class="article-form-wrapper">
+    <%= f.label :summary, '記事タイトル' %>
+    <%= f.text_area :summary, placeholder: '最大40文字まで', "v-model" => "input", maxlength: "40" %>
+    <%= f.label :study_genre_id, "ジャンル"%>
+    <%= f.collection_select(:study_genre_id, StudyGenre.all, :id, :name, {}) %>
+    <%= f.label :keyword, "タグ" %>
+    <%= f.text_field :keyword, class:"input-tag" %>
+    <%= f.label :detail, '本文' %>
+    <div id="detail" class="article-detail">
+      <%= f.text_area :detail, placeholder: '本文を記入してください。', "v-model" => "text", class: "article-detail-field" %>
+    <div v-html='text | marked' class="review-article"></div>
+    </div>
+    <div class="article-submit-button">
+      <%= f.submit "編集完了" %>
+    </div>
+  </div>
+  <% end %>
+  <div>
+    <%= link_to '記事を削除する', '#' %>
+  </div>
+</div>
+
+<div>
+
+</div>
+
+<script type="text/javascript">
+  window.onload = function() {
+    new Vue({
+    el: '#detail',
+    data: {
+      text: '<%== j @form.detail %>',
+    },
+    filters: {
+    marked: marked,
+    },
+    });
+  };
+</script>
+
+
+<%= link_to '記事一覧へ', articles_path %>
