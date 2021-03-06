@@ -24,7 +24,8 @@ class ArticlesController < ApplicationController
 
   def edit
     redirect_to root_path unless user_signed_in? && @article.user == current_user
-    @form = ArticlesTag.new(summary: @article.summary, detail: @article.detail, study_genre_id: @article.study_genre_id)
+    @tag = @article.tags.pluck(:tag_name).join(",")
+    @form = ArticlesTag.new(summary: @article.summary, detail: @article.detail, study_genre_id: @article.study_genre_id, tag_name: @tag)
   end
 
   def update
