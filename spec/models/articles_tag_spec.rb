@@ -9,8 +9,8 @@ RSpec.describe ArticlesTag, type: :model do
       it 'summary, detailが入力されており、study_genre_idが2-6である時' do
         expect(@article).to be_valid
       end
-      it 'tag(keyword)がなくても登録できる' do
-        @article.keyword = nil
+      it 'tag_nameがなくても登録できる' do
+        @article.tag_name = nil
         expect(@article).to be_valid
       end
     end

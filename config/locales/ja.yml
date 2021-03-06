@@ -44,4 +44,4 @@ ja:
         summary: 記事タイトル
         detail: 詳細
         study_genre_id: ジャンル      
-        keyword: タグ
+        tag_name: タグ

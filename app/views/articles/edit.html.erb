@@ -6,8 +6,8 @@
     <%= f.text_area :summary, placeholder: '最大40文字まで', "v-model" => "input", maxlength: "40" %>
     <%= f.label :study_genre_id, "ジャンル"%>
     <%= f.collection_select(:study_genre_id, StudyGenre.all, :id, :name, {}) %>
-    <%= f.label :keyword, "タグ" %>
-    <%= f.text_field :keyword, class:"input-tag" %>
+    <%= f.label :tag_name, "タグ" %>
+    <%= f.text_field :tag_name, class:"input-tag" %>
     <%= f.label :detail, '本文' %>
     <div id="detail" class="article-detail">
       <%= f.text_area :detail, placeholder: '本文を記入してください。', "v-model" => "text", class: "article-detail-field" %>

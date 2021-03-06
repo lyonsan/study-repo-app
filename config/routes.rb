@@ -21,5 +21,9 @@ Rails.application.routes.draw do
   resources :chats, only: [:create, :show, :destroy] do
     resources :messages, only: :create
   end
-  resources :articles
+  resources :articles do
+    collection do
+      get 'tagsearch'
+    end
+  end
 end
