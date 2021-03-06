@@ -44,9 +44,9 @@ class ArticlesController < ApplicationController
   end
 
   def tagsearch
-    return nil if params[:key_tag] == ""
-    tag = Tag.where(['tag_name LIKE ?', "%#{params[:key_tag]}%"])
-    render json: { key_tag: tag }
+    return nil if params[:keyword] == ""
+    tag = Tag.where(['tag_name LIKE ?', "%#{params[:keyword]}%"])
+    render json: { keyword: tag }
   end
 
   private

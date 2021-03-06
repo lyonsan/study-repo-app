@@ -8,6 +8,8 @@
     <%= f.collection_select(:study_genre_id, StudyGenre.all, :id, :name, {}) %>
     <%= f.label :tag_name, "タグ" %>
     <%= f.text_field :tag_name, class:"input-tag" %>
+    <div id="search-result">
+    </div>
     <%= f.label :detail, '本文' %>
     <div id="detail" class="article-detail">
       <%= f.text_area :detail, placeholder: '本文を記入してください。', "v-model" => "text", class: "article-detail-field" %>

@@ -14,7 +14,7 @@ class ArticlesTag
 
   def save
     article = Article.create(user_id: user_id, summary: summary, study_genre_id: study_genre_id, detail: detail)
-    tag = Tag.where(tag_name: tag_tame).first_or_initialize
+    tag = Tag.where(tag_name: tag_name).first_or_initialize
     tag.save
 
     ArticleTagRelation.create(article_id: article.id, tag_id: tag.id)
