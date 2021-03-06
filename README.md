@@ -181,7 +181,7 @@
 ### tags テーブル
 | Column             | Type            | option                         |
 | ------------------ | --------------- | ------------------------------ |
-| keyword            | string          | null: false, uniqueness: true  |
+| tag_name           | string          | null: false, uniqueness: true  |
 
 #### Association
 - has_many :article_tag_relations

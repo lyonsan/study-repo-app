@@ -43,14 +43,18 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
+  def tag_search
+    return nil if params[:key_tag] == ""
+  end
+
   private
 
   def article_params
-    params.require(:articles_tag).permit(:study_genre_id, :summary, :detail, :keyword).merge(user_id: current_user.id)
+    params.require(:articles_tag).permit(:study_genre_id, :summary, :detail, :tag_name).merge(user_id: current_user.id)
   end
 
   def update_params
-    params.require(:articles_tag).permit(:study_genre_id, :summary, :detail, :keyword).merge(user_id: current_user.id, article_id: params[:id])
+    params.require(:articles_tag).permit(:study_genre_id, :summary, :detail, :tag_name).merge(user_id: current_user.id, article_id: params[:id])
   end
 
   def set_article
