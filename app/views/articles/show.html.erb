@@ -20,5 +20,8 @@
   <div class="article-main">
     <p><%= @article.detail %></p>
   </div>
+  <% if user_signed_in? && @article.user.id == current_user.id %>
+    <%= link_to "編集", edit_article_path(@article) %>
+  <% end %>
   <div><%= link_to "記事一覧に戻る", articles_path %>
 </div>

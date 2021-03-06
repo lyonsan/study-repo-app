@@ -1,6 +1,6 @@
 class ArticlesTag
   include ActiveModel::Model
-  attr_accessor :user_id, :summary, :study_genre_id, :detail, :keyword
+  attr_accessor :user_id, :article_id, :summary, :study_genre_id, :detail, :keyword
 
   with_options presence: true do
     validates :summary
@@ -18,5 +18,15 @@ class ArticlesTag
     tag.save
 
     ArticleTagRelation.create(article_id: article.id, tag_id: tag.id)
+  end
+
+  def update
+    @article = Article.where(id: article_id)
+    article = @article.update(user_id: user_id, summary: summary, study_genre_id: study_genre_id, detail: detail)
+    tag = Tag.where(keyword: keyword).first_or_initialize
+    tag.save
+
+    map = ArticleTagRelation.where(article_id: article_id)
+    map.update(article_id: article_id, tag_id: tag.id)
   end
 end
