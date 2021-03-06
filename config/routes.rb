@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   end
   resources :articles do
     collection do
+      get 'search'
       get 'tagsearch'
     end
   end

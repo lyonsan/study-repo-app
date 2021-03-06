@@ -44,6 +44,10 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
+  def search
+    @articles = Article.search(params[:keyword], params[:study_genre_id]).order(created_at: 'DESC')
+  end
+
   def tagsearch
     return nil if params[:keyword] == ""
     tag = Tag.where(['tag_name LIKE ?', "%#{params[:keyword]}%"])
