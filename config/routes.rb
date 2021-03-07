@@ -15,6 +15,9 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    member do
+      get 'library'
+    end
   end
   resources :chats, only: [:create, :show, :destroy] do
     resources :messages, only: :create
