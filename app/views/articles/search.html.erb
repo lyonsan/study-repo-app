@@ -12,6 +12,17 @@
   </div>
   <%= f.submit "検索", class: "user-search-btn" %>
 <% end %>
+<%= form_with(url: search_articles_path, local: true, method: :get, class: "search-form") do |f| %>
+  <div class="search-field">
+    <%= select_tag :tag_id,
+      options_from_collection_for_select(Tag.all, :id, :tag_name, params[:tag_id]),
+      {
+        prompt: 'タグで絞り込み',
+        class: 'user-search-input',
+        onchange: 'submit(this.form)'
+      }%>
+  </div>
+<% end %>
 <div class="article-lists">
 <% @articles.each do |article| %>
   <%= link_to article_path(article) do %>

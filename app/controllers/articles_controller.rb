@@ -45,7 +45,7 @@ class ArticlesController < ApplicationController
   end
 
   def search
-    @articles = Article.search(params[:keyword], params[:study_genre_id]).order(created_at: 'DESC')
+    @articles = Article.search(params[:keyword], params[:study_genre_id], params[:tag_id]).order(created_at: 'DESC')
   end
 
   def tagsearch

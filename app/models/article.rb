@@ -12,19 +12,23 @@ class Article < ApplicationRecord
     validates :detail
   end
 
-  def self.search(search, study_genre)
-    if search != '' && study_genre != '1'
-      Article.where('summary LIKE(?)',
-                    "%#{search}%").or(Article.where('detail LIKE(?)',
-                                                    "%#{search}%")).where(study_genre_id: study_genre)
-    elsif search != '' && study_genre == '1'
-      Article.where('summary LIKE(?)',
-      "%#{search}%").or(Article.where('detail LIKE(?)',
-                                      "%#{search}%"))
-    elsif search == '' && study_genre != '1'
-      Article.where(study_genre_id: study_genre)
+  def self.search(search, study_genre, tag)
+    if tag.present?
+      Tag.find(tag).articles
     else
-      Article.all
+      if search != '' && study_genre != '1'
+        Article.where('summary LIKE(?)',
+                      "%#{search}%").or(Article.where('detail LIKE(?)',
+                                                      "%#{search}%")).where(study_genre_id: study_genre)
+      elsif search != '' && study_genre == '1'
+        Article.where('summary LIKE(?)',
+                      "%#{search}%").or(Article.where('detail LIKE(?)',
+                                                      "%#{search}%"))
+      elsif search == '' && study_genre != '1'
+        Article.where(study_genre_id: study_genre)
+      else
+        Article.all
+      end
     end
   end
 end
