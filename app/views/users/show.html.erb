@@ -27,6 +27,9 @@
         </tr>
       </tbody>
     </table>
+    <div>
+      <%= link_to "記事", library_user_path(@user) %>
+    </div>
     <div class="user-messages">
       <% if @user != current_user && user_signed_in? %>
         <% if @chat_id %>

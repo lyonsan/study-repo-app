@@ -197,6 +197,16 @@
 - belongs_to :article
 - belongs_to :tag
 
+### likes テーブル
+| Column             | Type            | option                         |
+| ------------------ | --------------- | ------------------------------ |
+| user               | references      | foreign_key: true              |
+| article            | references      | foreign_key: true              |
+
+#### Association
+- belongs_to :user
+- belongs_to :article
+
 
 ## ローカルでの動作方法
 - データベース: MySQL

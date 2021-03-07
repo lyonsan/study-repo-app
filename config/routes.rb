@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'articles/index'
-  get 'articles/new'
   devise_for :users
   root to: "rooms#index"
   resources :rooms do
@@ -17,6 +15,9 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    member do
+      get 'library'
+    end
   end
   resources :chats, only: [:create, :show, :destroy] do
     resources :messages, only: :create
@@ -26,5 +27,6 @@ Rails.application.routes.draw do
       get 'search'
       get 'tagsearch'
     end
+    resource :likes, only: [:create, :destroy]
   end
 end

@@ -33,6 +33,7 @@
       <% end %>
       <%= article.study_genre.name %>
       <%= article.user.nickname %>
+      <%= "お気に入り#{article.likes.count}" %>
     </div>
   <% end %>
 <% end %>

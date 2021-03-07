@@ -23,6 +23,8 @@ class User < ApplicationRecord
   has_many :chats, through: :chat_users
   has_many :messages
   has_many :articles
+  has_many :likes, dependent: :destroy
+  has_many :like_articles, through: :likes, source: :article
   belongs_to_active_hash :study_genre
 
   def self.search(search, study_genre)

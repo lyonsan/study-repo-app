@@ -1,0 +1,36 @@
+<%= render "shared/header" %>
+<div>
+  <div><%= @user.nickname %></div>
+  <div>
+    <div><h1>投稿した記事</h1><div>
+    <% @articles.each do |article| %>
+      <%= link_to article_path(article) do %>
+        <div class="article-list">
+          <h3><%= article.summary %></h3>
+          <% article.tags.each do |tag| %>
+            #<%= tag.tag_name %>
+          <% end %>
+          <%= article.study_genre.name %>
+          <%= article.user.nickname %>
+          <%= "お気に入り#{article.likes.count}" %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div>
+    <div><h1>いいねした記事</h1></div>
+    <% @like_articles.each do |like_article| %>
+      <%= link_to article_path(like_article) do %>
+        <div class="article-list">
+          <h3><%= like_article.summary %></h3>
+          <% like_article.tags.each do |tag| %>
+            #<%= tag.tag_name %>
+          <% end %>
+          <%= like_article.study_genre.name %>
+          <%= like_article.user.nickname %>
+          <%= "お気に入り#{like_article.likes.count}" %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
