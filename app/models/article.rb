@@ -4,6 +4,8 @@ class Article < ApplicationRecord
   belongs_to_active_hash :study_genre
   has_many :article_tag_relations, dependent: :destroy
   has_many :tags, through: :article_tag_relations
+  has_many :users, through: :likes
+  has_many :likes
   with_options numericality: { other_than: 1, message: 'を選択してください' } do
     validates :study_genre_id
   end
@@ -30,5 +32,9 @@ class Article < ApplicationRecord
         Article.all
       end
     end
+  end
+
+  def liked_by?(user)
+    likes.where(user_id: user.id).exists?
   end
 end

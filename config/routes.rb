@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'articles/index'
-  get 'articles/new'
   devise_for :users
   root to: "rooms#index"
   resources :rooms do
@@ -26,5 +24,6 @@ Rails.application.routes.draw do
       get 'search'
       get 'tagsearch'
     end
+    resource :likes, only: [:create, :destroy]
   end
 end
