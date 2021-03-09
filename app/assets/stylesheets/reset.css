@@ -49,7 +49,7 @@ td {
 }
 /* font-familyの設定 */
 body{
-  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3",'Roboto' sans-serif;
 }
 table {
   border-collapse:collapse;

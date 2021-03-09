@@ -1,0 +1,195 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.home-header {
+  position: fixed;
+  top:0;
+  z-index: 10;
+  font-family: 'Roboto';
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 20px;
+  align-items: center;
+  background-color: white;
+  border-bottom: solid 1px #00b0f0;
+}
+
+.right-lists {
+  display: flex;
+  padding: 2px 20px;
+  align-items: center;
+}
+.right-lists>li {
+  padding: 0 5px;
+  font-size: 25px;
+}
+
+.title {
+  height:85vh;
+  width: 70vw;
+  min-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 25px;
+}
+
+.top-title {
+  font-family: 'Roboto';
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+
+.top-exp {
+  font-family: 'Roboto';
+  text-align: center;
+  font-size: 15px;
+}
+
+.top-lists {
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-lists>.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+}
+
+.top-lists>.list>.list-pict {
+  width: 120px;
+  height: 120px;
+}
+
+.top-lists>.list>.top-list-text {
+  font-size: 15px;
+}
+
+.content, .why, .detail, .start {
+  width: 70vw;
+  min-width: 800px;
+  padding-bottom: 80px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.content-header, .why-header, .detail-header, .start-header {
+  font-family: 'Roboto';
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.content-header>.content-title, .why-header>.why-title, .detail-header>.detail-title, .start-header>.start-title {
+  position: relative;
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+
+.content-header>.content-title::after, .why-header>.why-title::after, .detail-header>.detail-title::after, .start-header>.start-title::after {
+  content: '';
+  width: 70px;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 1);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.content-content {
+  display: flex;
+  justify-content: space-around ;
+  padding-bottom: 60px;
+}
+
+.why-illust {
+  display: flex;
+  justify-content: space-between;
+}
+
+.why-content {
+  margin: 0 auto;
+}
+
+.why-content>p, .why-content>h1 {
+  text-align: center;
+}
+
+.detail-content {
+  display: flex;
+  justify-content: center;
+}
+
+.detail-link {
+  font-family: 'Roboto';
+  color: white;
+  background-color: #00b0f0;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+.detail-link:hover {
+  font-family: 'Roboto';
+  color: white;
+  background-color: #81d7f7;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: all 0.5s;
+}
+
+.start-content {
+  display: flex;
+  justify-content: center;
+}
+
+.signin-link {
+  padding:10px 20px;
+  margin: 0 10px;
+  background-color: white;
+  color: #00b0f0;
+  border: solid 1px #00b0f0;
+  border-radius: 4px;
+}
+
+.signup-link {
+  padding:10px 20px;
+  margin: 0 10px;
+  background-color: #00b0f0;
+  color: white;
+  border-radius: 4px;
+}
+
+.signin-link:hover {
+  padding:10px 20px;
+  margin: 0 10px;
+  background-color: white;
+  color: #81d7f7;
+  border: solid 1px #81d7f7;
+  border-radius: 4px;
+  transition: all 0.5s;
+}
+
+.signup-link:hover {
+  padding:10px 20px;
+  margin: 0 10px;
+  background-color: #81d7f7;
+  color: white;
+  border-radius: 4px;
+  transition: all 0.5s;
+}

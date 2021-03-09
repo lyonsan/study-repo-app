@@ -1,0 +1,154 @@
+<div class="home-header">
+  <div class="header-left"><h2>StudyReport</h2></div>
+  <div class="header-right">
+    <ul class="right-lists">
+      <li>Top</li>
+      <li>Content</li>
+      <li>Why</li>
+      <li>Details</li>
+      <li>Start</li>
+    </ul>
+  </div>
+</div>
+
+<div class="home-wrapper">
+  <div class='title'>
+    <div class="title-content">
+      <h2 class='top-title'>
+        StudyReport
+      </h2>
+      <p class='top-exp'>
+        大人のための学習アプリ
+      </p>
+    </div>
+    <div class='top-list-wrapper'>
+      <div class='top-lists'>
+        <div class='list'>
+          <%= image_tag "report_b.jpg", class:"list-pict" %>
+          <h3 class='top-list-text'>
+            報告する
+          </h3>
+          <p class='top-list-description'>
+            毎日の学習を、同士と報告し合えます。
+          </p>
+        </div>
+        <div class='list'>
+          <%= image_tag "memo_b.jpg", class:"list-pict" %>
+          <h3 class='top-list-text'>
+            メモをとる
+          </h3>
+          <p class='top-list-description'>
+            学習中の気付きを、ご自身の設定したカテゴリ毎にメモできます。
+          </p>
+        </div>
+        <div class='list'>
+          <%= image_tag "article_b.jpg", class:"list-pict" %>
+          <h3 class='top-list-text'>
+            記事にする
+          </h3>
+          <p class='top-list-description'>
+            学んだ知識を発信することができます
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%# /画面上部のキャッチコピー帯部分  %>
+
+  <%# StudyReportの特徴 %>
+  <div class='content'>
+    <div class='content-contents'>
+      <div class="content-header">
+        <h2 class='content-title'>
+          Contents
+        </h2>
+        <div class='content-exp'>
+          <p>StudyReportは、日々の学習をアウトプットするためのアプリケーションです。</p>
+          <p>アウトプットを通し、忙しい中での学習をやり切ることができる環境を用意しています。</p>
+        </div>
+      </div>
+      <div class="content-content">
+        <div class="report-left">
+          <h3>仲間との報告</h3>
+          <p>仲間と学習報告ルームを作成して、日々の学習内容、時間、感じたことを共有できます。</p>
+          <p>周りの目があることで毎日学習をやらざるを得ない環境を作ることができますし、</p>
+          <p>仮に一人でも1日の終わりに学習内容を振り返ることができます。</p>
+        </div>
+        <div class="memo-right">
+          <%= image_tag "report_b.jpg", class:"list-pict" %>
+        </div>
+      </div>
+      <div class="content-content">
+        <div class="memo-left">
+          <%= image_tag "memo_b.jpg", class:"list-pict" %>
+        </div>
+        <div class="memo-right">
+          <h3>学習中の気付きをメモ</h3>
+          <p>学習中に「これは記録しておきたい!」と思ったらすぐにメモできます。</p>
+          <p>ご自分の好きな項目で「メモルーム」を作成していただき、</p>
+          <p>メモルームの中に学習中の気付きをメモしていただけます。</p>
+        </div>
+      </div>
+      <div class="content-content">
+        <div class="article-left">
+          <h3>学んだことを記事にして公開する</h3>
+          <p>学習したことを記事にして公開しましょう。</p>
+          <p>人にわかりやすく伝えることを通して、自分の理解を深めましょう</p>
+        </div>
+        <div class="article-right">
+          <%= image_tag "article_b.jpg", class:"list-pict" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="why">
+    <div class="why-contents">
+      <div class="why-header">
+        <h2 class="why-title">Why</h2>
+        <div class="why-exp">
+          <p>なぜアウトプットが重要なのでしょうか？</p>
+          <p>それは、アウトプットは知識の定着効率を最も良くする手段だからです。</p>
+          <p>人間は情報を見たり、聞いたり、読んだりするだけでは学習定着率は良くて20%ですが、</p>
+          <p>人に説明することで<span class="border">最大90%</span>まで上昇すると言われています。</p>
+          <p>(出典：アメリカ国立訓練研究所)</p>
+        </div>
+      </div>
+      <div class="why-illust">
+      <div class="why-content">
+        <%= image_tag "input.jpeg", class:"list-pict" %>
+        <p>見る、聞く、読む</p>
+        <h1>20%</h1>
+      </div>
+      <div class="why-content">
+        <%= image_tag "output.jpg", class:"list-pict" %>
+        <p>説明する</p>
+        <h1>90%</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail">
+    <div class="detail-contents">
+      <div class="detail-header">
+        <h2 class="detail-title">Details</h2>
+        <div class="detail-exp">実際にどういった機能なのか見てみましょう!</div>
+      </div>
+      <div class="detail-content">
+        <%= link_to "説明ページへ", "#", class: "detail-link" %>
+      </div>
+    </div>
+  </div>
+  <div class="start">
+    <div class="start-contents">
+      <div class="start-header">
+        <h2 class="start-title">Start!</h2>
+        <div class="detail-exp">さあ、学習を始めましょう!</div>
+      </div>
+      <div class="start-content">
+        <%= link_to "新規登録", "#", class: "signup-link" %>
+        <%= link_to "ログイン", "#", class: "signin-link" %>
+      </div>
+    </div>
+  </div>
+</div>

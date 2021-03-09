@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "rooms#index"
+  get "home", to: 'home#index'
   resources :rooms do
     resources :reports, only: [:index, :new, :create, :destroy]
   end
