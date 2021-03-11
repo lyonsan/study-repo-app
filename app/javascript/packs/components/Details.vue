@@ -6,7 +6,7 @@
         <div class="detail-exp">実際にどういった機能なのか見てみましょう!</div>
       </div>
       <div class="detail-content">
-        <a href="#" class="detail-link">説明ページへ</a>
+        <a href="/details" class="detail-link">説明ページへ</a>
       </div>
     </div>
   </div>
