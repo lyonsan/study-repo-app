@@ -1,9 +1,47 @@
-<%= javascript_pack_tag 'hello_vue' %>
-<%= stylesheet_pack_tag 'hello_vue' %>
   <%# /画面上部のキャッチコピー帯部分  %>
-<div id='app'>
-</div>
+<% if user_signed_in? %>
+  <%= render "shared/header" %>
+  <div class="home-wrapper">
+    <div class="home-head-user">
+      <p>こんにちは、<%= current_user.nickname %>さん</p>
+    </div>
+    <div class="home-body">
+      <div class="menu-header">
+        <h2>メニューを選択</h2>
+        <p>今日も学習がんばっていきましょう!</p>
+      </div>
+    </div>
+    <div class='top-list-wrapper'>
+      <div class='top-lists'>
+        <%= link_to rooms_path, class:'list' do %>
+          <img src="/images/report_b.jpg" alt="" class="list-pict">
+          <h3 class='top-list-text'>
+            学習報告
+          </h3>
+        <% end %>
+        <%= link_to subjects_path, class:'list' do %>
+          <img src="/images/memo_b.jpg" alt="" class="list-pict">
+          <h3 class='top-list-text'>
+            メモ
+          </h3>
+        <% end %>
+        <%= link_to articles_path, class:'list' do %>
+          <img src="/images/article_b.jpg" alt="" class="list-pict">
+          <h3 class='top-list-text'>
+            記事にする
+          </h3>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <%= javascript_pack_tag 'hello_vue' %>
+  <%= stylesheet_pack_tag 'hello_vue' %>
 
+  <div id='app'>
+  </div>
+<% end %>
+<%= render "shared/footer" %>
 <%# StudyReportの特徴 %>
 
 

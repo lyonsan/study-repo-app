@@ -1,6 +1,6 @@
 <template>
   <div class="home-header">
-    <div class="header-left"><h2>StudyReport</h2></div>
+    <div class="header-left"><h2 class="header-logo">StudyReport</h2></div>
     <div class="header-right">
       <Nav></Nav>
     </div>

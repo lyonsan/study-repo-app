@@ -1,31 +1,7 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.home-header {
-  position: fixed;
-  top:0;
-  z-index: 10;
-  font-family: 'Roboto';
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 2px 20px;
-  align-items: center;
-  background-color: white;
-  border-bottom: solid 1px #00b0f0;
-}
 
-.right-lists {
-  display: flex;
-  padding: 2px 20px;
-  align-items: center;
-}
-.right-lists>li>a {
-  padding: 0 5px;
-  font-family: 'Roboto';
-  color: black;
-  font-size: 25px;
-}
 
 .title {
   height:80vh;
