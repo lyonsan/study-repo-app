@@ -37,8 +37,20 @@
   color: white;
 }
 
+.link-room:hover {
+  background-color: #81d7f7;
+  color: white;
+}
+
 .link-top {
   border: solid 1px #00b0f0;
   background-color: white;
   color: #00b0f0;
 }
+
+.link-top:hover {
+  border: solid 1px #81d7f7;
+  background-color: white;
+  color: #81d7f7;
+}
+

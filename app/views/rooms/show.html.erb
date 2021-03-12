@@ -1,4 +1,4 @@
-<%= render "shared/header" %>
+<%= render "shared/report_header" %>
 
 <div class="room-show">
   <div class="room-box">
@@ -14,11 +14,8 @@
     </div>
 
     <% if user_signed_in? && @room.users.include?(current_user) %>
-      <%= link_to "学習報告ルームへ", room_reports_path(@room), class:"room-link" %>
-      <div class="room-edit-btn">
-        <%= link_to 'ルームの編集', edit_room_path(@room) , method: :get, class: "room-link" %>
-        <p class='or-text'>or</p>
-        <%= link_to '削除', room_path(@room), method: :delete, class:'room-link' %>
+      <div class="to-report">
+        <%= link_to "学習報告ルームへ", room_reports_path(@room), class:"room-link" %>
       </div>
     <% end %>
 
@@ -51,6 +48,13 @@
         </tr>
       </tbody>
     </table>
+    <% if user_signed_in? && @room.users.include?(current_user) %>
+      <div class="room-edit-btn">
+        <%= link_to 'ルーム情報の編集', edit_room_path(@room) , method: :get, class: "room-link-edit" %>
+        <p class='or-text'>or</p>
+        <%= link_to 'ルームの削除', room_path(@room), method: :delete, class:'room-link-des' %>
+      </div>
+    <% end %>
   </div>
 </div>
 
