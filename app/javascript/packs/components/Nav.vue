@@ -1,5 +1,5 @@
 <template>
-  <ul class="right-lists">
+  <ul class="right-lists-lp">
     <li><a href="#top" class="nav-button" @click="clickSmoothScroll('#top')">Top</a></li>
     <li><a href="#content" class="nav-button" @click="clickSmoothScroll('#content')">Content</a></li>
     <li><a href="#Why" class="nav-button" @click="clickSmoothScroll('#why')">Why</a></li>

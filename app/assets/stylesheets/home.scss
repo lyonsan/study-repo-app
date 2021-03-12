@@ -6,7 +6,6 @@
 .title {
   height:80vh;
   width: 70vw;
-  min-width: 800px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -59,7 +58,6 @@
 
 .content, .why, .detail, .start {
   width: 70vw;
-  min-width: 800px;
   padding-bottom: 80px;
   margin: 0 auto;
   display: flex;
@@ -84,7 +82,7 @@
   content: '';
   width: 70px;
   height: 2px;
-  background-color: rgba(0, 0, 0, 1);
+  background-color: black;
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -95,6 +93,10 @@
   display: flex;
   justify-content: space-around ;
   padding-bottom: 60px;
+}
+
+.report-right-sp, .article-right-sp {
+  display: none;
 }
 
 .why-illust {
@@ -171,4 +173,103 @@
   color: white;
   border-radius: 4px;
   transition: all 0.5s;
+}
+
+.home-wrapper {
+  padding-top: 100px;
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.menu-header>h2 {
+  font-size: 30px;
+  text-align: center;
+}
+
+.top-lists-login {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.top-lists-login>.list>.list-pict {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+}
+
+.top-lists-login>.list>h3 {
+  text-align: center;
+  color: black;
+}
+
+@media screen and (max-width: 1000px) {
+  .title {
+    padding-top: 50px;
+    height: unset;
+    width: 70vw;
+    min-width: none;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .top-lists {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .top-lists>.list {
+    width: 100%;
+    text-align: center;
+  }
+
+  .content-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .report-right, .article-right {
+    display: none;
+  }
+
+  .report-right-sp, .article-right-sp, .memo-left {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .content, .why, .detail, .start {
+    width: 70vw;
+    min-width: none;
+    padding-bottom: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .why-illust {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home-head-user {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+
+  .top-lists-login {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: 15px auto;
+  }
+
+  .top-list-login>.list {
+    text-align: center;
+  }
+  
 }

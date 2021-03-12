@@ -1,9 +1,9 @@
 <template>
-  <ul class="right-lists">
+  <ul class="right-lists-lp">
     <li><a href="/" class="nav-button">Top</a></li>
-    <li><router-link :to="{name:'ReportDetailsPage'}">学習報告</router-link></li>
-    <li><router-link :to="{name:'MemoDetailsPage'}">メモ</router-link></li>
-    <li><router-link :to="{name:'ArticleDetailsPage'}">記事</router-link></li>
+    <li><router-link class="nav-button" :to="{name:'ReportDetailsPage'}">Report</router-link></li>
+    <li><router-link class="nav-button" :to="{name:'MemoDetailsPage'}">Memo</router-link></li>
+    <li><router-link class="nav-button" :to="{name:'ArticleDetailsPage'}">Article</router-link></li>
   </ul>
 </template>
 
