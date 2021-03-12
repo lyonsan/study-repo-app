@@ -11,8 +11,12 @@ RSpec.describe '学習報告ルームの作成機能', type: :system do
     it 'ログインしたユーザーは新規ルーム作成ができる' do
       # ログインする
       sign_in(@user)
+      # 学習報告一覧へのリンクがあることを確認する
+      expect(page).to have_content('学習報告')
+      # 学習報告一覧ページに遷移する
+      visit rooms_path
       # 新規ルーム作成ページへのリンクがあることを確認する
-      expect(page).to have_content('学習報告ルーム作成ページ')
+      expect(page).to have_content('ルーム新規作成')
       # 新規ルーム作成ページに遷移する
       visit new_room_path
       # 添付する写真を定義する
@@ -31,9 +35,9 @@ RSpec.describe '学習報告ルームの作成機能', type: :system do
       # 「学習報告ルーム作成が完了しました!」と表示されている
       expect(page).to have_content('学習報告ルーム作成が完了しました!')
       # トップページへのリンクがあることを確認する
-      expect(page).to have_content('トップページに戻る')
+      expect(page).to have_content('一覧に戻る')
       # トップページに遷移する
-      visit root_path
+      visit rooms_path
       # トップページには先ほど作成したルームがあることを確認する
       expect(page).to have_content(@room_title)
     end
@@ -42,14 +46,18 @@ RSpec.describe '学習報告ルームの作成機能', type: :system do
     it 'ログインしていないと新規ルーム作成ができない' do
       # トップページに遷移する
       visit root_path
-      # 新規投稿ページへのリンクがない
-      expect(page).to have_no_content('学習報告ルーム作成ページ')
+      # 学習報告へのリンクがない(メニューを選択できない)
+      expect(page).to have_no_content('メニューを選択')
     end
     it '誤った情報では新規ルーム作成ができずにルーム作成ページに戻ってくる' do
       # ログインする
       sign_in(@user)
+      # 学習報告一覧へのリンクがあることを確認する
+      expect(page).to have_content('学習報告')
+      # 学習報告一覧ページに遷移する
+      visit rooms_path
       # 新規ルーム作成ページへのリンクがあることを確認する
-      expect(page).to have_content('学習報告ルーム作成ページ')
+      expect(page).to have_content('ルーム新規作成')
       # 新規ルーム作成ページに遷移する
       visit new_room_path
       # フォームに値を入力する
@@ -78,12 +86,16 @@ RSpec.describe '学習報告ルームの情報編集機能', type: :system do
     it 'ログインしたユーザーは自分の所属するルームの情報を編集できる' do
       # ログインする
       sign_in(@user)
+      # 学習報告一覧へのリンクがあることを確認する
+      expect(page).to have_content('学習報告')
+      # 学習報告一覧ページに遷移する
+      visit rooms_path
       # ルーム名が表示されていることを確認する
       expect(page).to have_content(@room.title)
       # ルームの詳細ページにアクセスする
       visit room_path(@room)
       # 詳細ページに、「ルームの編集」ボタンがあることを確認する
-      expect(page).to have_content('ルームの編集')
+      expect(page).to have_content('ルーム情報の編集')
       # ルーム情報編集ページにアクセスする
       visit edit_room_path(@room)
       # 元々のルームの情報が既に入力されていることを確認する(画像を除く)
@@ -117,12 +129,16 @@ RSpec.describe '学習報告ルームの情報編集機能', type: :system do
     it '誤った情報では新規ルーム作成ができずにルーム作成ページに戻ってくる' do
       # ログインする
       sign_in(@user)
+      # 学習報告一覧へのリンクがあることを確認する
+      expect(page).to have_content('学習報告')
+      # 学習報告一覧ページに遷移する
+      visit rooms_path
       # ルーム名が表示されていることを確認する
       expect(page).to have_content(@room.title)
       # ルームの詳細ページにアクセスする
       visit room_path(@room)
       # 詳細ページに、「ルームの編集」ボタンがあることを確認する
-      expect(page).to have_content('ルームの編集')
+      expect(page).to have_content('ルーム情報の編集')
       # ルーム情報編集ページにアクセスする
       visit edit_room_path(@room)
       # 元々のルームの情報が既に入力されていることを確認する(画像を除く)
@@ -143,14 +159,18 @@ RSpec.describe '学習報告ルームの情報編集機能', type: :system do
       expect(current_path).to eq "/rooms/#{@room.id}"
     end
     it 'ログインしていないとルーム編集ができない' do
-      # ルーム詳細ページに遷移する
-      visit room_path(@room)
-      # 新規投稿ページへのリンクがない
-      expect(page).to have_no_content('ルームの編集')
+      # トップページに遷移する
+      visit root_path
+      # 学習報告へのリンクがない(メニューを選択できない)
+      expect(page).to have_no_content('メニューを選択')
     end
     it 'メンバー外のユーザーはルーム編集ができない' do
       # サインイン
       sign_in(@user1)
+      # 学習報告一覧へのリンクがあることを確認する
+      expect(page).to have_content('学習報告')
+      # 学習報告一覧ページに遷移する
+      visit rooms_path
       # ルーム詳細ページに遷移する
       visit room_path(@room)
       # ルーム情報編集ページへのリンクがない
@@ -167,12 +187,16 @@ RSpec.describe '学習報告ルームの削除機能', type: :system do
     it '学習ルームに所属するメンバーは学習ルームを削除することができる' do
       # サインインする
       sign_in(@room_user.user)
+      # 学習報告一覧へのリンクがあることを確認する
+      expect(page).to have_content('学習報告')
+      # 学習報告一覧ページに遷移する
+      visit rooms_path
       # 生成されたルームが存在することを確認する
       expect(page).to have_content(@room_user.room.title)
       # ルーム詳細ページに遷移
       visit room_path(@room_user.room)
       # 「削除」ボタンがあることを確認
-      expect(page).to have_content('削除')
+      expect(page).to have_content('ルームの削除')
       # 「削除」ボタンをクリックすると、Reportモデルのカウントが減少する
       expect do
         click_link '削除'

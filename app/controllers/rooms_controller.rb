@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!
   before_action :set_room, only: [:show, :edit, :update]
   def index
     @rooms = Room.all.order(created_at: 'DESC')
