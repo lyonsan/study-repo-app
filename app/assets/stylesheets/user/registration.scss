@@ -189,3 +189,13 @@
   cursor: pointer;
   transition: all 0.5s;
 }
+
+@media screen and (max-width: 1000px) {
+  .registration-main {
+    min-width: 200px;
+  }
+
+  .form-group {
+    width: 80%;
+  }
+}
