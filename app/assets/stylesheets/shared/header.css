@@ -2,78 +2,6 @@
   box-sizing: border-box;
 }
 
-.top-page-header {
-  width: 100vw;
-  padding: 2vh 15vw;
-  position: fixed;
-  top:0;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.8);
-}
-.nav {
-  font-size: 18px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 1vh 0;
-}
-
-.lists-left {
-  display: flex;
-  min-width: 200px;
-}
-
-.lists-left a {
-  color: rgba(256, 256, 256, 0.8);
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
-}
-
-
-.lists-right {
-  display: flex;
-  list-style: none;
-  align-items: flex-end;
-}
-
-
-.subjects {
-  text-decoration: none;
-  margin-right: 3vw;
-  color: rgba(256, 256, 256, 0.8);
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
-  font-weight: bold;
-}
-
-.user-nickname {
-  text-decoration: none;
-  margin-right: 3vw;
-  color: rgba(256, 256, 256, 0.8);
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
-  font-weight: bold;
-}
-
-
-.logout {
-  text-decoration: none;
-  color: rgba(256, 256, 256, 0.8);
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
-}
-
-
-.login {
-  text-decoration: none;
-  line-height: 32px;
-  margin-right: 3vw;
-  color: rgba(256, 256, 256, 0.8);
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
-}
-
-.sign-up {
-  text-decoration: none;
-  color: rgba(256, 256, 256, 0.8);
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
-}
 
 .home-header {
   position: fixed;
@@ -105,6 +33,7 @@
   font-family: 'Roboto';
   color: black;
   font-size: 20px;
+  height: 100%;
 }
 
 .right-lists-lp {
@@ -120,9 +49,14 @@
   font-size: 20px;
 }
 
-.nav-button:hover {
-  color: #666666;
+.current-nav-button {
+  border-bottom: solid 2px black;
 }
+
+.nav-button:hover {
+  border-bottom: solid 2px black;
+}
+
 
 nav {
   background-color: white;
@@ -212,25 +146,4 @@ nav {
     font-size: 20px;
   }
 
-  .sp-right-lists>li>a::after {
-    content: '';
-    width: 30px;
-    height: 1.5px;
-    background-color: black;
-    position: absolute;
-    bottom: -3px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .sp-right-lists>li>a:hover::after {
-    content: '';
-    width: 30px;
-    height: 1.5px;
-    background-color: #666666;
-    position: absolute;
-    bottom: -3px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
 }

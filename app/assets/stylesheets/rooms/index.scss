@@ -3,215 +3,77 @@ a {
 }
 
 
-
-
-/* 画面上部のキャッチコピー帯部分 */
-.title-contents {
-  width: 100vw;
-  height: 120vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-image: image-url('rooms-index-02.jpeg');
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 5vh 15vw;
-  color: rgba(256, 256, 256, 0.8);
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
-}
-
-.service-title {
-  font-size: 10vh;
-}
-
-.service-explain {
-  font-size: 2.5vh;
-  line-height: 40px;
-}
-
-/* //画面上部のキャッチコピー帯部分 */
-
-/* ルームのサンプル */
-.land-room-lists {
-  width: 100vw;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.9);
-}
-
-.land-room-lists>.list {
-  width: 30vw;
-  padding: 2vw;
-  border-radius: 4px;
-}
-
-.land-room-lists>.got-list {
-  width: 30vh;
-  padding: 2vw;
-}
-
-/* //ルームのサンプル */
-
-
-/* StudyReportの特徴 */
-.feature-contents {
-  padding: 15vh 15vw;
-  background-color: rgba(0, 0, 0, 0.9);
-}
-
-.feature-contents>.title {
-  text-align: center;
-  font-size: 3.5vh;
-  margin-bottom: 10vh;
-  position: relative;
-  color: rgba(256, 256, 256, 0.8);
-}
-
-.feature-contents>.title::after {
-  content: '';
-  width: 70px;
-  height: 2px;
-  background-color: rgba(256, 256, 256, 0.8);
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.feature-contents>.explanation {
-  text-align: center;
-  font-size: 2vh;
-  margin-bottom: 5vh;
-  color: rgba(256, 256, 256, 0.8);
-}
-
-.feature-contents>.explanation>p {
-  padding-bottom:4vh;
-}
-
-
-.feature-lists {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.feature-lists>.list {
-  width: 40vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.feature-lists>.list>.list-pict {
-  width: 100%;
-  height: 30vh;
-}
-
-.feature-list-text {
-  font-weight: bold;
-  font-size: 4vh;
-  line-height: 50px;
-  color: rgba(256, 256, 256, 0.8);
-}
-
-.feature-list-description {
-  font-size: 3.5vh;
-  margin-top: 20px;
-  color: rgba(256, 256, 256, 0.8);
-}
-
-.regi_session {
-  font-size: 3vh;
-  line-height: 50px;
-  margin-bottom: 20vh;
-  color: rgba(256, 256, 256, 0.8);
-}
-
-.regi_session:hover {
-  font-weight: bold;
-  font-size: 3vh;
-  line-height: 50px;
-  margin-bottom: 20vh;
-  color: rgba(256, 256, 256, 0.8);
-  border-bottom: solid 2px rgba(256, 256, 256, 0.8);
-  transition: all 0.5s;
-}
-
-
-/* //StudyReportの特徴 */
-
 /* 学習報告ルーム一覧 */
 
-.room-contents {
+.room-wrapper {
+  width: 70vw;
+  margin: 0 auto;
+  padding-top: 70px;
+}
+
+.room-header {
   display: flex;
-  background-color: rgba(48, 146, 236, 0.3);
-  flex-direction: column;
-  align-items: center;
-  padding: 30vh 0 0 0;
+  justify-content: space-between;
 }
 
-.room-contents>.title {
-  font-size: 3.5vh;
-  line-height: 1.4;
+.room-header>.room-title {
+  font-family: 'Roboto';
+  font-size: 16px;
+}
+
+.room-header>.room-header-right {
+  margin-top: 15px;
+}
+
+.room-header>.room-header-right>.room-new {
+  padding: 10px;
+  color: white;
   font-weight: bold;
-  color:rgba(256, 256, 256, 0.8);
-  margin-bottom: 10vh;
-  position: relative;
+  background-color: #00b0f0;
+  border-radius: 5px;
+  text-align: center;
 }
 
-.room-contents>.title::after {
-  content: '';
-  width: 70px;
-  height: 2px;
-  background-color: rgba(256, 256, 256, 0.8);
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.room-contents>.subtitle {
-  font-size: 3vh;
-  margin: 1vh 0;
-  text-decoration: none;
-  color: #3ccace;
+.room-header>.room-header-right>.room-new:hover {
+  padding: 10px;
+  color: white;
   font-weight: bold;
+  background-color: #81d7f7;
+  border-radius: 5px;
+  text-align: center;
 }
 
 .room-lists {
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 7vh;
-}
-
-.room-lists>.list {
-  width: 30vw;
-  padding: 2vw;
-  border-radius: 4px;
 }
 
 .room-lists>.got-list {
-  width: 30vh;
-  padding: 2vw;
+  width: 200px;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 5px;
+  border: solid 1px #eeeeee;
+  box-shadow: 0px 0px 5px #eeeeee;
+  display: flex;
+  flex-direction: column;
 }
 
 
 
 .room-img {
-  width: 25vh;
-  height: 25vh;
+  width: 180px;
+  height: 180px;
+  margin-left: 10px;
   border-radius: 50%;
+  margin: 0 auto;
 }
 
 
 .room-info {
-  color: rgba(256, 256, 256, 0.8);
+  color: black;
   padding: 1vw;
 }
 
@@ -235,10 +97,7 @@ a {
 
 .new-message {
   text-align: center;
-  font-size: 3.5vh;
-  margin-bottom: 10vh;
   position: relative;
-  color: rgba(256, 256, 256, 0.8);
 }
 
 /* //学習報告ルーム一覧 */
