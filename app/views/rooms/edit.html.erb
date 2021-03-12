@@ -4,9 +4,9 @@
   <%= form_with model: @room, url: room_path(@room), class: 'registration-main', local: true do |f| %>
   <div class='form-wrap'>
     <div class='form-header'>
-      <h1 class='form-header-text'>
-        学習報告ルームの情報を編集
-      </h1>
+      <h2 class='form-header-text'>
+        学習報告ルーム情報編集
+      </h2>
     </div>
 
     <%= render 'shared/error_messages', model: f.object %>
@@ -45,11 +45,11 @@
 
     <div class="form-group">
       <h2 class='form-bottom-text'>
-        「ルーム作成」ボタンを押すと、学習報告ルームが生成されます。
+        「ルーム情報更新」ボタンを押すと、学習報告ルームの情報が更新されます。
       </h2>
-    </div>
-    <div class='register-btn'>
-      <%= f.submit "ルーム情報を更新する" ,class:"register-link" %>
+      <div class='register-btn'>
+        <%= f.submit "ルーム情報更新" ,class:"register-link" %>
+      </div>
     </div>
   </div>
   <% end %>

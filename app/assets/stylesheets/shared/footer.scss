@@ -1,14 +1,16 @@
 .footer {
   width: 100vw;
-  padding: 2vh 0;
-  color: rgba(256, 256, 256, 0.8);
+  padding: 5px 0;
+  color: black;
   position: fixed;
   bottom:0;
   z-index: 10;
-  background: rgba(0, 0, 0, 0.8);
+  background: white;
   text-align: center;
 }
 
 .footer>p {
   font-size: 14px;
+  color: black;
+  font-family: 'Roboto';
 }

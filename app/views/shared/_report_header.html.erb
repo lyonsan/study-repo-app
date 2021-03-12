@@ -1,12 +1,30 @@
-<header class='report-header'>
-  <div class='nav-report'>
-    <ul class='lists-left'>
-      <li><%= link_to @room.title, room_path(@room), class: "category-list" %></li>
+<%= javascript_pack_tag "menu.js" %>
+<header class='home-header'>
+  <ul class='header-left'>
+    <li><%= link_to 'StudyReport', root_path, class: "header-logo" %></li>
+  </ul>
+  <div class="header-right">
+    <ul class='right-lists'>
+      <li><%= link_to 'Report', rooms_path, class: "current-nav-button" %></li>
+      <li><%= link_to 'Memo', subjects_path, class: "nav-button" %></li>
+      <li><%= link_to 'Article', articles_path, class: "nav-button" %></li>
+      <li><%= link_to 'MyPage', user_path(current_user), class: "nav-button" %></li>
+      <li><%= link_to 'Users', users_path, class: "nav-button" %></li>
+      <li><%= link_to 'Logout', destroy_user_session_path , method: :delete, class: "nav-button" %></li>
     </ul>
-    <ul class='lists-right'>
-      <li><%= link_to 'メモ', subjects_path, class: "subjects" %></li>
-      <li><%= link_to 'トップページ', root_path , class: "top-link" %></li>
-      <li><%= link_to '学習報告を行う', new_room_report_path(@room) , class: "new-report" %></li>
-    </ul>
+    <div id="box">
+      <span></span>
+    </div>
   </div>
+
+  <nav>
+    <ul class='sp-right-lists'>
+      <li><%= link_to 'Report', rooms_path, class: "current-nav-button" %></li>
+      <li><%= link_to 'Memo', subjects_path, class: "nav-button" %></li>
+      <li><%= link_to 'Article', articles_path, class: "nav-button" %></li>
+      <li><%= link_to 'MyPage', user_path(current_user), class: "nav-button" %></li>
+      <li><%= link_to 'Users', users_path, class: "nav-button" %></li>
+      <li><%= link_to 'Logout', destroy_user_session_path , method: :delete, class: "nav-button" %></li>
+    </ul>
+  </nav>
 </header>

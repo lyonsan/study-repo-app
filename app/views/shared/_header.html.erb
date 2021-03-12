@@ -1,20 +1,41 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
-<header class='top-page-header'>
-  <div class='nav'>
-    <ul class='lists-left'>
-      <li><%= link_to 'StudyReport', root_path, class: "category-list" %></li>
-    </ul>
-    <ul class='lists-right'>
-    <% if user_signed_in? %>
-      <li><%= link_to '記事', articles_path, class: "subjects" %></li>
-      <li><%= link_to 'メモ', subjects_path, class: "subjects" %></li>
-      <li><%= link_to current_user.nickname, user_path(current_user), class: "user-nickname" %></li>
-      <li><%= link_to 'ユーザー一覧', users_path, class: "user-nickname" %></li>
-      <li><%= link_to 'ログアウト', destroy_user_session_path , method: :delete, class: "logout" %></li>
-    <% else %>
-      <li><%= link_to 'ログイン', new_user_session_path , class: "login" %></li>
-      <li><%= link_to '新規登録', new_user_registration_path , class: "sign-up" %></li>
-    <% end %>
+<%= javascript_pack_tag "menu.js" %>
+<header class='home-header'>
+  <ul class='header-left'>
+    <li><%= link_to 'StudyReport', root_path, class: "header-logo" %></li>
+  </ul>
+  <% if user_signed_in? %>
+    <div class="header-right">
+      <ul class='right-lists'>
+        <li><%= link_to 'Report', rooms_path, class: "nav-button" %></li>
+        <li><%= link_to 'Memo', subjects_path, class: "nav-button" %></li>
+        <li><%= link_to 'Article', articles_path, class: "nav-button" %></li>
+        <li><%= link_to 'MyPage', user_path(current_user), class: "nav-button" %></li>
+        <li><%= link_to 'Users', users_path, class: "nav-button" %></li>
+        <li><%= link_to 'Logout', destroy_user_session_path , method: :delete, class: "nav-button" %></li>
+      </ul>
+      <div id="box">
+        <span></span>
+      </div>
+    </div>
+
+    <nav>
+      <ul class='sp-right-lists'>
+        <li><%= link_to 'Report', rooms_path, class: "nav-button" %></li>
+        <li><%= link_to 'Memo', subjects_path, class: "nav-button" %></li>
+        <li><%= link_to 'Article', articles_path, class: "nav-button" %></li>
+        <li><%= link_to 'MyPage', user_path(current_user), class: "nav-button" %></li>
+        <li><%= link_to 'Users', users_path, class: "nav-button" %></li>
+        <li><%= link_to 'Logout', destroy_user_session_path , method: :delete, class: "nav-button" %></li>
+      </ul>
+    </nav>
+    
+  <% else %>
+  <div class="header-right">
+    <ul class='right-lists'>
+      <li><%= link_to 'Top', root_path, class: "nav-button" %></li>
+      <li><%= link_to 'Users', users_path, class: "nav-button" %></li>
     </ul>
   </div>
+  <% end %>
 </header>
