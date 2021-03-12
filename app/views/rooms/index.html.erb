@@ -1,4 +1,4 @@
-<%= render "shared/room_header" %>
+<%= render "shared/report_header" %>
 <div class='room-wrapper'>
   <div class="room-body">
     <div class="room-header">
@@ -12,26 +12,29 @@
         <%# ルーム毎に表示 %>
       <% @rooms.each do |room| %>
         <% if room.users.include?(current_user) %>
-          <%= link_to room_path(room), class:'got-list' do %>
-            <div class='room-img-content'>
-              <% if room.image.attached? %>
-                <%= image_tag room.image, class: "room-img" %>
-              <% else %>
-                <%= image_tag 'rooms-index-03.jpeg', class:"room-img" %>
-              <% end %>
-            </div>
-            <div class='room-info'>
-              <h3 class='room-name'>
-                <%= room.title %>
-              </h3>
-            </div>
-          <% end %>
+          <div class="got-list">
+            <%= link_to room_path(room) do %>
+              <div class='room-img-content'>
+                <% if room.image.attached? %>
+                  <%= image_tag room.image, class: "room-img" %>
+                <% else %>
+                  <%= image_tag 'rooms-index-03.jpeg', class:"room-img" %>
+                <% end %>
+              </div>
+              <div class='room-info'>
+                <h3 class='room-name'>
+                  <%= room.title %>
+                </h3>
+              </div>
+            <% end %>
+            <%= link_to '報告へ', room_reports_path(room), class: 'report-link' %>
+          </div>
         <% end %>
       <% end %>
     </div>
     <div class='new-message'>
       <div class='room-info'>
-        <h3 class='room-name'>
+        <h3 class='room-message'>
           仲間と学習報告を行いましょう!
         </h3>
       </div>

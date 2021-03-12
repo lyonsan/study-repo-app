@@ -1,12 +1,12 @@
-<%= render "shared/header"%>
+<%= render "shared/report_header"%>
 
 <div class="registration-body">
   <%= form_with model: @room, url: rooms_path(@room), class: 'registration-main', local: true do |f| %>
   <div class='form-wrap'>
     <div class='form-header'>
-      <h1 class='form-header-text'>
-        学習報告ルームの情報を入力
-      </h1>
+      <h2 class='form-header-text'>
+        学習報告ルーム新規作成
+      </h2>
     </div>
 
     <%= render 'shared/error_messages', model: f.object %>
@@ -19,7 +19,7 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, class:"room-image" %>
+        <%= f.file_field :image, class:"room-image-upload" %>
       </div>
     </div>
 
@@ -56,10 +56,11 @@
       <h2 class='form-bottom-text'>
         「ルーム作成」ボタンを押すと、学習報告ルームが生成されます。
       </h2>
+      <div class='register-btn'>
+          <%= f.submit "ルーム作成" ,class:"register-link" %>
+        </div>
     </div>
-    <div class='register-btn'>
-      <%= f.submit "ルーム作成" ,class:"register-link" %>
-    </div>
+    
   </div>
   <% end %>
 </div>

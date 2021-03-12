@@ -8,7 +8,7 @@
 }
 
 .form-wrap {
-  width: 50%;
+  width: 100%;
   padding-bottom: 70px;
   margin-top: 20vh;
   margin-bottom: 20vh;
@@ -22,10 +22,21 @@
 }
 
 .form-header-text {
-  line-height: 100px;
-  border-bottom: 1px solid #000088;
   font-weight: bold;
-  color: #000088;
+  color: black;
+  position: relative;
+}
+
+
+.form-header-text::after {
+  content: '';
+  width: 70px;
+  height: 2px;
+  background-color: #00b0f0;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 // 共通
@@ -34,7 +45,7 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  padding-top: 20px;
+  padding: 30px 0;
 }
 
 .form-group:first-child {
@@ -45,13 +56,27 @@
 .form-text-wrap {
   width: 100%;
   height: 20%;
+  padding-bottom: 30px;
 }
 
 // 共通
 .form-text {
   font-size: 14px;
   font-weight: bold;
-  color: #000088;
+  color: black;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-text::after {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background-color: #00b0f0;
+  position: absolute;
+  bottom: -10px;
+  left: 15px;
+  transform: translateX(-50%);
 }
 
 // 共通
@@ -78,7 +103,7 @@
 }
 
 .info-text {
-  color: #000088;
+  color: black;
   font-size: 15px;
   margin-top: 3px;
 }
@@ -144,8 +169,8 @@
 }
 
 .register-link {
-  width: 100%;
-  background-color: #000088;
+  width: 100%;  
+  background-color: #00b0f0;
   border-radius: 4px;
   border: none;
   color: #FFF;
@@ -156,7 +181,7 @@
 
 .register-link:hover {
   width: 100%;
-  background-color: #0000EE;
+  background-color: #81d7f7;
   border-radius: 4px;
   color: #fff;
   line-height: 48px;
