@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_user, only: [:show, :library]
-  
+
   def index
     @users = User.all.order(created_at: 'DESC')
   end
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 
   def library
     @articles = @user.articles
-    @like_articles = @user.like_articles 
+    @like_articles = @user.like_articles
   end
 
   def search

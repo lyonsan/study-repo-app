@@ -18,17 +18,17 @@ RSpec.describe ArticlesTag, type: :model do
       it 'summaryがないと登録できない' do
         @article.summary = nil
         @article.valid?
-        expect(@article.errors.full_messages).to include "記事タイトルを入力してください"
+        expect(@article.errors.full_messages).to include '記事タイトルを入力してください'
       end
       it 'detailがないと登録できない' do
         @article.detail = nil
         @article.valid?
-        expect(@article.errors.full_messages).to include "詳細を入力してください"
+        expect(@article.errors.full_messages).to include '詳細を入力してください'
       end
       it 'study_genre_idが1だと登録できない' do
         @article.study_genre_id = 1
         @article.valid?
-        expect(@article.errors.full_messages).to include "ジャンルを選択してください"
+        expect(@article.errors.full_messages).to include 'ジャンルを選択してください'
       end
     end
   end

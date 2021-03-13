@@ -1,12 +1,42 @@
-<header class='memo-header'>
+<%# <header class='memo-header'>
   <div class='nav-memo'>
     <ul class='lists-left'>
       <li><%= link_to @subject.name, subject_memos_path(@subject), class: "category-list" %></li>
-    </ul>
+    <%# </ul>
     <ul class='lists-right'>
       <li><%= link_to '学習報告', root_path, class: "top-link" %></li>
-      <li><%= link_to '科目一覧へ', subjects_path , class: "subjects" %></li>
-      <li><%= link_to 'メモを作成する', new_subject_memo_path(@subject) , class: "new-memo" %></li>
-    </ul>
+      <%# <li><%= link_to '科目一覧へ', subjects_path , class: "subjects" %></li>
+      <%# <li><%= link_to 'メモを作成する', new_subject_memo_path(@subject) , class: "new-memo" %></li>
+    <%# </ul>
   </div>
+</header> %>
+<%= javascript_pack_tag "menu.js" %>
+<header class='home-header'>
+  <ul class='header-left'>
+    <li><%= link_to 'StudyReport', root_path, class: "header-logo" %></li>
+  </ul>
+  <div class="header-right">
+    <ul class='right-lists'>
+      <li><%= link_to 'Report', rooms_path, class: "nav-button" %></li>
+      <li><%= link_to 'Memo', subjects_path, class: "current-nav-button" %></li>
+      <li><%= link_to 'Article', articles_path, class: "nav-button" %></li>
+      <li><%= link_to 'MyPage', user_path(current_user), class: "nav-button" %></li>
+      <li><%= link_to 'Users', users_path, class: "nav-button" %></li>
+      <li><%= link_to 'Logout', destroy_user_session_path , method: :delete, class: "nav-button" %></li>
+    </ul>
+    <div id="box">
+      <span></span>
+    </div>
+  </div>
+
+  <nav>
+    <ul class='sp-right-lists'>
+      <li><%= link_to 'Report', rooms_path, class: "nav-button" %></li>
+      <li><%= link_to 'Memo', subjects_path, class: "current-nav-button" %></li>
+      <li><%= link_to 'Article', articles_path, class: "nav-button" %></li>
+      <li><%= link_to 'MyPage', user_path(current_user), class: "nav-button" %></li>
+      <li><%= link_to 'Users', users_path, class: "nav-button" %></li>
+      <li><%= link_to 'Logout', destroy_user_session_path , method: :delete, class: "nav-button" %></li>
+    </ul>
+  </nav>
 </header>

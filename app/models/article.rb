@@ -17,20 +17,18 @@ class Article < ApplicationRecord
   def self.search(search, study_genre, tag)
     if tag.present?
       Tag.find(tag).articles
+    elsif search != '' && study_genre != '1'
+      Article.where('summary LIKE(?)',
+                    "%#{search}%").or(Article.where('detail LIKE(?)',
+                                                    "%#{search}%")).where(study_genre_id: study_genre)
+    elsif search != '' && study_genre == '1'
+      Article.where('summary LIKE(?)',
+                    "%#{search}%").or(Article.where('detail LIKE(?)',
+                                                    "%#{search}%"))
+    elsif search == '' && study_genre != '1'
+      Article.where(study_genre_id: study_genre)
     else
-      if search != '' && study_genre != '1'
-        Article.where('summary LIKE(?)',
-                      "%#{search}%").or(Article.where('detail LIKE(?)',
-                                                      "%#{search}%")).where(study_genre_id: study_genre)
-      elsif search != '' && study_genre == '1'
-        Article.where('summary LIKE(?)',
-                      "%#{search}%").or(Article.where('detail LIKE(?)',
-                                                      "%#{search}%"))
-      elsif search == '' && study_genre != '1'
-        Article.where(study_genre_id: study_genre)
-      else
-        Article.all
-      end
+      Article.all
     end
   end
 
