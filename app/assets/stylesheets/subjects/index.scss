@@ -5,27 +5,27 @@ a {
 
 /* 学習報告ルーム一覧 */
 
-.room-wrapper {
+.subject-wrapper {
   width: 70vw;
   margin: 0 auto;
   padding-top: 70px;
 }
 
-.room-header {
+.subject-header {
   display: flex;
   justify-content: space-between;
 }
 
-.room-header>.room-title {
+.subject-header>.subject-title {
   font-family: 'Roboto';
   font-size: 16px;
 }
 
-.room-header>.room-header-right {
+.subject-header>.subject-header-right {
   margin-top: 15px;
 }
 
-.room-header>.room-header-right>.room-new {
+.subject-header>.subject-header-right>.subject-new {
   padding: 10px;
   color: white;
   font-weight: bold;
@@ -34,7 +34,7 @@ a {
   text-align: center;
 }
 
-.room-header>.room-header-right>.room-new:hover {
+.subject-header>.subject-header-right>.subject-new:hover {
   padding: 10px;
   color: white;
   font-weight: bold;
@@ -43,14 +43,14 @@ a {
   text-align: center;
 }
 
-.room-lists {
+.subject-lists {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.room-lists>.got-list {
+.subject-lists>.got-list {
   width: 200px;
   margin: 15px;
   border-radius: 5px;
@@ -60,55 +60,18 @@ a {
   flex-direction: column;
 }
 
-.room-img-content {
-  padding: 10px;
-}
-
-.room-img {
-  width: 180px;
-  height: 180px;
-  margin-left: 10px;
-  border-radius: 50%;
-  margin: 0 auto;
-}
-
-.room-name {
+.subject-name {
+  color: black;
   text-align: center;
   font-size: 2.5vh;
   font-family: 'Roboto';
   text-decoration: underline;
 }
 
-.room-name:hover {
+.subject-name:hover {
   text-align: center;
   font-size: 2.5vh;
   text-decoration: underline;
   font-weight: bold;
   transition: 0.5s;
 }
-
-.report-link {
-  text-align: center;
-  font-family: 'Roboto';
-  font-weight: bold;
-  color: black;
-  padding-bottom: 10px;
-}
-
-.room-info {
-  color: black;
-  padding: 1vw;
-}
-
-
-.non-room-info {
-  color: rgba(256, 256, 256, 0.8);
-  padding: 1vw;
-}
-
-.new-message {
-  text-align: center;
-  position: relative;
-}
-
-/* //学習報告ルーム一覧 */
