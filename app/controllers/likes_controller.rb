@@ -14,7 +14,7 @@ class LikesController < ApplicationController
   end
 
   private
-  
+
   def set_like
     @article = Article.find(params[:article_id])
   end

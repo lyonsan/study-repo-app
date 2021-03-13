@@ -1,25 +1,25 @@
 <%= render "shared/memo_header" %>
 <div class="memo-show-main">
   <div class="memo-text">
-    <h2 class="memo-text-contents">題目</h2>
+    <h2 class="form-text">題目</h2>
   </div>
   <div class="memo-show-title">
     <%= @memo.topic %>
   </div>
   <div class="memo-text">
-    <h2 class="memo-text-contents">該当箇所の画像</h2>
+    <h2 class="form-text">該当箇所の画像</h2>
   </div>
   <div class="memo-show-image">
     <%= link_to image_tag(@memo.image.variant(resize: '200x200')),@memo.image, :rel => "lightbox", class: "memo-img" if @memo.image.attached? %>
   </div>
   <div class="memo-text">
-    <h2 class="memo-text-contents">関連する記述</h2>
+    <h2 class="form-text">関連する記述</h2>
   </div>
   <div class="memo-show-contents">
     <%= @memo.point %>
   </div>
   <div class="memo-text">
-    <h2 class="memo-text-contents">メモ</h2>
+    <h2 class="form-text">メモ</h2>
   </div>
   <div class="memo-show-markdown">
     <%= sanitize markdown(@memo.explanation), tags: %w(h1 h2 h3 h4 h5 strong em a p), attributes: %w(href) %>

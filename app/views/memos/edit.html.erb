@@ -1,11 +1,11 @@
-<%= render "shared/memo_second_header"%>
+<%= render "shared/memo_header"%>
 
 <div class="registration-body">
   <%= form_with model: [@subject, @memo], url: subject_memo_path, class: 'registration-main', local: true do |f| %>
   <div class='form-wrap'>
     <div class='form-header'>
       <h1 class='form-header-text'>
-        メモの作成
+        メモ情報の編集
       </h1>
     </div>
 
@@ -37,17 +37,17 @@
       </div>
       <%= f.text_area :point, class:"input-contents" %>
     </div>
-    <div class="form-group-wide">
-      <div id="editor">
-        <div class='form-text-wrap'>
-          <%= f.label :explanation, "メモを書きましょう", class:"form-text" %>
-          <span class="indispensable">任意</span>
-        </div>
-        <%= f.text_area :explanation, class:"input-contents", "v-model" => "input", name: "memo[explanation]" %>
-      <div v-html='input | marked'></div>
+    <div class="form-group-max">
+      <div class='form-text-wrap'>
+        <%= f.label :explanation, "メモを書きましょう", class:"form-text" %>
+        <span class="indispensable">任意</span>
+      </div>
+      <div id="editor" class="memo-explanation">
+        <%= f.text_area :explanation, class:"input-memo-explanation", "v-model" => "input", name: "memo[explanation]" %>
+      <div v-html='input | marked' class="review-memo"></div>
     </div>
     <div class='register-btn'>
-      <%= f.submit "メモ作成" ,class:"register-link" %>
+      <%= f.submit "メモ更新" ,class:"register-link" %>
     </div>
   </div>
   <% end %>

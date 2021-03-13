@@ -10,8 +10,6 @@ class ArticlesTag
     validates :study_genre_id
   end
 
-
-
   def save
     article = Article.create(user_id: user_id, summary: summary, study_genre_id: study_genre_id, detail: detail)
     tag = Tag.where(tag_name: tag_name).first_or_initialize
