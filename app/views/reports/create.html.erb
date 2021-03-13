@@ -1,18 +1,18 @@
-<%= render "shared/header" %>
-<div class="report-create-contents">
+<%= render "shared/report_header" %>
+<div class="room-create-contents">
   <div class="message">
     <div class="success">
       <h2 class="create-message">学習報告が完了しました!</h2>
     </div>
   </div>
-  <ul class='feature-lists'>
-    <li class='list'>
-      <%= link_to "学習報告ルームへ", room_reports_path(@room), class: :regi_session %>
-    </li>
-    <li class='list'>
-      <%= link_to "トップページに戻る", root_path, class: :regi_session %>
-    </li>
-  </ul>
+  <div class='feature-lists'>
+    <div class='list'>
+      <%= link_to "学習報告ルームへ", room_reports_path(@room), class: 'link-room' %>
+    </div>
+    <div class='list'>
+      <%= link_to "一覧に戻る", rooms_path, class: 'link-top' %>
+    </div>
+  </div>
 </div>
 
 <%= render "shared/footer" %>
