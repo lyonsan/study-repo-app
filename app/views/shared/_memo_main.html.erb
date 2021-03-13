@@ -1,6 +1,12 @@
 <div class="memo-main-wrapper">
   <div class="memo-main-header">
-    <h1 class="memo-main-header-title">メモ一覧</h1>
+    <div class="memo-main-header-left">
+      <h3 class="memo-main-header-title">メモ一覧</h3>
+      <h3 class="memo-subject-name"><%= @subject.name %></h3>
+    </div>
+    <div class="memo-main-header-right">
+      <%= link_to 'メモ新規作成', new_subject_memo_path(@subject), class: 'memo-new' %>
+    </div>
   </div>
   <div class="memo-search">
     <%= form_with(url: search_subject_memos_path, local: true, method: :get, class: "search-form") do |f| %>

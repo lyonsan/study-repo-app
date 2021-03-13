@@ -1,13 +1,13 @@
-<%= render "shared/header" %>
-<div class="subject-create-contents">
+<%= render "shared/memo_header" %>
+<div class="room-create-contents">
   <div class="message">
     <div class="success">
       <h2 class="create-message">メモを削除しました</h2>
     </div>
   </div>
-  <ul class='destroy'>
-    <li class='destroy-list'>
-      <%= link_to "ルームに戻る", subject_memos_path(@subject), class:"regi_session" %>
+  <ul class='feature-lists'>
+    <li class='list'>
+      <%= link_to "ルームに戻る", subject_memos_path(@subject), class:"link-top" %>
     </li>
   </ul>
 </div>
