@@ -1,15 +1,15 @@
-<%= render "shared/header" %>
+<%= render "shared/report_header" %>
 <div class="room-create-contents">
   <div class="message">
     <div class="success">
       <h2 class="create-message">学習報告を削除しました</h2>
     </div>
   </div>
-  <ul class='destroy'>
-    <li class='destroy-list'>
-      <%= link_to "学習報告ルームに戻る", "/rooms/#{@room.id}/reports", class:"regi_session" %>
-    </li>
-  </ul>
+  <div class='feature-lists'>
+    <div class='list'>
+      <%= link_to "学習報告ルームに戻る", "/rooms/#{@room.id}/reports", class:"link-top" %>
+    </div>
+  </div>
 </div>
 
 <%= render "shared/footer" %>

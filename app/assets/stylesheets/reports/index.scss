@@ -1,6 +1,5 @@
 .report-wrapper {
   display: flex;
-  background-color: #EEEEEE;
   justify-content: center;
 }
 
@@ -21,7 +20,7 @@
 
 .reports-mine {
   padding:3vh;
-  background-color:  #c7dcdd;
+  background-color:  #bbe4f3;
   margin-top:4vh;
   margin-left:3vw;
   border-radius: 2vh;
@@ -29,7 +28,7 @@
 
 .reports-others {
   padding:3vh;
-  background-color: #FFF;
+  background-color: #eeeeee;
   margin-top:4vh;
   margin-right: 3vw;
   border-radius: 2vh;
@@ -44,6 +43,7 @@
 .report-user {
   font-size: 4vh;
   font-weight: bold;
+  color: #6d5507;
 }
 
 .report-date {
@@ -59,12 +59,12 @@
 .report-content h2 {
   font-size: 2vh;
   font-weight: bold;
-  color:saddlebrown
+  color: #6d5507;
 }
 
 .report-input {
   font-size: 2vh;
-  background-color: #EEEEEE;
+  background-color: white;
   padding:0.5vh;
   border-radius: 0.5vh;
   word-wrap: break-word;
@@ -73,4 +73,17 @@
 .report-destroy {
   color: #777777;
   font-size: 1vh;
+}
+
+.report-new {
+  position: fixed;
+  bottom: 2vh;
+  left: 2vh;
+}
+
+.report-new-button {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #00b0f0;
+  color: white;
 }
