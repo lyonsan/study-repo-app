@@ -10,7 +10,7 @@
     </div>
     <div class='top-list-wrapper'>
       <div class='top-lists'>
-        <div class='list'>
+        <div class='top-list'>
           <img src="/images/report_b.jpg" alt="" class="list-pict">
           <h3 class='top-list-text'>
             報告する
@@ -19,7 +19,7 @@
             毎日の学習を、同士と報告し合えます。
           </p>
         </div>
-        <div class='list'>
+        <div class='top-list'>
           <img src="/images/memo_b.jpg" alt="" class="list-pict">
           <h3 class='top-list-text'>
             メモをとる
@@ -28,7 +28,7 @@
             学習中の気付きを、ご自身の設定したカテゴリ毎にメモできます。
           </p>
         </div>
-        <div class='list'>
+        <div class='top-list'>
           <img src="/images/article_b.jpg" alt="" class="list-pict">
           <h3 class='top-list-text'>
             記事にする

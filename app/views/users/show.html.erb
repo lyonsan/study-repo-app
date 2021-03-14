@@ -1,82 +1,90 @@
-<% if @user == current_user %>
+<% if user_signed_in? && @user == current_user %>
   <%= render "shared/mypage_header" %>
-<% else %>
+<% elsif user_signed_in? && @user != current_user %>
   <%= render "shared/users_header" %>
+<% else %>
+  <%= render "shared/logout_users_header" %>
 <% end %>
 
 <div class="user-show">
   <div class="user-box">
-    <h2 class="nickname">
-      <%= @user.nickname %>
-    </h2>
-    <table class="detail-table">
-      <tbody>
-        <tr>
-          <th class="detail-user">勉強していること</th>
-          <td class="detail-value"><%= @user.study_genre.name %></td>
-        </tr>
-        <tr>
-          <th class="detail-user">自己紹介/勉強していることの詳細</th>
-          <td class="detail-value">
-            <%= @user.self_introduction %>
-          </td>
-        </tr>
-        <tr>
-          <th class="detail-user">学習報告ルーム</th>
-          <td class="detail-value">
-            <% @rooms.each do |room| %>
-              <%= link_to room.title, room_path(room), class:'user-rooms' %>
-            <% end %>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <div>
-      <%= link_to "記事", library_user_path(@user) %>
+    <div class="user-show-header">
+      <h2 class="nickname">
+        <%= @user.nickname %>
+      </h2>
     </div>
-    <div class="user-messages">
-      <% if @user != current_user && user_signed_in? %>
-        <% if @chat_id %>
-          <%= link_to "チャットへ", chat_path(@chat_id), class:"user-chats-btn" %>
-        <% else %>
-          <%= form_with(model: @chat, local: true) do |f| %>
-            <%= fields_for @chat_user do |c| %>
-              <%= c.hidden_field :user_id, value: @user.id %>
-            <% end %>
-            <%= f.submit "チャットを始める", class:"user-chats-btn" %>
-          <% end %>
-        <% end %>
-      <% elsif @user == current_user && user_signed_in? %>
-        <div class="user-lists-title">
-          <h2>チャットを行っているユーザー</h2>
+    <div class="user-show-body">
+      <div class="basic-info">
+        <div class="basic-info-title">
+          <h3 class="user-show-title">基本情報</h3>
         </div>
-        <% @chats.each do |chat| %>
-          <div class="chat-user-list">
-            <ul class="user-lists">
-              <% chat.users.each do |user| %>
-                <% if user != current_user %>
-                  <li class="user-list">
-                    <%= link_to user.nickname, user_path(user), class:"user-list-name" %>
-                  </li>
+        <table class="detail-table">
+          <tbody>
+            <tr>
+              <th class="detail-user">勉強していること</th>
+              <td class="detail-value"><%= @user.study_genre.name %></td>
+            </tr>
+            <tr>
+              <th class="detail-user">自己紹介/勉強していることの詳細</th>
+              <td class="detail-value">
+                <%= @user.self_introduction %>
+              </td>
+            </tr>
+            <tr>
+              <th class="detail-user">学習報告ルーム</th>
+              <td class="detail-value">
+                <% @rooms.each do |room| %>
+                  <%= room.title %>
                 <% end %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="user-article-link">
+        <h3 class="user-show-title"><%= "#{@user.nickname}さんの記事"%></h3>
+        <i class="fas fa-pen-fancy"></i><%= link_to "記事一覧へ", library_user_path(@user), class: 'link-library' %>
+      </div>
+      <div class="user-messages">
+        <h3 class="user-show-title"><%= "#{@user.nickname}さんとのチャット" %></h3>
+        <% if @user != current_user && user_signed_in? %>
+          <% if @chat_id %>
+            <%= link_to "チャットへ", chat_path(@chat_id), class:"user-chats-btn" %>
+          <% else %>
+            <%= form_with(model: @chat, local: true) do |f| %>
+              <%= fields_for @chat_user do |c| %>
+                <%= c.hidden_field :user_id, value: @user.id %>
               <% end %>
-            </ul>
+              <%= f.submit "チャットを始める", class:"user-chats-btn" %>
+            <% end %>
+          <% end %>
+        <% elsif @user == current_user && user_signed_in? %>
+          <div class="user-lists-title">
+            <h3 class="user-show-title">チャットを行っているユーザー</h3>
+          </div>
+          <% @chats.each do |chat| %>
+            <div class="chat-user-list">
+              <div class="user-lists">
+                <% chat.users.each do |user| %>
+                  <% if user != current_user %>
+                    <div class="user-list">
+                      <%= link_to user.nickname, user_path(user), class:"user-list-name" %>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="user-lists-title">
+            <h2>ユーザー登録してメッセージを送ろう!</h2>
+          </div>
+          <div class="start-content">
+            <%= link_to "新規登録", new_user_registration_path, class:"signup-link" %>
+            <%= link_to "ログイン", new_user_session_path, class:"signin-link" %>
           </div>
         <% end %>
-      <% else %>
-        <div class="user-lists-title">
-          <h2>ユーザー登録してメッセージを送ろう!</h2>
-        </div>
-        <div class="regi-session">
-          <div class="regi-session-btn">
-            <%= link_to "新規登録", new_user_registration_path, class:"regi-btn" %>
-          </div>
-          <div class="regi-session-btn">
-            <%= link_to "ログイン", new_user_session_path, class:"session-btn" %>
-          </div>
-          </ul>
-        </div>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>

@@ -99,6 +99,22 @@
   background-color: rgba(256, 256, 256, 0.7);
 }
 
+.search-box {
+  display: flex;
+  justify-content: right;
+}
+
+.search-field {
+  display: flex;
+  flex-direction: column;
+  width:30%;
+  margin-right:2vw;
+}
+
+.search-field>.search-text {
+  padding:5px;
+  font-size: 2vh;
+}
 
 .search-input {
   border-radius: 2px;

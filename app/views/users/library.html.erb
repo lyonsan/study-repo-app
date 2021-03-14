@@ -1,7 +1,9 @@
-<% if @user == current_user %>
+<% if user_signed_in? && @user == current_user %>
   <%= render "shared/mypage_header" %>
-<% else %>
+<% elsif user_signed_in? && @user != current_user %>
   <%= render "shared/users_header" %>
+<% else %>
+  <%= render "shared/logout_users_header" %>
 <% end %>
 <div class="user-library-wrapper">
   <div class="user-library-header">

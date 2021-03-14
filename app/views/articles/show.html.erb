@@ -1,4 +1,9 @@
-<%= render "shared/article_header"%>
+<% if user_signed_in? %>
+  <%= render "shared/article_header" %>
+<% else %>
+  <%= render "shared/logout_article_header" %>
+<% end %>
+
 
 <div class="article-show-wrapper">
   <div class="article-wrapper-body">
