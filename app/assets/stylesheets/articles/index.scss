@@ -44,6 +44,12 @@
   flex-direction: column;
 }
 
+.article-search-input {
+  border: solid 1px #777777;
+  border-radius: 2px;
+  padding: 2px;
+}
+
 .article-body {
   width: calc( 100vw - 300px );
   padding: 70px 60px;
@@ -91,7 +97,7 @@
   width: 90%;
 }
 
-.list {
+.article-list {
   padding: 10px;
   border-bottom: solid 1.5px #cccccc;
   background-color: white;

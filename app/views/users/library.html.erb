@@ -1,9 +1,9 @@
 <% if user_signed_in? && @user == current_user %>
   <%= render "shared/mypage_header" %>
 <% elsif user_signed_in? && @user != current_user %>
-  <%= render "shared/users_header" %>
+  <%= render "shared/user_header" %>
 <% else %>
-  <%= render "shared/logout_users_header" %>
+  <%= render "shared/logout_user_header" %>
 <% end %>
 <div class="user-library-wrapper">
   <div class="user-library-header">
@@ -17,7 +17,7 @@
       <% if @articles.present? %>
         <% @articles.each do |article| %>
           <%= link_to article_path(article) do %>
-            <div class="list">
+            <div class="article-list">
               <div class="list-upper">
                 <h3 class="article-summary"><%= article.summary %></h3>
               </div>

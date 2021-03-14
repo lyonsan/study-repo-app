@@ -1,9 +1,9 @@
 <% if user_signed_in? && @user == current_user %>
   <%= render "shared/mypage_header" %>
 <% elsif user_signed_in? && @user != current_user %>
-  <%= render "shared/users_header" %>
+  <%= render "shared/user_header" %>
 <% else %>
-  <%= render "shared/logout_users_header" %>
+  <%= render "shared/logout_user_header" %>
 <% end %>
 
 <div class="user-show">
@@ -46,8 +46,8 @@
         <i class="fas fa-pen-fancy"></i><%= link_to "記事一覧へ", library_user_path(@user), class: 'link-library' %>
       </div>
       <div class="user-messages">
-        <h3 class="user-show-title"><%= "#{@user.nickname}さんとのチャット" %></h3>
         <% if @user != current_user && user_signed_in? %>
+          <h3 class="user-show-title"><%= "#{@user.nickname}さんとのチャット" %></h3>
           <% if @chat_id %>
             <%= link_to "チャットへ", chat_path(@chat_id), class:"user-chats-btn" %>
           <% else %>

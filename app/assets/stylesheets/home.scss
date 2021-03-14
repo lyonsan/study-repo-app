@@ -95,6 +95,17 @@
   padding-bottom: 60px;
 }
 
+.articles-link {
+  color: black;
+  font-weight: bold;
+}
+
+.articles-link:hover {
+  color: black;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .report-right-sp, .article-right-sp {
   display: none;
 }
@@ -236,7 +247,7 @@
     display: none;
   }
 
-  .report-right-sp, .article-right-sp, .memo-left {
+  .report-right-sp, .article-right-sp, .memo-left, .user-left {
     display: block;
     margin: 0 auto;
   }

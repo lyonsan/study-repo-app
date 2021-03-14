@@ -43,9 +43,21 @@
           <h3>学んだことを記事にして公開する</h3>
           <p>学習したことを記事にして公開しましょう。</p>
           <p>人にわかりやすく伝えることを通して、自分の理解を深めましょう</p>
+          <a href="/articles" class="articles-link">→実際の記事を見てみる</a>
         </div>
         <div class="article-right">
           <img src="/images/article_b.jpg" alt="" class="content-pict">
+        </div>
+      </div>
+      <div class="content-content">
+        <div class="user-left">
+          <img src="/images/memo_b.jpg" alt="" class="content-pict">
+        </div>
+        <div class="user-right">
+          <h3>仲間と繋がる</h3>
+          <p>そして学習をやり切る上で大切なのが学習仲間。</p>
+          <p>登録しているユーザーを検索し、同志を見つけて学習を共に行っていきましょう!</p>
+          <a href="/users" class="articles-link">→ユーザー一覧へ</a>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
-  <%= render "shared/users_header" %>
+  <%= render "shared/user_header" %>
 <% else %>
-  <%= render "shared/logout_users_header" %>
+  <%= render "shared/logout_user_header" %>
 <% end %>
 
 
@@ -29,8 +29,9 @@
   <div class="users-main">
     <% @users.each do |user| %>
       <%= link_to user_path(user) do %>
-        <div class="user-name">
-          <%= user.nickname %>
+        <div class="user-content">
+          <p><%= user.nickname %></p>
+          <p class="user-genre">ジャンル:<%= user.study_genre.name %></p>
         </div>
       <% end %>
     <% end %>

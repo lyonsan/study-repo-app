@@ -1,11 +1,11 @@
-<%= render "shared/header"%>
+<%= render "shared/session_header"%>
 
 <div class="registration-body">
   <%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
   <div class='form-wrap'>
     <div class='form-header'>
       <h1 class='form-header-text'>
-        会員情報入力
+        ログイン
       </h1>
     </div>
     <div class="login-flash-message">
