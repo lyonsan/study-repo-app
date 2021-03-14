@@ -1,0 +1,30 @@
+<%= javascript_pack_tag "menu.js" %>
+<header class='home-header'>
+  <ul class='header-left'>
+    <li><%= link_to 'StudyReport', root_path, class: "header-logo" %></li>
+  </ul>
+  <div class="header-right">
+    <ul class='right-lists'>
+      <li><%= link_to 'Report', rooms_path, class: "nav-button" %></li>
+      <li><%= link_to 'Memo', subjects_path, class: "nav-button" %></li>
+      <li><%= link_to 'Article', articles_path, class: "nav-button" %></li>
+      <li><%= link_to 'MyPage', user_path(current_user), class: "nav-button" %></li>
+      <li><%= link_to 'Users', users_path, class: "current-nav-button" %></li>
+      <li><%= link_to 'Logout', destroy_user_session_path , method: :delete, class: "nav-button" %></li>
+    </ul>
+    <div id="box">
+      <span></span>
+    </div>
+  </div>
+
+  <nav>
+    <ul class='sp-right-lists'>
+      <li><%= link_to 'Report', rooms_path, class: "nav-button" %></li>
+      <li><%= link_to 'Memo', subjects_path, class: "nav-button" %></li>
+      <li><%= link_to 'Article', articles_path, class: "nav-button" %></li>
+      <li><%= link_to 'MyPage', user_path(current_user), class: "nav-button" %></li>
+      <li><%= link_to 'Users', users_path, class: "current-nav-button" %></li>
+      <li><%= link_to 'Logout', destroy_user_session_path , method: :delete, class: "nav-button" %></li>
+    </ul>
+  </nav>
+</header>

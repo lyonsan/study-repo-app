@@ -7,20 +7,24 @@
         <%= link_to "#{user.nickname}さんとのチャット", user_path(user), class:"chat-user" %>
       <% end %>
     <% end %>
-    <div class="chat-destroy">
-      <%= link_to "チャットルームを削除する", chat_path(@chat), method: :delete, class:'chat-destroy-link' %>
-    </div>
   </div>
   <div class="chat-main">
     <div class="message-form">
       <%= form_with model: [@chat, @message] do |f| %>
-        <%= f.label :content, "メッセージ記入欄" %>
-        <%= f.text_field :content, placeholder: "メッセージを送りましょう", class:"message-input" %>
-        <%= f.submit '送信', class:"send-btn" %>
+        <%= f.label :content, "メッセージ記入欄", class: 'chat-input-text' %>
+        <div class="chat-input">
+          <%= f.text_field :content, placeholder: "メッセージを送りましょう", class:"message-input" %>
+          <%= f.submit '送信', class:"chat-send-btn" %>
+        </div>
       <% end %>
     </div>
     <div id='messages'>
       <%= render @messages %>
     </div>
   </div>
+  <div class="chat-destroy">
+    <%= link_to "チャットルームを削除する", chat_path(@chat), method: :delete, class:'chat-destroy-link' %>
+  </div>
 </div>
+
+<%= render "shared/footer" %>

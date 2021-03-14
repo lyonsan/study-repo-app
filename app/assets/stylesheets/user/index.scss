@@ -1,10 +1,9 @@
 .users-wrapper {
-  width: 60vw;
-  margin: 15vh auto;
+  width: 60%;
+  margin: 80px auto;
 }
 
 .users-header {
-  padding-top: 5vh;
   padding-bottom: 1vh;
   border-bottom: solid 2px #BBBBBB;
 }
@@ -13,29 +12,24 @@
   padding:2vh 0;
 }
 
-.user-name {
+.user-content {
   padding:10px;
   font-size: 2.5vh;
   color:#333333;
   background-color: #EEEEEE;
   margin:2vh 0;
   border-radius: 5px;
-}
-.search-box {
   display: flex;
-  justify-content: right;
+  justify-content: space-between;
 }
 
-.search-field {
-  display: flex;
-  flex-direction: column;
-  width:30%;
-  margin-right:2vw;
+.user-genre {
+  font-size: 13px;
+  vertical-align: bottom;
 }
 
-.search-field>.search-text {
-  padding:5px;
-  font-size: 2vh;
+.user-search-form {
+  display: flex;
 }
 
 .user-search-input {
@@ -43,13 +37,31 @@
   border: 1px solid #ccc;
   padding: 5px;
   margin: 5px;
+  width: 300px;
+}
+
+.user-search-text {
+  font-weight: bold;
+}
+
+.user-search-buttom {
+  display: flex;
 }
 
 .user-search-btn {
+  display: flex;
   background-color: #333333;
   padding: 5px;
   border: none;
   border-radius: 2px;
   color: #EEEEEE;
   margin: 5px;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .user-search-buttom {
+    display: flex;
+    flex-direction: column;
+  }
 }

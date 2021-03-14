@@ -1,5 +1,9 @@
 <%= javascript_pack_tag "search.js" %>
-<%= render "shared/article_header" %>
+<% if user_signed_in? %>
+  <%= render "shared/article_header" %>
+<% else %>
+  <%= render "shared/logout_article_header" %>
+<% end %>
 <div class="article-wrapper">
   <div class="article-search-bar">
     <div class="article-search-body">
@@ -8,11 +12,11 @@
         <div class="article-search-box">
           <div class="article-search-field">
             <%= f.label :study_genre_id, "ジャンル", class:"search-article" %>
-            <%= f.collection_select(:study_genre_id, StudyGenre.all, :id, :name, {}, {class:"user-search-input"}) %>
+            <%= f.collection_select(:study_genre_id, StudyGenre.all, :id, :name, {}, {class:"article-search-input"}) %>
           </div>
           <div class="article-search-field">
             <%= f.label :keyword, "フリーワード検索", class:"search-article" %>
-            <%= f.text_field :keyword, placeholder: "記事を検索する", class: "user-search-input" %>
+            <%= f.text_field :keyword, placeholder: "記事を検索する", class: "article-search-input" %>
           </div>
           <div class="article-search-btn-field">
             <%= f.submit "検索", class: "search-btn" %>
@@ -26,7 +30,7 @@
             options_from_collection_for_select(Tag.all, :id, :tag_name, params[:tag_id]),
             {
               prompt: 'タグで絞り込み',
-              class: 'user-search-input',
+              class: 'article-search-input',
               onchange: 'submit(this.form)'
             }%>
         </div>
@@ -44,11 +48,11 @@
         <div class="article-search-box">
           <div class="article-search-field">
             <%= f.label :study_genre_id, "ジャンル", class:"search-article" %>
-            <%= f.collection_select(:study_genre_id, StudyGenre.all, :id, :name, {}, {class:"user-search-input"}) %>
+            <%= f.collection_select(:study_genre_id, StudyGenre.all, :id, :name, {}, {class:"article-search-input"}) %>
           </div>
           <div class="article-search-field">
             <%= f.label :keyword, "フリーワード検索", class:"search-article" %>
-            <%= f.text_field :keyword, placeholder: "記事を検索する", class: "user-search-input" %>
+            <%= f.text_field :keyword, placeholder: "記事を検索する", class: "article-search-input" %>
           </div>
           <div class="article-search-btn-field">
             <%= f.submit "検索", class: "search-btn" %>
@@ -62,7 +66,7 @@
             options_from_collection_for_select(Tag.all, :id, :tag_name, params[:tag_id]),
             {
               prompt: 'タグで絞り込み',
-              class: 'user-search-input',
+              class: 'article-search-input',
               onchange: 'submit(this.form)'
             }%>
         </div>
@@ -81,25 +85,27 @@
     <div class="article-lists">
       <% @articles.each do |article| %>
         <%= link_to article_path(article) do %>
-          <div class="list">
+          <div class="article-list">
             <div class="list-upper">
               <h3 class="article-summary"><%= article.summary %></h3>
-              <p class="article-genre"><%= article.study_genre.name %></p>
             </div>
-            <div class="list-lower">
-              <div class="lower-left">
-                <div class="list-like">
-                  <%= "お気に入り#{article.likes.count}" %>
+            <p class="article-genre"><%= article.study_genre.name %></p>
+            <div class="list-bottom">
+                
+                <div class="bottom-left-bottom">
+                  <div class="list-like">
+                    <p><%= "お気に入り:#{article.likes.count}" %></p>
+                  </div>
+                  <div class="list-tag">
+                    <% article.tags.each do |tag| %>
+                      <p class="list-tag-name">#<%= tag.tag_name %></p>
+                    <% end %>
+                  </div>
                 </div>
-                <div class="list-tag">
-                  <% article.tags.each do |tag| %>
-                    <p class="list-tag-name">#<%= tag.tag_name %></p>
-                  <% end %>
-                </div>
-              </div>
-              <div class="lower-right">
+              <div class="bottom-right">
                 <div class="list-user">
                   <p class="list-user-nickname">投稿者:<%= article.user.nickname %></p>
+                  <p class="list-article-date">最終更新日時: <%= l article.updated_at, format: :long %></p>
                 </div>
               </div>
             </div>
@@ -109,3 +115,5 @@
     </div>
   </div>
 </div>
+
+<%= render "shared/footer"%>

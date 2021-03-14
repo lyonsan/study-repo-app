@@ -44,6 +44,12 @@
   flex-direction: column;
 }
 
+.article-search-input {
+  border: solid 1px #777777;
+  border-radius: 2px;
+  padding: 2px;
+}
+
 .article-body {
   width: calc( 100vw - 300px );
   padding: 70px 60px;
@@ -87,10 +93,11 @@
   display: flex;
   flex-direction: column;
   border-top: solid 2px #cccccc;
+  margin: 0 auto;
   width: 90%;
 }
 
-.list {
+.article-list {
   padding: 10px;
   border-bottom: solid 1.5px #cccccc;
   background-color: white;
@@ -119,7 +126,13 @@
 
 .list-like {
   color: black;
-  padding: 5px 0;
+}
+
+.list-like>p {
+  padding: 4px;
+  border-radius: 4px;
+  margin: 0;
+  border: solid 1px #00b0f0;
 }
 
 .list-tag {
@@ -167,7 +180,7 @@
   #search-box {
     display: block;
     position: fixed;
-    bottom: 10px;
+    bottom: 30px;
     left: 10px;
     padding: 10px;
     border-radius: 50%;

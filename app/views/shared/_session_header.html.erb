@@ -1,0 +1,25 @@
+<%= javascript_pack_tag "menu.js" %>
+<header class='home-header'>
+  <ul class='header-left'>
+    <li><%= link_to 'StudyReport', root_path, class: "header-logo" %></li>
+  </ul>
+  <div class="header-right">
+    <ul class='right-lists'>
+      <li><%= link_to 'Article', articles_path, class: "nav-button" %></li>
+      <li><%= link_to 'Users', users_path, class: "nav-button" %></li>
+      <li><%= link_to 'New Member', new_user_registration_path , class: "nav-button" %></li>
+      <li><%= link_to 'Login', new_user_session_path , class: "current-nav-button" %></li>
+    </ul>
+    <div id="box">
+      <span></span>
+    </div>
+  </div>
+  <nav>
+    <ul class='sp-right-lists'>
+      <li><%= link_to 'Article', articles_path, class: "nav-button" %></li>
+      <li><%= link_to 'Users', users_path, class: "nav-button" %></li>
+      <li><%= link_to 'New Member', new_user_registration_path , class: "nav-button" %></li>
+      <li><%= link_to 'Login', new_user_session_path , class: "current-nav-button" %></li>
+    </ul>
+  </nav>
+</header>

@@ -1,26 +1,37 @@
-<%= render "shared/header" %>
+<% if user_signed_in? %>
+  <%= render "shared/user_header" %>
+<% else %>
+  <%= render "shared/logout_user_header" %>
+<% end %>
+
+
 <div class="users-wrapper">
   <div class="users-header">
     <h1 class="users-header-title">ユーザー一覧</h1>
   </div>
-  <%= form_with(url: search_users_path, local: true, method: :get, class: "search-form") do |f| %>
-    <div class="search-box">
-      <div class="search-field">
-        <%= f.label :study_genre_id, "勉強していること", class:"search-text" %>
+  <%= form_with(url: search_users_path, local: true, method: :get, class: "user-search-form") do |f| %>
+    <div class="user-search-box">
+      <div class="user-search-field">
+        <%= f.label :study_genre_id, "勉強していること", class:"user-search-text" %>
         <%= f.collection_select(:study_genre_id, StudyGenre.all, :id, :name, {}, {class:"user-search-input"}) %>
       </div>
-      <div class="search-field">
-        <%= f.label :keyword, "フリーワード検索", class:"search-text" %>
-        <%= f.text_field :keyword, placeholder: "ユーザーを検索する", class: "user-search-input" %>
+      <div class="user-search-buttom">
+        <div class="user-search-field">
+          <%= f.label :keyword, "フリーワード検索", class:"user-search-text" %>
+          <%= f.text_field :keyword, placeholder: "ユーザーを検索する", class: "user-search-input" %>
+        </div>
+        <div class="user-search">
+          <%= f.submit "検索", class: "user-search-btn" %>
+        </div>
       </div>
     </div>
-    <%= f.submit "検索", class: "user-search-btn" %>
   <% end %>
   <div class="users-main">
     <% @users.each do |user| %>
       <%= link_to user_path(user) do %>
-        <div class="user-name">
-          <%= user.nickname %>
+        <div class="user-content">
+          <p><%= user.nickname %></p>
+          <p class="user-genre">ジャンル:<%= user.study_genre.name %></p>
         </div>
       <% end %>
     <% end %>

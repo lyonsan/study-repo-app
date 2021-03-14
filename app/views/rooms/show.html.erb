@@ -30,7 +30,7 @@
           <th class="detail-room">参加者</th>
           <td class="detail-value">
             <% @room.users.each do |user| %>
-              <%= link_to user.nickname, "#", class:"user-name" %>
+              <%= link_to user.nickname, user_path(user), class:"user-name" %>
             <% end %>
           </td>
         </tr>
