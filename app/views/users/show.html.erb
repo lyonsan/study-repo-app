@@ -1,4 +1,8 @@
-<%= render "shared/header" %>
+<% if @user == current_user %>
+  <%= render "shared/mypage_header" %>
+<% else %>
+  <%= render "shared/users_header" %>
+<% end %>
 
 <div class="user-show">
   <div class="user-box">

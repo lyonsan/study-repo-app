@@ -87,6 +87,7 @@
   display: flex;
   flex-direction: column;
   border-top: solid 2px #cccccc;
+  margin: 0 auto;
   width: 90%;
 }
 
@@ -119,7 +120,13 @@
 
 .list-like {
   color: black;
-  padding: 5px 0;
+}
+
+.list-like>p {
+  padding: 4px;
+  border-radius: 4px;
+  margin: 0;
+  border: solid 1px #00b0f0;
 }
 
 .list-tag {
