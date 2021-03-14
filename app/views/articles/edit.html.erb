@@ -1,7 +1,8 @@
+
 <%= render "shared/article_header"%>
 
 <div class="article-new-form">
-  <%= form_with model: @article, url: article_path, class: 'registration-main', local: true do |f| %>
+  <%= form_with model: @form, url: article_path, method: :patch, class: 'registration-main', local: true do |f| %>
   <div class="form-wrap">
     <div class='form-header'>
       <h1 class='form-header-text'>
@@ -29,8 +30,6 @@
         <%= f.label :tag_name, "タグ", class: "form-text" %>
       </div>
       <%= f.text_field :tag_name, class:"input-default" %>
-      <div id="search-result">
-      </div>
     </div>
     <div class="form-group-max">
       <div class="form-text-wrap">
@@ -56,7 +55,7 @@
     new Vue({
     el: '#detail',
     data: {
-      text: '<%== j @article.detail %>',
+      text: '<%== j @form.detail %>',
     },
     filters: {
     marked: marked,

@@ -3,6 +3,27 @@
   display: flex;
 }
 
+.search-result-list {
+  display: flex;
+}
+
+.search-result-list>p {
+  padding: 5px;
+}
+
+#search-result {
+  display: flex;
+  padding: 5px;
+}
+
+.child {
+  margin-left: 5px;
+  padding: 5px;
+  border-radius: 4px;
+  border: solid 1px #cccccc;
+  background-color: #eeeeee;
+}
+
 .input-article-detail {
   width: 50%;
   margin-top: 5px;

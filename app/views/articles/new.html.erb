@@ -1,3 +1,4 @@
+
 <%= render "shared/article_header"%>
 
 <div class="article-new-form">
@@ -29,7 +30,10 @@
         <%= f.label :tag_name, "タグ", class: "form-text" %>
       </div>
       <%= f.text_field :tag_name, class:"input-default" %>
-      <div id="search-result">
+      <div class="search-result-list">
+        <p>候補</p>
+        <div id="search-result">
+        </div>
       </div>
     </div>
     <div class="form-group-max">
