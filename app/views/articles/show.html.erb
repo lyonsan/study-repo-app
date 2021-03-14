@@ -1,37 +1,56 @@
-<div class="article-show-wrapper">
-  <div class="article-header">
-    <div class="article-title">
-      <h1><%= @article.summary %></h1>
-    </div>
-    <div class="article-user">
-      <p>投稿者:<%= link_to @article.user.nickname, user_path(@article.user) %></p>
-    </div>
-  </div>
-  <ul class="article-tags">
-    <% @article.tags.each do |tag| %>
-      <li class="article-tag">
-        <p>#<%= tag.tag_name %></p>
-      </li>
-    <% end %>
-  </ul>
-  <% if user_signed_in? %>
-    <% if @article.liked_by?(current_user) %>
-      <p><span>お気に入り解除: </span><%= link_to @article.likes.count, article_likes_path(@article.id), method: :delete %></p>
-    <% else %>
-      <p><span>お気に入り登録: </span><%= link_to @article.likes.count, article_likes_path(@article.id), method: :post %></p>
-    <% end %>
-  <% else %>
-    <p><span>お気に入り数: </span><%= @article.likes.count %></p>
-  <% end %>
+<%= render "shared/article_header"%>
 
-  <div class="article-genre">
-    <p>ジャンル:<%= @article.study_genre.name %></p>
+<div class="article-show-wrapper">
+  <div class="article-wrapper-body">
+    <div class="article-show-header">
+      <div class="article-header-upper">
+        <div class="article-upper-upper">
+          <div class="article-title">
+            <h3 class="article-title-summary"><%= @article.summary %></h3>
+          </div>
+          <div class="article-genre">
+            <p>ジャンル:<%= @article.study_genre.name %></p>
+          </div>
+        
+        </div>
+        <div class="article-upper-bottom">
+          <div class="article-date">
+            <p>最終更新日時: <%= l @article.updated_at, format: :long %></p>
+          </div>
+          <div class="article-user">
+            <p>投稿者: </p><%= link_to @article.user.nickname, user_path(@article.user) %>
+          </div>
+        </div>
+      </div>
+      <div class="article-header-bottom">
+        <div class="article-tags">
+          <% @article.tags.each do |tag| %>
+            <div class="article-tag">
+              <p>#<%= tag.tag_name %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="like-btn">
+        <% if user_signed_in? %>
+          <% if @article.liked_by?(current_user) %>
+            <p><%= link_to "お気に入り解除: #{@article.likes.count}", article_likes_path(@article.id), class:'like-btn-blue', method: :delete %></p>
+          <% else %>
+            <p><%= link_to "お気に入り登録: #{@article.likes.count}", article_likes_path(@article.id), class:'like-btn-grey', method: :post %></p>
+          <% end %>
+        <% else %>
+          <p class="like-btn-white"><span>お気に入り数: </span><%= @article.likes.count %></p>
+        <% end %>
+        <% if user_signed_in? && @article.user.id == current_user.id %>
+          <p><%= link_to "編集", edit_article_path(@article), class:'edit-link' %></p>
+        <% end %>
+      </div>
+  
+      <div class="article-main">
+        <p><%= @article.detail %></p>
+      </div>
+    </div>
+    
+
   </div>
-  <div class="article-main">
-    <p><%= @article.detail %></p>
-  </div>
-  <% if user_signed_in? && @article.user.id == current_user.id %>
-    <%= link_to "編集", edit_article_path(@article) %>
-  <% end %>
-  <div><%= link_to "記事一覧に戻る", articles_path %>
 </div>
