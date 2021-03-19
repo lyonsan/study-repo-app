@@ -15,5 +15,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.nav-button.router-link-exact-active {
+  border-bottom: solid 2px black;
+}
+
 
 </style>

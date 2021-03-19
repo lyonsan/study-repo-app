@@ -10,12 +10,14 @@
         <p class="detail-content-exp">まずは学習報告を行うための報告ルームを作成しましょう。</p>
         <p class="detail-content-exp">必要な事項を入力し、学習報告を行いたい仲間を選んだらルーム作成をクリック!</p>
         <p class="detail-content-exp">(一人でルームを作成し、自分の学習振り返りに使っていただくことも可能です)</p>
+        <img src="/images/create_room.gif" alt="" class="gif-wrapper">
       </div>
       <div>
         <h3 class="detail-content-title">学習報告を行おう</h3>
         <p class="detail-content-exp">ルームを作成したら、ルーム内で学習報告を実施しましょう!</p>
         <p class="detail-content-exp">その日の学習時間や学習内容を振り返り、明日の計画を立てましょう</p>
         <p class="detail-content-exp">記録が残り、後から毎日の学習内容を確認できます。</p>
+        <img src="/images/create_report.gif" alt="" class="gif-wrapper">
       </div>
     </div>
   </div>
@@ -41,6 +43,11 @@ export default {
 
 .repo-detail-content {
   margin-bottom: 50px;
+}
+
+.gif-wrapper {
+  margin: 60px 0;
+  width: 100%;
 }
 
 </style>

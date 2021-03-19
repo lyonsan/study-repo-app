@@ -9,6 +9,7 @@
         <h3 class="detail-content-title">メモルームを作ろう</h3>
         <p class="detail-content-exp">メモを項目別に残すことができます!</p>
         <p class="detail-content-exp">まずは自分の作りたいメモルームを作成します。</p>
+        <img src="/images/create_subject.gif" alt="" class="gif-wrapper">
       </div>
       <div class="memo-detail-content">
         <h3 class="detail-content-title">メモを書こう</h3>
@@ -44,6 +45,11 @@ export default {
 
 .memo-detail-content {
   margin-bottom: 50px;
+}
+
+.gif-wrapper {
+  margin: 60px 0;
+  width: 100%;
 }
 
 </style>
