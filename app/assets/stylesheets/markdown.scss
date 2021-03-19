@@ -4,6 +4,12 @@
 .review-memo>h4,
 .review-memo>h5,
 .review-memo>h6,
+.memo-show-markdown>h1,
+.memo-show-markdown>h2,
+.memo-show-markdown>h3,
+.memo-show-markdown>h4,
+.memo-show-markdown>h5,
+.memo-show-markdown>h6,
 .review-article>h1,
 .review-article>h2,
 .review-article>h3,
@@ -20,12 +26,14 @@
   border-bottom: solid 2px #cccccc;
 }
 
+.memo-show-markdown>ul,
 .review-memo>ul,
 .review-article>ul,
 .article-main>ul {
   list-style: disc;
 }
 
+.memo-show-markdown>p>code,
 .review-memo>p>code,
 .review-article>p>code,
 .article-main>p>code {
@@ -36,6 +44,7 @@
   color: rgb(247, 78, 11);
 }
 
+.memo-show-markdown>pre,
 .review-memo>pre,
 .review-article>pre,
 .article-main>pre {
@@ -44,6 +53,7 @@
   background-color: #020331;
 }
 
+.memo-show-markdown>pre>code,
 .review-memo>pre>code,
 .review-article>pre>code,
 .article-main>pre>code {

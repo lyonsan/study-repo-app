@@ -20,7 +20,6 @@
 
 .memo-show-contents {
   padding:10px;
-  background-color: #EEEEEE;
   border-radius: 5px;
   font-size: 15px;
   margin-bottom: 10px;
@@ -32,18 +31,6 @@
 }
 
 
-.memo-show-markdown {
-  padding:10px;
-  background-color: #EEEEEE;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-.memo-show-markdown li{
-  list-style: initial;
-}
-.memo-show-markdown code {
-  background-color: ivory;
-}
 
 .memo-show-btn {
   display: flex;
