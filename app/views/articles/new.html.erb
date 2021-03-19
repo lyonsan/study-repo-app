@@ -44,6 +44,7 @@
       <div id="detail" class="article-detail">
         <%= f.text_area :detail, placeholder: '本文を記入してください。', "v-model" => "text", class: "input-article-detail" %>
       <div v-html='text | marked' class="review-article"></div>
+      <%# <div v-html='text' class="review-article"></div> %>
       </div>
     </div>
     <div class="register-btn">
