@@ -49,7 +49,7 @@
         <% if user_signed_in? && @article.user.id == current_user.id %>
           <div class="links-edit-destroy">
             <p><%= link_to "編集", edit_article_path(@article), class:'edit-link' %></p>
-            <p><%= link_to "削除", article_path(@article), method: :delete, class:'edit-link' %>
+            <p><%= link_to "削除", article_path(@article), method: :delete, class:'edit-link', data: { confirm: "本当に削除しますか？" } %>
           </div>
         <% end %>
       </div>
