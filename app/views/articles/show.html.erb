@@ -47,7 +47,10 @@
           <p class="like-btn-grey"><span>お気に入り数: </span><%= @article.likes.count %></p>
         <% end %>
         <% if user_signed_in? && @article.user.id == current_user.id %>
-          <p><%= link_to "編集", edit_article_path(@article), class:'edit-link' %></p>
+          <div class="links-edit-destroy">
+            <p><%= link_to "編集", edit_article_path(@article), class:'edit-link' %></p>
+            <p><%= link_to "削除", article_path(@article), method: :delete, class:'edit-link' %>
+          </div>
         <% end %>
       </div>
   

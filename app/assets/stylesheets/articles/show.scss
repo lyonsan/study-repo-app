@@ -108,12 +108,16 @@
   font-weight: bold;
 }
 
+.links-edit-destroy {
+  display: flex;
+}
 
 .edit-link {
   color: #333333;
   background-color: #cccccc;
   padding: 15px;
   border-radius: 5px;
+  margin: 0 5px;
 }
 
 .article-main {
