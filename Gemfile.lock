@@ -159,6 +159,7 @@ GEM
     mimemagic (0.3.5)
     mini_magick (4.11.0)
     mini_mime (1.0.2)
+    mini_portile2 (2.5.0)
     minitest (5.14.4)
     msgpack (1.4.2)
     mysql2 (0.5.3)
@@ -166,7 +167,8 @@ GEM
       net-ssh (>= 2.6.5, < 7.0.0)
     net-ssh (6.1.0)
     nio4r (2.5.7)
-    nokogiri (1.11.2-x86_64-linux)
+    nokogiri (1.11.2)
+      mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.20.1)
@@ -220,6 +222,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redcarpet (2.3.0)
     regexp_parser (2.1.1)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -336,6 +339,7 @@ DEPENDENCIES
   capistrano-rbenv
   capistrano3-unicorn
   capybara (>= 2.15)
+  coderay
   devise
   dotenv-rails
   factory_bot_rails
@@ -350,6 +354,7 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 6.0.0)
   rails-i18n
+  redcarpet (~> 2.3.0)
   rspec-rails (~> 4.0.0)
   rspec_junit_formatter
   rubocop

@@ -55,7 +55,7 @@
       </div>
   
       <div class="article-main" id="article-main">
-        <%# <%= sanitize markdown(@article.detail), tags: %w(h1 h2 h3 h4 h5 strong em a p ul li code pre a), attributes: %w(href) %>
+        <%= sanitize markdown(@article.detail), tags: %w(h1 h2 h3 h4 h5 strong em a p ul li code pre a), attributes: %w(href) %>
       </div>
     </div>
     
@@ -64,8 +64,3 @@
 </div>
 
 <%= render "shared/footer"%>
-
-<script>
-document.getElementById('article-main').innerHTML = 
-  marked(`<%= @article.detail.gsub(/`/) {'\`'} %>`);
-</script>

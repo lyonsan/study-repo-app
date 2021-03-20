@@ -75,3 +75,5 @@ gem 'rails-i18n'
 gem "aws-sdk-s3", require: false
 gem 'dotenv-rails'
 gem 'marked-rails'
+gem 'redcarpet', '~> 2.3.0'
+gem 'coderay'

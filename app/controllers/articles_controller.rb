@@ -9,14 +9,20 @@ class ArticlesController < ApplicationController
     @article = ArticlesTag.new
   end
 
+  def back
+    @article = ArticlesTag.new(article_params)
+    render :new
+  end
+
+  def confirm
+    @article = ArticlesTag.new(article_params)
+    render :new if @article.invalid?
+  end
+
   def create
     @article = ArticlesTag.new(article_params)
-    if @article.valid?
-      @article.save
-      redirect_to articles_path
-    else
-      render :new
-    end
+    @article.save
+    redirect_to articles_path
   end
 
   def show
@@ -29,14 +35,20 @@ class ArticlesController < ApplicationController
                             tag_name: @tag)
   end
 
+  def edit_back
+    @form = ArticlesTag.new(update_params)
+    render :edit
+  end
+
+  def edit_confirm
+    @form = ArticlesTag.new(update_params)
+    render :edit if @form.invalid?
+  end
+
   def update
     @form = ArticlesTag.new(update_params)
-    if @form.valid?
-      @form.update
-      redirect_to articles_path
-    else
-      render :edit
-    end
+    @form.update
+    redirect_to articles_path
   end
 
   def destroy
