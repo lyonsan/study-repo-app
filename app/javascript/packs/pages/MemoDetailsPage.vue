@@ -14,12 +14,14 @@
       <div class="memo-detail-content">
         <h3 class="detail-content-title">メモを書こう</h3>
         <p class="detail-content-exp">先ほど作成したメモルームに入り、書きたいことをメモします。</p>
-        <p class="detail-content-exp">必要に応じて画面のスクリーンショットを入れることもできます。</p>
+        <p class="detail-content-exp">必要に応じて画面のスクリーンショット等を入れることもできます。</p>
+        <img src="/images/create_memo.gif" alt="" class="gif-wrapper">
       </div>
       <div class="memo-detail-content">
         <h3 class="detail-content-title">書いたメモを見よう</h3>
         <p class="detail-content-exp">これまでに書いたメモをキーワード検索できます。</p>
         <p class="detail-content-exp">メモタイトルをクリックすると詳細情報を確認することができます。</p>
+        <img src="/images/show_memo.gif" alt="" class="gif-wrapper">
       </div>
     </div>
   </div>
