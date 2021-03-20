@@ -72,7 +72,6 @@ gem 'pry-rails'
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem 'rails-i18n'
-gem 'redcarpet', '~> 2.3.0'
-gem 'coderay'
 gem "aws-sdk-s3", require: false
 gem 'dotenv-rails'
+gem 'marked-rails'

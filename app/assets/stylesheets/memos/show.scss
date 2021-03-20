@@ -1,5 +1,5 @@
 .memo-show-main {
-  padding-top:15vh;
+  padding:70px 0;
   display: flex;
   flex-direction: column;
   width: 70%;
@@ -12,39 +12,25 @@
 
 
 .memo-show-title {
-  padding:2vh;
-  border-radius: 0.5vh;
+  padding:20px;
   font-size: 25px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
 .memo-show-contents {
-  padding:2vh;
-  background-color: #EEEEEE;
-  border-radius: 0.5vh;
-  font-size: 2vh;
-  margin-bottom: 2vh;
+  padding:10px;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 
 .memo-show-image {
-  padding:2vh;
-  margin-bottom: 2vh;
+  padding:10px;
+  margin-bottom: 10px;
 }
 
 
-.memo-show-markdown {
-  padding:2vh;
-  background-color: #EEEEEE;
-  border-radius: 0.5vh;
-  margin-bottom: 2vh;
-}
-.memo-show-markdown li{
-  list-style: initial;
-}
-.memo-show-markdown code {
-  background-color: ivory;
-}
 
 .memo-show-btn {
   display: flex;

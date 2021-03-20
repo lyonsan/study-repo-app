@@ -1,0 +1,61 @@
+.review-memo>h1,
+.review-memo>h2,
+.review-memo>h3,
+.review-memo>h4,
+.review-memo>h5,
+.review-memo>h6,
+.memo-show-markdown>h1,
+.memo-show-markdown>h2,
+.memo-show-markdown>h3,
+.memo-show-markdown>h4,
+.memo-show-markdown>h5,
+.memo-show-markdown>h6,
+.review-article>h1,
+.review-article>h2,
+.review-article>h3,
+.review-article>h4,
+.review-article>h5,
+.review-article>h6,
+.article-main>h1,
+.article-main>h2,
+.article-main>h3,
+.article-main>h4,
+.article-main>h5,
+.article-main>h6 {
+  padding-bottom: 5px;
+  border-bottom: solid 2px #cccccc;
+}
+
+.memo-show-markdown>ul,
+.review-memo>ul,
+.review-article>ul,
+.article-main>ul {
+  list-style: disc;
+}
+
+.memo-show-markdown>p>code,
+.review-memo>p>code,
+.review-article>p>code,
+.article-main>p>code {
+  padding: 2px;
+  border-radius: 1px;
+  border: solid 1px #cccccc;
+  background-color: rgb(248, 241, 231);
+  color: rgb(247, 78, 11);
+}
+
+.memo-show-markdown>pre,
+.review-memo>pre,
+.review-article>pre,
+.article-main>pre {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #020331;
+}
+
+.memo-show-markdown>pre>code,
+.review-memo>pre>code,
+.review-article>pre>code,
+.article-main>pre>code {
+  color: #eeeeee;
+}

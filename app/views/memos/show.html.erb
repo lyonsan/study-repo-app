@@ -21,8 +21,8 @@
   <div class="memo-text">
     <h2 class="form-text">メモ</h2>
   </div>
-  <div class="memo-show-markdown">
-    <%= sanitize markdown(@memo.explanation), tags: %w(h1 h2 h3 h4 h5 strong em a p), attributes: %w(href) %>
+  <div class="memo-show-markdown" id="memo-show-markdown">
+    <%# <%= sanitize markdown(@memo.explanation), tags: %w(h1 h2 h3 h4 h5 strong em a p ul li code pre a), attributes: %w(href) %>
   </div>
   <div class="memo-show-btn">
     <%= link_to "編集", edit_subject_memo_path(@subject, @memo), class:"btn-edit-destroy" %>
@@ -31,3 +31,8 @@
 </div>
 
 <%= render "shared/footer"%>
+
+<script>
+document.getElementById('memo-show-markdown').innerHTML = 
+  marked(`<%= @memo.explanation.gsub(/`/) {'\`'} %>`);
+</script>
