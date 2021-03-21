@@ -13,12 +13,12 @@
       </div>
       <div class="why-illust">
         <div class="why-content">
-          <img src="/images/input.jpeg" alt="" class="why-pict">
+          <img src="/images/input.jpg" alt="" class="why-pict">
           <p>見る、聞く、読む</p>
           <h1>20%</h1>
         </div>
         <div class="why-content">
-          <img src="/images/output.jpeg" alt="" class="why-pict">
+          <img src="/images/output.jpg" alt="" class="why-pict">
           <p>説明する</p>
           <h1>90%</h1>
         </div>

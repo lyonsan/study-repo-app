@@ -5,14 +5,11 @@
         <h2 class='content-title'>
           Content
         </h2>
-        <div class='content-exp'>
-          <p>StudyReportは、日々の学習をアウトプットするためのアプリケーションです。</p>
-          <p>アウトプットを通し、忙しい中での学習をやり切ることができる環境を用意しています。</p>
-        </div>
+        
       </div>
       <div class="content-content">
         <div class="report-right-sp">
-          <img src="/images/report_b.jpg" alt="" class="content-pict">
+          <img src="/images/report_human.jpg" alt="" class="content-pict">
         </div>
         <div class="report-left">
           <h3>仲間との報告</h3>
@@ -21,12 +18,12 @@
           <p>仮に一人でも1日の終わりに学習内容を振り返ることができます。</p>
         </div>
         <div class="report-right">
-          <img src="/images/report_b.jpg" alt="" class="content-pict">
+          <img src="/images/report_human.jpg" alt="" class="content-pict">
         </div>
       </div>
       <div class="content-content">
         <div class="memo-left">
-          <img src="/images/memo_b.jpg" alt="" class="content-pict">
+          <img src="/images/rooms-index-04.jpeg" alt="" class="content-pict">
         </div>
         <div class="memo-right">
           <h3>学習中の気付きをメモ</h3>
@@ -37,7 +34,7 @@
       </div>
       <div class="content-content">
         <div class="article-right-sp">
-          <img src="/images/article_b.jpg" alt="" class="content-pict">
+          <img src="/images/article_real.jpg" alt="" class="content-pict">
         </div>
         <div class="article-left">
           <h3>学んだことを記事にして公開する</h3>
@@ -46,12 +43,12 @@
           <a href="/articles" class="articles-link">→実際の記事を見てみる</a>
         </div>
         <div class="article-right">
-          <img src="/images/article_b.jpg" alt="" class="content-pict">
+          <img src="/images/article_real.jpg" alt="" class="content-pict">
         </div>
       </div>
       <div class="content-content">
         <div class="user-left">
-          <img src="/images/memo_b.jpg" alt="" class="content-pict">
+          <img src="/images/user_real.jpg" alt="" class="content-pict">
         </div>
         <div class="user-right">
           <h3>仲間と繋がる</h3>

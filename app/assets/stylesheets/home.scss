@@ -3,6 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.title-wrapper {
+  background-image: url(landing_back.jpg);
+  background-size: cover;
+}
+
+.white {
+  background-color: rgba(256, 256, 256, 0.4);
+}
+
 .title {
   height:80vh;
   width: 70vw;
@@ -19,6 +28,10 @@
   flex-direction: column;
   width: 100%;
   padding-bottom: 25px;
+}
+
+.content-exp {
+  text-align: center;
 }
 
 .top-title {
@@ -95,6 +108,11 @@
   padding-bottom: 60px;
 }
 
+.content-pict {
+  width: 200px;
+  height: 200px;
+}
+
 .articles-link {
   color: black;
   font-weight: bold;
@@ -121,6 +139,11 @@
 
 .why-content>p, .why-content>h1 {
   text-align: center;
+}
+
+.why-pict {
+  width: 200px;
+  height: 200px;
 }
 
 .detail-content {
@@ -203,9 +226,10 @@
 }
 
 
-.top-lists-login>.list>.list-pict {
+.top-lists-login>.top-list>.list-pict {
   width: 200px;
   height: 200px;
+  border-radius: 10px;
   text-align: center;
 }
 
@@ -217,7 +241,7 @@
 @media screen and (max-width: 1000px) {
   .title {
     padding-top: 50px;
-    height: unset;
+    height: 80vh;
     width: 70vw;
     min-width: none;
     margin: 0 auto;
