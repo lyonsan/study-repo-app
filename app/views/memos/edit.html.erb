@@ -37,14 +37,14 @@
       </div>
       <%= f.text_area :point, class:"input-contents" %>
     </div>
-    <div class="form-group-max">
+    <div class="form-group-wide">
       <div class='form-text-wrap'>
         <%= f.label :explanation, "メモを書きましょう", class:"form-text" %>
         <span class="indispensable">任意</span>
       </div>
       <div id="editor" class="memo-explanation">
         <%= f.text_area :explanation, class:"input-memo-explanation", "v-model" => "input", name: "memo[explanation]" %>
-      <div v-html='input | marked' class="review-memo"></div>
+      </div>
     </div>
     <div class='register-btn'>
       <%= f.submit "メモ更新" ,class:"register-link" %>
@@ -53,19 +53,4 @@
   <% end %>
 </div>
 
-<%= render "shared/footer"%>
-
-<script type="text/javascript">
-  window.onload = function() {
-    new Vue({
-    el: '#editor',
-    data: {
-      input: '<%== j @memo.explanation %>',
-    },
-    filters: {
-    marked: marked,
-    },
-    });
-  };
-</script>
 <%= render "shared/footer"%>

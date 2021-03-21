@@ -34,14 +34,29 @@
 
 .memo-show-btn {
   display: flex;
-  padding: 2vh 0vh;
+  padding: 10px 0vh;
 }
 
 .btn-edit-destroy {
   color:black;
   text-decoration: underline;
-  padding: 2vh;
+  padding: 10px 20px;
   background-color: #EEEEEE;
   border-radius: 0.5vh;
-  margin-right: 2vh;
+  margin-right: 5px;
+  margin-top: 15px;
+}
+
+.memo-show-back {
+  padding-top: 15px;
+}
+
+.memo-show-top {
+  color:black;
+  padding: 10px 20px;
+  background-color: #EEEEEE;
+  text-decoration: underline;
+  border-radius: 0.5vh;
+  margin-right: 5px;
+  margin-top: 25px;
 }
