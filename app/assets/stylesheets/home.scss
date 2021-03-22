@@ -69,10 +69,18 @@
   font-size: 15px;
 }
 
-.content, .why, .detail, .start {
+.why, .detail, .start {
   width: 70vw;
   padding-bottom: 80px;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.content {
+  width: 100vw;
+  padding-bottom: 80px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -104,9 +112,42 @@
 
 .content-content {
   display: flex;
-  justify-content: space-around ;
-  padding-bottom: 60px;
+  justify-content: space-between;
+  height: 400px;
 }
+
+.report-left, .report-right, .memo-left, .memo-right, .article-left, .article-right, .user-left, .user-right {
+  width: 50%;
+}
+
+.report-right {
+  background-image: url(report_human.jpg);
+  background-size: cover;
+}
+
+.memo-left {
+  background-image: url(rooms-index-04.jpeg);
+  background-size: cover;
+}
+
+.article-right {
+  background-image: url(article_real.jpg);
+  background-size: cover;
+}
+
+.user-left {
+  background-image: url(user_real.jpg);
+  background-size: cover;
+}
+
+.content-text-wrapper {
+  padding: 15px;
+}
+
+.content-text-wrapper>h3 {
+  padding-bottom: 50px;
+}
+
 
 .content-pict {
   width: 200px;
@@ -124,9 +165,6 @@
   text-decoration: underline;
 }
 
-.report-right-sp, .article-right-sp {
-  display: none;
-}
 
 .why-illust {
   display: flex;
@@ -265,15 +303,66 @@
   .content-content {
     display: flex;
     flex-direction: column;
+    height: auto;
   }
+
+  .content-text-wrapper {
+    margin-bottom: 60px;
+  }
+
+  .content-text-wrapper>h3 {
+    padding-bottom: 30px;
+    text-align: center;
+  }
+
+  .content-text-wrapper>p {
+    text-align: center;
+  }
+
+  .content-text-wrapper>a {
+    display: flex;
+    justify-content: center;
+  }
+
+  .report-left, .report-right-sp, .memo-left, .memo-right, .article-left, .article-right-sp, .user-left, .user-right {
+    width: 100%;
+  }
+  
 
   .report-right, .article-right {
     display: none;
   }
 
-  .report-right-sp, .article-right-sp, .memo-left, .user-left {
-    display: block;
+  .report-right-sp {
+    background-image: url(report_human.jpg);
     margin: 0 auto;
+    height: 300px;
+    max-width: 450px;
+    background-size: cover;
+  }
+
+  .article-right-sp {
+    background-image: url(article_real.jpg);
+    margin: 0 auto;
+    height: 300px;
+    max-width: 450px;
+    background-size: cover;  
+  }
+
+  .memo-left {
+    background-image: url(rooms-index-04.jpeg);
+    margin: 0 auto;
+    height: 300px;
+    max-width: 450px;
+    background-size: cover;  
+  }
+
+  .user-left {
+    background-image: url(user_real.jpg);
+    margin: 0 auto;
+    height: 300px;
+    max-width: 450px;
+    background-size: cover;
   }
 
   .content, .why, .detail, .start {
