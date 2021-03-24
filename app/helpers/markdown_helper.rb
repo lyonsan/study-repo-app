@@ -17,13 +17,5 @@ module MarkdownHelper
     markdown.render(detail).html_safe
   end
 
-  # def toc(detail)
-  #   toc_option = {
-  #     nesting_level: 2
-  #   }
-
-  #   toc_renderer = Redcarpet::Render::HTML_TOC.new
-  #   toc = Redcarpet::Markdown.new(toc_renderer, toc_option)
-  #   toc.render(detail).html_safe
-  # end
+  
 end

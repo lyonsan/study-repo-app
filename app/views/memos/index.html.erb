@@ -9,7 +9,7 @@
   </div>
 </div>
 <div class="subject-destroy">
-  <%= link_to "科目ルームの削除", subject_path(@subject), method: :delete, class: 'subject-destroy-link' %>
+  <%= link_to "科目ルームの削除", subject_path(@subject), method: :delete, class: 'subject-destroy-link', data: { confirm: "本当に削除しますか？" } %>
 </div>
 
 <%= render "shared/footer"%>

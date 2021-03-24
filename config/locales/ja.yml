@@ -43,6 +43,6 @@ ja:
     attributes:
       articles_tag:
         summary: 記事タイトル
-        detail: 詳細
+        detail: 本文
         study_genre_id: ジャンル      
         tag_name: タグ

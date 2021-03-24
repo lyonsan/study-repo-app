@@ -97,8 +97,10 @@
                     <p><%= "お気に入り:#{article.likes.count}" %></p>
                   </div>
                   <div class="list-tag">
-                    <% article.tags.each do |tag| %>
-                      <p class="list-tag-name">#<%= tag.tag_name %></p>
+                    <% if article.tags.present? %>
+                      <% article.tags.each do |tag| %>
+                        <p class="list-tag-name">#<%= tag.tag_name %></p>
+                      <% end %>
                     <% end %>
                   </div>
                 </div>

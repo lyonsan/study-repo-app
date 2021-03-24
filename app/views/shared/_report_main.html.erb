@@ -5,7 +5,7 @@
     <% if report.user == current_user %>
       <div class="reports-mine">
         <%= render partial:'shared/report', locals: {report: report} %>
-        <%= link_to '削除', "reports/#{report.id}", method: :delete, class:'report-destroy' %>
+        <%= link_to '削除', "reports/#{report.id}", method: :delete, class:'report-destroy', data: { confirm: "本当に削除しますか？" } %>
       </div>
     <% else %>
       <div class="reports-others">

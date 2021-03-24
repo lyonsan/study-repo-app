@@ -9,7 +9,7 @@
       <% if @room.image.attached? %>
         <%= image_tag @room.image, class: "room-box-img" %>
       <% else %>
-        <%= image_tag 'rooms-index-03.jpeg', class:"room-box-img" %>
+        <%= image_tag 'report_human.jpg', class:"room-box-img" %>
       <% end %>
     </div>
 
@@ -52,7 +52,7 @@
       <div class="room-edit-btn">
         <%= link_to 'ルーム情報の編集', edit_room_path(@room) , method: :get, class: "room-link-edit" %>
         <p class='or-text'>or</p>
-        <%= link_to 'ルームの削除', room_path(@room), method: :delete, class:'room-link-des' %>
+        <%= link_to 'ルームの削除', room_path(@room), method: :delete, class:'room-link-des', data: { confirm: "本当に削除しますか？" } %>
       </div>
     <% end %>
     <div class="to-room-index">

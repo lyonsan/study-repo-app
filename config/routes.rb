@@ -24,7 +24,13 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
   resources :articles do
+    member do
+      post 'edit_confirm'
+      post 'edit_back'
+    end
     collection do
+      post 'confirm'
+      post 'back'
       get 'search'
       get 'tagsearch'
     end

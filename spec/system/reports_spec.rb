@@ -10,16 +10,14 @@ RSpec.describe '学習報告投稿機能', type: :system do
     it 'ログインしたユーザーは自分の所属するルームで学習報告を投稿できる' do
       # サインインする
       sign_in(@room_user.user)
+      # 学習報告ルーム一覧に遷移する
+      visit rooms_path
       # 生成されたルームが存在することを確認する
       expect(page).to have_content(@room_user.room.title)
-      # ルーム詳細ページに遷移
-      visit room_path(@room_user.room)
-      # 「学習報告ルームへ」のリンクがあることを確認
-      expect(page).to have_content('学習報告ルームへ')
       # 学習報告一覧ルームに遷移する
       visit room_reports_path(@room_user.room)
       # 「学習報告を行う」のリンクがあることを確認
-      expect(page).to have_content('学習報告を行う')
+      expect(page).to have_content('報告を行う')
       # 学習報告ページに遷移する
       visit new_room_report_path(@room_user.room)
       # 報告情報を報告する
@@ -56,16 +54,14 @@ RSpec.describe '学習報告投稿機能', type: :system do
     it '誤った情報では投稿できない' do
       # サインインする
       sign_in(@room_user.user)
+      # 学習報告ルームに遷移する
+      visit rooms_path
       # 生成されたルームが存在することを確認する
       expect(page).to have_content(@room_user.room.title)
-      # ルーム詳細ページに遷移
-      visit room_path(@room_user.room)
-      # 「学習報告ルームへ」のリンクがあることを確認
-      expect(page).to have_content('学習報告ルームへ')
       # 学習報告一覧ルームに遷移する
       visit room_reports_path(@room_user.room)
       # 「学習報告を行う」のリンクがあることを確認
-      expect(page).to have_content('学習報告を行う')
+      expect(page).to have_content('報告を行う')
       # 学習報告ページに遷移する
       visit new_room_report_path(@room_user.room)
       # 報告情報を報告する
@@ -85,14 +81,10 @@ RSpec.describe '学習報告投稿機能', type: :system do
     it 'ルーム外のユーザーは投稿できない' do
       # サインインする
       sign_in(@user1)
+      # 学習報告ルームに遷移する
+      visit rooms_path
       # ルーム詳細ページが表示されていない
       expect(page).to have_no_content(@room_user.room.title)
-    end
-    it 'ログインしていないと投稿できない' do
-      # ルーム詳細ページに遷移
-      visit room_path(@room_user.room)
-      # 「学習報告ルームへ」のリンクがないことを確認
-      expect(page).to have_no_content('学習報告ルームへ')
     end
   end
 end
@@ -106,14 +98,14 @@ RSpec.describe '学習報告の削除機能', type: :system do
     it '学習ルームに所属するメンバーは学習ルームを削除することができ、その場合同時に学習報告も削除される' do
       # サインインする
       sign_in(@room_user.user)
+      # 学習報告ルームに遷移する
+      visit rooms_path
       # ルームの中で学習報告を行う
       report_create(@room_user.room, @report)
       # 学習報告ルームへのリンクがあることを確認する
-      expect(page).to have_content('トップページに戻る')
-      # トップページに遷移する
-      visit root_path
-      # ルーム詳細ページに遷移
-      visit room_path(@room_user.room)
+      expect(page).to have_content('学習報告ルームへ')
+      # 学習報告一覧ルームに遷移する
+      visit room_reports_path(@room_user.room)
       # 「削除」ボタンがあることを確認
       expect(page).to have_content('削除')
       # 「削除」ボタンをクリックすると、Reportモデルのカウントが減少する
@@ -121,7 +113,7 @@ RSpec.describe '学習報告の削除機能', type: :system do
         click_link '削除'
       end.to change { Report.count }.by(-1)
       # 削除完了ページに遷移していることを確認する
-      expect(current_path).to eq "/rooms/#{@room_user.room_id}"
+      expect(page).to have_content('報告を削除しました')
     end
   end
 end

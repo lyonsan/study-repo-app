@@ -10,7 +10,7 @@
         <p class="detail-content-exp">学習中に得た気付きを全世界に発信できます!</p>
         <p class="detail-content-exp">新たに得た学びを、みんなが理解できるような言葉で書いてみましょう。</p>
         <p class="detail-content-exp">説明することで学習効率を上げましょう!</p>
-        <img src="/images/create_article.gif" alt="" class="gif-wrapper">
+        <img src="/images/create_article2.gif" alt="" class="gif-wrapper">
       </div>
       <div class="article-detail-content">
         <h3 class="detail-content-title">記事を探そう</h3>

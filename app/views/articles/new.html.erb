@@ -2,11 +2,11 @@
 <%= render "shared/article_header"%>
 
 <div class="article-new-form">
-  <%= form_with model: @article, url: articles_path, class: 'registration-main', local: true do |f| %>
+  <%= form_with model: @article, url: confirm_articles_path, class: 'registration-main', local: true do |f| %>
   <div class="form-wrap">
     <div class='form-header'>
       <h1 class='form-header-text'>
-        メモの作成
+        記事の作成
       </h1>
     </div>
 
@@ -36,15 +36,13 @@
         </div>
       </div>
     </div>
-    <div class="form-group-max">
+    <div class="form-group-wide">
       <div class="form-text-wrap">
         <%= f.label :detail, '本文', class:"form-text" %>
         <span class="indispensable">必須</span>
       </div>
-      <div id="detail" class="article-detail">
-        <%= f.text_area :detail, placeholder: '本文を記入してください。', "v-model" => "text", class: "input-article-detail" %>
-      <div v-html='text | marked' class="review-article"></div>
-      <%# <div v-html='text' class="review-article"></div> %>
+      <div class="article-detail">
+        <%= f.text_area :detail, placeholder: '本文を記入してください。', class: "input-article-detail" %>
       </div>
     </div>
     <div class="register-btn">
@@ -54,17 +52,3 @@
   <% end %>
 </div>
 <%= render "shared/footer"%>
-
-<script type="text/javascript">
-  window.onload = function() {
-    new Vue({
-    el: '#detail',
-    data: {
-      text: '<%== j @article.detail %>',
-    },
-    filters: {
-    marked: marked,
-    },
-    });
-  };
-</script>

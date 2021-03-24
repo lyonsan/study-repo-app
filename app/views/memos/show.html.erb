@@ -22,17 +22,15 @@
     <h2 class="form-text">メモ</h2>
   </div>
   <div class="memo-show-markdown" id="memo-show-markdown">
-    <%# <%= sanitize markdown(@memo.explanation), tags: %w(h1 h2 h3 h4 h5 strong em a p ul li code pre a), attributes: %w(href) %>
+    <%= sanitize markdown(@memo.explanation), tags: %w(h1 h2 h3 h4 h5 strong em a p ul li code pre a), attributes: %w(href) %>
   </div>
   <div class="memo-show-btn">
     <%= link_to "編集", edit_subject_memo_path(@subject, @memo), class:"btn-edit-destroy" %>
-    <%= link_to "削除", subject_memo_path(@subject, @memo), method: :delete, class:"btn-edit-destroy" %>
+    <%= link_to "削除", subject_memo_path(@subject, @memo), method: :delete, class:"btn-edit-destroy", data: { confirm: "本当に削除しますか？" } %>
+  </div>
+  <div class="memo-show-back">
+    <%= link_to "メモ一覧に戻る", subject_memos_path(@subject), class:"memo-show-top" %>
   </div>
 </div>
 
 <%= render "shared/footer"%>
-
-<script>
-document.getElementById('memo-show-markdown').innerHTML = 
-  marked(`<%= @memo.explanation.gsub(/`/) {'\`'} %>`);
-</script>

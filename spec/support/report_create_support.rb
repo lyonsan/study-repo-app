@@ -4,7 +4,7 @@ module ReportCreateSupport
     visit room_path(room)
     expect(page).to have_content('学習報告ルームへ')
     visit room_reports_path(room)
-    expect(page).to have_content('学習報告を行う')
+    expect(page).to have_content('報告を行う')
     visit new_room_report_path(room)
     fill_in '本日の学習時間を入力してください', with: report.study_time
     fill_in '集中して学習を行えた時間を入力してください', with: report.concentrated_time

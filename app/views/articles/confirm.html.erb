@@ -1,0 +1,29 @@
+<%= render "shared/article_header"%>
+
+<div class="article-show-wrapper">
+  <div class="article-wrapper-body">
+    <h1 class="confirm-title">記事本文の確認</h1>
+    <div class="article-main">
+      <%= sanitize markdown(@article.detail), tags: %w(h1 h2 h3 h4 h5 strong em a p ul li code pre a), attributes: %w(href) %>
+    </div>
+    <div class="confirm-btns">
+      <%= form_with model: @article, method: :post, url: articles_path, class:"confirm-btn", local: true do |f| %>
+        <%= f.hidden_field :summary %>
+        <%= f.hidden_field :study_genre_id %>
+        <%= f.hidden_field :tag_name %>
+        <%= f.hidden_field :detail %>
+        <%= f.submit '送信する', class: 'confirm-create' %>
+      <% end %>
+
+      <%= form_with model: @article, method: :post, url: back_articles_path, class:"confirm-btn", local: true do |f| %>
+        <%= f.hidden_field :summary %>
+        <%= f.hidden_field :study_genre_id %>
+        <%= f.hidden_field :tag_name %>
+        <%= f.hidden_field :detail %>
+        <%= f.submit '入力画面に戻る', class: 'confirm-back' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer"%>

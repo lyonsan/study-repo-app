@@ -10,7 +10,7 @@ RSpec.describe 'チャットルーム作成機能', type: :system do
       # サインインする
       sign_in(@user)
       # ユーザー一覧へのリンクがあることを確認する
-      expect(page).to have_content 'ユーザー一覧'
+      expect(page).to have_content 'Users'
       # ユーザー一覧ページに遷移する
       visit users_path
       # ユーザー一覧ページに別のユーザーの名前があることを確認する
@@ -29,8 +29,6 @@ RSpec.describe 'チャットルーム作成機能', type: :system do
     it 'ログインしていないユーザーは新規チャットルームを作成できない' do
       # トップページに遷移する
       visit root_path
-      # ユーザー一覧へのリンクがあることを確認する
-      expect(page).to have_content 'ユーザー一覧ページへ'
       # ユーザー一覧ページに遷移する
       visit users_path
       # ユーザー一覧ページに別のユーザーの名前があることを確認する
@@ -52,7 +50,7 @@ RSpec.describe 'チャットルーム削除', type: :system do
       # サインインする
       sign_in(@user)
       # ユーザー一覧へのリンクがあることを確認する
-      expect(page).to have_content 'ユーザー一覧'
+      expect(page).to have_content 'Users'
       # ユーザー一覧ページに遷移する
       visit users_path
       # ユーザー一覧ページに別のユーザーの名前があることを確認する

@@ -9,19 +9,19 @@
         <h3 class="detail-content-title">メモルームを作ろう</h3>
         <p class="detail-content-exp">メモを項目別に残すことができます!</p>
         <p class="detail-content-exp">まずは自分の作りたいメモルームを作成します。</p>
-        <img src="/images/create_subject.gif" alt="" class="gif-wrapper">
+        <img src="/images/create_subject2.gif" alt="" class="gif-wrapper">
       </div>
       <div class="memo-detail-content">
         <h3 class="detail-content-title">メモを書こう</h3>
         <p class="detail-content-exp">先ほど作成したメモルームに入り、書きたいことをメモします。</p>
         <p class="detail-content-exp">必要に応じて画面のスクリーンショット等を入れることもできます。</p>
-        <img src="/images/create_memo.gif" alt="" class="gif-wrapper">
+        <img src="/images/create_memo2.gif" alt="" class="gif-wrapper">
       </div>
       <div class="memo-detail-content">
         <h3 class="detail-content-title">書いたメモを見よう</h3>
         <p class="detail-content-exp">これまでに書いたメモをキーワード検索できます。</p>
         <p class="detail-content-exp">メモタイトルをクリックすると詳細情報を確認することができます。</p>
-        <img src="/images/show_memo.gif" alt="" class="gif-wrapper">
+        <img src="/images/show_memo2.gif" alt="" class="gif-wrapper">
       </div>
     </div>
   </div>
