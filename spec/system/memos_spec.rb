@@ -19,7 +19,7 @@ RSpec.describe 'メモ作成機能', type: :system do
       # メモ一覧ページに移動
       visit subject_memos_path(@subject)
       # 「メモを作成する」のリンクがあることを確認
-      expect(page).to have_content('メモを作成する')
+      expect(page).to have_content('メモ新規作成')
       # メモ新規作成ページへ遷移
       visit new_subject_memo_path(@subject)
       # 今回貼り付ける画像を定義する
@@ -64,7 +64,7 @@ RSpec.describe 'メモ作成機能', type: :system do
         # メモ一覧ページに移動
         visit subject_memos_path(@subject)
         # 「メモを作成する」のリンクがあることを確認
-        expect(page).to have_content('メモを作成する')
+        expect(page).to have_content('メモ新規作成')
         # メモ新規作成ページへ遷移
         visit new_subject_memo_path(@subject)
         # メモの内容を記入する

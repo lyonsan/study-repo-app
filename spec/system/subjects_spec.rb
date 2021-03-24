@@ -12,10 +12,12 @@ RSpec.describe '科目別メモルームの作成機能', type: :system do
       sign_in(@user)
       # メモルーム一覧ページへのリンクがあることを確認する
       expect(page).to have_content('メモ')
+      # メモルーム一覧に移動する
+      visit subjects_path
       # メモルーム一覧ページに遷移する
       visit subjects_path
       # メモルーム新規作成ページへのリンクがあることを確認する
-      expect(page).to have_content('新規科目/カテゴリー新規作成はこちら')
+      expect(page).to have_content('科目/カテゴリー新規作成')
       # メモルーム新規作成ページに遷移する
       visit new_subject_path
       # フォームに情報を記入する
@@ -42,7 +44,7 @@ RSpec.describe '科目別メモルームの作成機能', type: :system do
       # トップページに遷移する
       visit root_path
       # 新規作成ページへのリンクがない
-      expect(page).to have_no_content('新規科目/カテゴリー新規作成はこちら')
+      expect(page).to have_no_content('科目/カテゴリー新規作成')
     end
     it '正しい情報を入力しなければ作成できない' do
       # サインインする
@@ -52,7 +54,7 @@ RSpec.describe '科目別メモルームの作成機能', type: :system do
       # メモルーム一覧ページに遷移する
       visit subjects_path
       # メモルーム新規作成ページへのリンクがあることを確認する
-      expect(page).to have_content('新規科目/カテゴリー新規作成はこちら')
+      expect(page).to have_content('科目/カテゴリー新規作成')
       # メモルーム新規作成ページに遷移する
       visit new_subject_path
       # フォームに誤った情報を記入する

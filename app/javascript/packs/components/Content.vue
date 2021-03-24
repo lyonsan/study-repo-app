@@ -9,6 +9,7 @@
       </div>
       <div class="content-content">
         <div class="report-right-sp">
+          <div class="smoke"></div>
         </div>
         <div class="report-left">
           <div class="content-text-wrapper">
@@ -19,10 +20,12 @@
           </div>
         </div>
         <div class="report-right">
+          <div class="smoke"></div>
         </div>
       </div>
       <div class="content-content">
         <div class="memo-left">
+          <div class="smoke"></div>
         </div>
         <div class="memo-right">
           <div class="content-text-wrapper">
@@ -35,6 +38,7 @@
       </div>
       <div class="content-content">
         <div class="article-right-sp">
+          <div class="smoke"></div>
         </div>
         <div class="article-left">
           <div class="content-text-wrapper">
@@ -45,11 +49,12 @@
           </div>
         </div>
         <div class="article-right">
+          <div class="smoke"></div>
         </div>
       </div>
       <div class="content-content">
         <div class="user-left">
-          
+          <div class="smoke"></div>
         </div>
         <div class="user-right">
           <div class="content-text-wrapper">

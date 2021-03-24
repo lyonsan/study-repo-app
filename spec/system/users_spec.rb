@@ -9,8 +9,6 @@ RSpec.describe 'ユーザー新規登録', type: :system do
     it '正しい情報を入力すればユーザー新規登録ができてトップページに移動する' do
       # トップページに遷移する
       visit root_path
-      # トップページにサインアップページへ遷移するボタンがあることを確認する
-      expect(page).to have_content('新規登録')
       # 新規登録ページへ移動する
       visit new_user_registration_path
       # ユーザー情報を入力する
@@ -29,11 +27,8 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       end.to change { User.count }.by(1)
       # トップページへ遷移したことを確認する
       expect(current_path).to eq root_path
-      # ログアウトボタン、ユーザー名、メモルームへのリンクボタンが表示されていることを確認する
-      expect(page).to have_content('ログアウト')
-      expect(page).to have_content('ユーザー一覧')
-      expect(page).to have_content(@user.nickname)
-      expect(page).to have_content('メモ')
+      # ログアウトボタが表示されていることを確認する
+      expect(page).to have_content('Logout')
       # 新規登録ページへ遷移するボタンやログインページに遷移するボタンが表示されていないことを確認する
       expect(page).to have_no_content('新規登録')
       expect(page).to have_no_content('ログイン')
@@ -47,8 +42,6 @@ RSpec.describe 'ユーザー新規登録', type: :system do
     it '誤った情報ではユーザー新規登録ができずに新規登録ページへ戻ってくる' do
       # トップページに遷移する
       visit root_path
-      # トップページにサインアップページへ遷移するボタンがあることを確認する
-      expect(page).to have_content('新規登録')
       # 新規登録ページへ移動する
       visit new_user_registration_path
       # ユーザー情報を入力する
