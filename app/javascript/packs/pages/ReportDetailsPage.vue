@@ -15,7 +15,7 @@
       <div>
         <h3 class="detail-content-title">学習報告を行おう</h3>
         <p class="detail-content-exp">ルームを作成したら、ルーム内で学習報告を実施しましょう!</p>
-        <p class="detail-content-exp">その日の学習時間や学習内容を振り返り、明日の計画を立てましょう</p>
+        <p class="detail-content-exp">その日の学習時間や学習内容を振り返り、明日の計画を立てましょう。</p>
         <p class="detail-content-exp">記録が残り、後から毎日の学習内容を確認できます。</p>
         <img src="/images/create_report.gif" alt="" class="gif-wrapper">
       </div>
