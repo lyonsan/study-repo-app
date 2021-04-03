@@ -15,6 +15,7 @@ class RoomsController < ApplicationController
   end
 
   def show
+    redirect_to root_path unless user_signed_in? && @room.users.include?(current_user)
   end
 
   def edit
