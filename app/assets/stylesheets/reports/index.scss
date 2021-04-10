@@ -87,3 +87,9 @@
   background-color: #00b0f0;
   color: white;
 }
+
+@media screen and (max-width: 1000px) {
+  .report-new-button {
+    font-size: 45px;
+  }
+}
