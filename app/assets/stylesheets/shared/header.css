@@ -62,7 +62,7 @@ nav {
   background-color: white;
   position: absolute;
   z-index: 10;
-  top: 3.125rem;
+  top: 3.5rem;
   overflow-x: hidden;
   text-align: center;
   transition: .5s;
@@ -71,6 +71,9 @@ nav {
 }
 
 @media screen and (max-width: 1000px) {
+  .header-logo {
+    font-size: 35px;
+  }
   .right-lists {
     display: none;
   }
@@ -85,7 +88,7 @@ nav {
     padding: 0 5px;
     font-family: 'Roboto';
     color: black;
-    font-size: 18px;
+    font-size: 35px;
   }
   
 

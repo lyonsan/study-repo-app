@@ -303,6 +303,10 @@
     align-items: center;
     flex-direction: column;
   }
+
+  .top-title {
+    font-size: 60px;
+  }
   
   .top-lists {
     display: flex;
@@ -313,6 +317,14 @@
   .top-lists>.top-list {
     width: 100%;
     text-align: center;
+  }
+
+  .content-exp>p {
+    font-size: 20px;
+  }
+
+  .content-header>.content-title, .why-header>.why-title, .detail-header>.detail-title, .start-header>.start-title {
+    font-size: 45px;
   }
 
   .content-content {
@@ -327,17 +339,20 @@
   }
 
   .content-text-wrapper>h3 {
+    font-size: 30px;
     padding-bottom: 30px;
     text-align: center;
   }
 
   .content-text-wrapper>p {
     text-align: center;
+    font-size: 20px;
   }
 
   .content-text-wrapper>a {
     display: flex;
     justify-content: center;
+    font-size: 20px;
   }
 
   .report-left, .report-right-sp, .memo-left, .memo-right, .article-left, .article-right-sp, .user-left, .user-right {
@@ -390,10 +405,35 @@
     justify-content: center;
     flex-direction: column;
   }
+
+  .why-exp>p {
+    font-size: 18px;
+  }
   
   .why-illust {
     display: flex;
     flex-direction: column;
+  }
+
+  .why-pict {
+    width: 300px;
+    height: 300px;
+  }
+
+  .why-content>p {
+    font-size: 30px;
+  }
+
+  .why-content>h1 {
+    font-size: 40px;
+  }
+
+  .detail-exp>p {
+    font-size: 20px;
+  }
+
+  .detail-link {
+    font-size: 25px;
   }
 
   .home-head-user {
@@ -410,6 +450,10 @@
 
   .top-lists-login>.top-list {
     text-align: center;
+  }
+
+  .signin-link, .signup-link {
+    font-size: 25px;
   }
   
 }
