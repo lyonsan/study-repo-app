@@ -54,3 +54,17 @@
   color: #81d7f7;
 }
 
+@media screen and (max-width: 1000px) {
+  .message {
+    padding-top: 120px;
+  }
+
+  .create-message {
+    font-size: 50px;
+  }
+
+  .feature-lists>.list>a {
+    font-size: 45px;
+  }
+  
+}
