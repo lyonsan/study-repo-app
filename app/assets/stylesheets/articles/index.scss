@@ -1,4 +1,5 @@
 .article-wrapper {
+  padding-top: 70px;
   display: flex;
 }
 
@@ -14,7 +15,6 @@
 #hidden {
   overflow-x: hidden;
   height: 0%;
-  width: 300px;
   padding: 0 20px;
   position: fixed;
   top: 0;
@@ -24,7 +24,6 @@
 }
 
 .article-search-body {
-  padding-top: 70px;
   display: flex;
   flex-direction: column;
 }
@@ -137,6 +136,7 @@
 
 .list-tag {
   margin-left: 5px;
+  max-width: 300px;
 }
 
 .list-tag-name {
@@ -145,6 +145,7 @@
   color: black;
   border: solid 1px #cccccc;
   background-color: #eeeeee;
+  overflow-wrap: break-word;
 }
 
 .bottom-left {
@@ -162,9 +163,14 @@
   align-items: baseline;
 }
 
+.list-user {
+  max-width: 250px;
+}
+
 .list-user-nickname {
   padding: 5px 0;
   color: black;
+  overflow-wrap: break-word;
 }
 
 .list-article-date {
@@ -173,8 +179,20 @@
 }
 
 @media screen and (max-width: 1000px) {
+  .article-wrapper {
+    padding-top: 70px;
+  }
+
   .article-search-bar {
     display: none;
+  }
+
+  .article-search-body {
+    padding-top: 120px;
+  }
+
+  .article-search-title {
+    font-size: 45px;
   }
 
   #search-box {
@@ -188,16 +206,64 @@
   }
 
   .fa-search {
-    font-size: 30px;
+    font-size: 60px;
     color: white;
   }
   
   #hidden.search-menu {
-    width: 300px;
-    height: 500px;
+    height: 1000px;
   }
+
   
   .article-body {
     width: 100%;
+    min-height: calc(100vh - 70px);
+  }
+
+  .search-article {
+    font-size: 30px;
+  }
+
+  .article-search-input {
+    font-size: 40px;
+    height: 80px;
+  }
+
+  .article-header>.article-title {
+    font-size: 60px;
+  }
+  
+  .article-header-right {
+    display: flex;
+    align-items: center;
+  }
+
+  .article-new {
+    font-size: 30px;
+  }
+
+  .article-summary {
+    font-size: 50px;
+  }
+
+  .article-genre {
+    font-size: 25px;
+  }
+
+  .list-like>p {
+    font-size: 30px;
+  }
+
+  .list-tag-name {
+    font-size: 30px;
+  }
+  
+  .list-user-nickname {
+    font-size: 25px;
+  }
+  
+  .list-article-date {
+    font-size: 12px;
+    color: black;
   }
 }

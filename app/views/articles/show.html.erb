@@ -13,16 +13,16 @@
           <div class="article-title">
             <h3 class="article-title-summary"><%= @article.summary %></h3>
           </div>
-          <div class="article-genre">
+          <div class="article-genre-show">
             <p>ジャンル:<%= @article.study_genre.name %></p>
           </div>
         
         </div>
         <div class="article-upper-bottom">
-          <div class="article-date">
+          <div class="article-date-show">
             <p>最終更新日時: <%= l @article.updated_at, format: :long %></p>
           </div>
-          <div class="article-user">
+          <div class="article-user-show">
             <p>投稿者: </p><%= link_to @article.user.nickname, user_path(@article.user) %>
           </div>
         </div>
