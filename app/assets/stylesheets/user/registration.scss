@@ -39,6 +39,7 @@
   transform: translateX(-50%);
 }
 
+
 // 共通
 .form-group {
   width: 50%;
@@ -235,5 +236,9 @@
   }
   .error-message {
     font-size: 30px;
+  }
+
+  .login-flash-message {
+    padding-top: 50px;
   }
 }
