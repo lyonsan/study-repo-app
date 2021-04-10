@@ -28,3 +28,9 @@ select {
   height: 30px;
   color: rgba(0, 0, 0, 0.8);
 }
+
+@media screen and (max-width: 1000px) {
+  .click-upload>p {
+    font-size: 25px;
+  }
+}
