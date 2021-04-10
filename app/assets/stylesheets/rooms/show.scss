@@ -135,3 +135,31 @@
 .to-room-index {
   margin-top: 40px;
 }
+
+@media screen and (max-width: 1000px) {
+  .room-box>.name {
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    color: black;
+    margin-bottom: 5vh;
+    position: relative;
+  }
+  
+  .room-link, .room-link:hover {
+    font-size: 40px;
+  }
+
+  .detail-room {
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  .detail-value {
+    font-size: 30px;
+  }
+
+  .room-link-edit, .room-link-des {
+    font-size: 45px;
+  }
+}
