@@ -14,7 +14,9 @@
         <%= f.label :content, "メッセージ記入欄", class: 'chat-input-text' %>
         <div class="chat-input">
           <%= f.text_field :content, placeholder: "メッセージを送りましょう", class:"message-input" %>
-          <%= f.submit '送信', class:"chat-send-btn" %>
+          <div>
+            <%= f.submit '送信', class:"chat-send-btn" %>
+          </div>
         </div>
       <% end %>
     </div>

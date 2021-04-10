@@ -5,16 +5,25 @@
 }
 
 
-.posted-articles>h3 {
-  text-align: center;
-}
-
-
-.liked-articles>h3 {
+.posted-articles>h3, .liked-articles>h3 {
   text-align: center;
 }
 
 .no-content-message {
   margin: 40px 0 40px 0;
   text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .user-library-wrapper {
+    padding: 120px 30px 40px 30px;
+  }
+
+  .header-user-nickname {
+    font-size: 50px;
+  }
+
+  .posted-articles>h3, .liked-articles>h3 {
+    font-size: 45px;
+  }
 }

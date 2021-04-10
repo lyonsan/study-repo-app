@@ -62,12 +62,12 @@
 }
 
 .user-messages {
-  padding-top: 5vh;
+  padding-top: 50px;
 }
 
 .user-chats-btn {
-  padding: 2vh;
-  border-radius: 2px;
+  padding: 10px 20px;
+  border-radius: 4px;
   background-color: #333333;
   color:#eee;
   border: none;
@@ -101,35 +101,33 @@
   font-weight: bold;
 }
 
-.regi-session {
-  display: flex;
-  justify-content: center;
-}
+@media screen and (max-width: 1000px) {
+  .nickname {
+    font-size: 60px;
+  }
 
-.regi-btn {
-  background-color: blue;
-  color: #eee;
-  padding: 2vh 5vh;
-  border-radius: 2px;
-}
+  .detail-user {
+    font-size: 25px;
+    padding: 5px;
+  }
 
-.session-btn {
-  background-color: #333333;
-  color: #eee;
-  padding: 2vh 5vh;
-  border-radius: 2px;
-}
+  .user-show-title {
+    font-size: 30px;
+  }
 
-.regi-btn:hover {
-  background-color: rgb(67, 67, 231);
-  color: #eee;
-  padding: 2vh 5vh;
-  border-radius: 2px;
-}
+  .fa-pen-fancy {
+    font-size: 45px;
+  }
 
-.session-btn:hover {
-  background-color: #7c7a7a;
-  color: #eee;
-  padding: 2vh 5vh;
-  border-radius: 2px;
+  .link-library {
+    font-size: 45px;
+  }
+
+  .user-list-name {
+    font-size: 45px;
+  }
+
+  .user-chats-btn {
+    font-size: 45px;
+  }
 }
