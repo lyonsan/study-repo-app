@@ -136,6 +136,7 @@
 
 .list-tag {
   margin-left: 5px;
+  max-width: 300px;
 }
 
 .list-tag-name {
@@ -144,6 +145,7 @@
   color: black;
   border: solid 1px #cccccc;
   background-color: #eeeeee;
+  overflow-wrap: break-word;
 }
 
 .bottom-left {
@@ -161,9 +163,14 @@
   align-items: baseline;
 }
 
+.list-user {
+  max-width: 250px;
+}
+
 .list-user-nickname {
   padding: 5px 0;
   color: black;
+  overflow-wrap: break-word;
 }
 
 .list-article-date {
