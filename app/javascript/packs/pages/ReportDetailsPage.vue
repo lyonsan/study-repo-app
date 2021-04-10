@@ -51,23 +51,27 @@ export default {
 }
 
 @media screen and (max-width: 1000px) {
+  .repo-detail {
+    padding-top: 100px;
+  }
   .detail-header-title {
-    font-size: 45px;
+    font-size: 70px;
     font-weight: bold;
   }
 
   .detail-content-title {
-    font-size: 30px;
+    font-size: 45px;
     font-weight: bold;
   }
 
   .exp-text {
-    font-size: 20px;
+    font-size: 30px;
   }
 
   .detail-content-exp {
-    font-size: 20px;
+    font-size: 30px;
   }
 }
+
 
 </style>

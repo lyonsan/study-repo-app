@@ -62,7 +62,7 @@ nav {
   background-color: white;
   position: absolute;
   z-index: 10;
-  top: 3.5rem;
+  top: 6rem;
   overflow-x: hidden;
   text-align: center;
   transition: .5s;
@@ -72,24 +72,12 @@ nav {
 
 @media screen and (max-width: 1000px) {
   .header-logo {
-    font-size: 35px;
+    font-size: 60px;
   }
   .right-lists {
     display: none;
   }
 
-  .right-lists-lp {
-    display: flex;
-    padding: 2px 20px;
-    align-items: center;
-  }
-  
-  .right-lists-lp>li>a {
-    padding: 0 5px;
-    font-family: 'Roboto';
-    color: black;
-    font-size: 35px;
-  }
   
 
   #box {
@@ -146,7 +134,7 @@ nav {
     position: relative;
     font-family: 'Roboto';
     color: black;
-    font-size: 20px;
+    font-size: 60px;
   }
 
 }
