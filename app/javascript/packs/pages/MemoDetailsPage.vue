@@ -54,4 +54,24 @@ export default {
   width: 100%;
 }
 
+@media screen and (max-width: 1000px) {
+  .detail-header-title {
+    font-size: 45px;
+    font-weight: bold;
+  }
+
+  .detail-content-title {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .exp-text {
+    font-size: 20px;
+  }
+
+  .detail-content-exp {
+    font-size: 20px;
+  }
+}
+
 </style>
