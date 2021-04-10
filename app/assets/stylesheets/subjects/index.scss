@@ -66,6 +66,8 @@ a {
   font-size: 2.5vh;
   font-family: 'Roboto';
   text-decoration: underline;
+  max-width: 180px;
+  overflow-wrap: break-word;
 }
 
 .subject-name:hover {
@@ -74,4 +76,18 @@ a {
   text-decoration: underline;
   font-weight: bold;
   transition: 0.5s;
+}
+
+@media screen and (max-width: 1000px) {
+  .subject-wrapper {
+    padding-top: 120px;
+  }
+
+  .subject-header>.subject-title {
+    font-size: 30px;
+  }
+
+  .subject-new {
+    font-size: 30px;
+  }
 }
