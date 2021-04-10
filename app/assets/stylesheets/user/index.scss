@@ -1,10 +1,12 @@
 .users-wrapper {
   width: 60%;
-  margin: 80px auto;
+  padding-top: 80px;
+  margin: 0 auto;
+  min-height: 100vh;
 }
 
 .users-header {
-  padding-bottom: 1vh;
+  padding-bottom: 10px;
   border-bottom: solid 2px #BBBBBB;
 }
 
@@ -14,7 +16,8 @@
 
 .user-content {
   padding:10px;
-  font-size: 2.5vh;
+  font-size: 25px;
+  overflow-wrap: break-word;
   color:#333333;
   background-color: #EEEEEE;
   margin:2vh 0;
@@ -30,6 +33,7 @@
 
 .user-search-form {
   display: flex;
+  margin-top: 30px;
 }
 
 .user-search-input {
@@ -63,5 +67,41 @@
   .user-search-buttom {
     display: flex;
     flex-direction: column;
+  }
+
+  .users-wrapper {
+    width: 80%;
+    padding-top: 120px;
+    min-height: 100vh;
+  }
+
+  .users-header-title {
+    font-size: 60px;
+  }
+
+  .user-search-field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user-search-text {
+    font-size: 30px;
+  }
+
+  .user-search-input {
+    font-size: 40px;
+    width: 100%;
+  }
+
+  .user-search-btn {
+    font-size: 45px;
+  }
+
+  .user-content {
+    font-size: 60px;
+  }
+
+  .user-genre {
+    font-size: 30px;
   }
 }
